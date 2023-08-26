@@ -1,0 +1,64 @@
+site_name: Hysteria 2
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: white
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css
+
+repo_url: https://github.com/apernet/hysteria
+
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en:
+          name: English
+          build: true
+        zh:
+          name: 简体中文
+          build: true
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Docs:
+      - Getting Started:
+          - Installation: docs/getting-started/Installation.md
+          - Server: docs/getting-started/Server.md
+          - Client: docs/getting-started/Client.md
+  - GitHub: https://github.com/apernet/hysteria
