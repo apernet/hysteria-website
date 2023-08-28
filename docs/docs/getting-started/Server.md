@@ -1,8 +1,8 @@
 # Server
 
-This tutorial provides a quick guide to deploying a Hysteria server using a recommended setup. Please note that Hysteria is highly flexible and the options presented here are only a subset of what is available. **For further customization, please refer to the pages in the Advanced section of this documentation.**
+This tutorial provides a quick guide to deploying a Hysteria server using a recommended setup. Please note that Hysteria is highly flexible and the options presented here are only a subset of what is available. **For further customization, please refer to [Full Server Config](../advanced/Full-Server-Config.md).**
 
-The steps were performed in a Linux environment, but should be similar on all platforms.
+The steps were performed in a Linux environment, but should be similar on other platforms.
 
 ## Prerequisites
 
@@ -82,7 +82,9 @@ To accomplish this, our example uses reverse proxy mode to "steal" content from 
 
 ## Running the server
 
-**Since Hysteria listens on port 443 by default, you may need to run it with `cap_net_bind_service` capability or as root. (not necessary if you change the port to something above 1024)**
+**Since Hysteria listens on port 443 by default, you may need to run it with `cap_net_bind_service` capability or as root.**
+
+The following command grants the capability to the executable:
 
 ```bash
 sudo setcap cap_net_bind_service=+ep ./hysteria-linux-amd64-avx

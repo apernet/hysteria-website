@@ -61,4 +61,7 @@ nav:
           - Installation: docs/getting-started/Installation.md
           - Server: docs/getting-started/Server.md
           - Client: docs/getting-started/Client.md
+      - Advanced:
+          - Full Server Config: docs/advanced/Full-Server-Config.md
+          - Full Client Config: docs/advanced/Full-Client-Config.md
   - GitHub: https://github.com/apernet/hysteria
