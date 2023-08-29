@@ -65,5 +65,6 @@ nav:
           - Full Server Config: docs/advanced/Full-Server-Config.md
           - Full Client Config: docs/advanced/Full-Client-Config.md
       - Developers:
+          - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
   - GitHub: https://github.com/apernet/hysteria
