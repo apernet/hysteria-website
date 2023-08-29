@@ -108,3 +108,13 @@ default(8.8.4.4, udp/53, 1.1.1.1)
 # Direct all other connections
 direct(all)
 ```
+
+> **NOTE:** ACL is fully usable without custom outbounds. The built-in outbounds are always available, even if you have an empty outbound list. In fact, one of the most common uses of ACL is just to block some addresses:
+
+```python
+reject(geoip:cn)
+reject(10.0.0.0/8)
+reject(172.16.0.0/12)
+reject(192.168.0.0/16)
+reject(fc00::/7)
+```
