@@ -248,9 +248,7 @@ If omitted, Hysteria will use the system's default resolver.
 
 ACL, often used in combination with outbounds, is a very powerful feature of the Hysteria server that allows you to customize the way client's requests are handled. For example, you can use ACL to block certain addresses, or to route certain sites through a specific outbound.
 
-For details on syntax, usage and other information, please refer to the ACL page.
-
-TODO: link
+For details on syntax, usage and other information, please refer to the [ACL documentation](acl.md).
 
 You can have either `file` or `inline`, but not both.
 

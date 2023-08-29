@@ -65,6 +65,7 @@ nav:
           - Full Server Config: docs/advanced/Full-Server-Config.md
           - Full Client Config: docs/advanced/Full-Client-Config.md
           - What if I hate YAML?: docs/advanced/Hate-YAML.md
+          - ACL: docs/advanced/ACL.md
       - Developers:
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md

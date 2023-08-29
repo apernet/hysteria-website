@@ -1,6 +1,6 @@
 # Installation
 
-Like any proxy software, Hysteria consists of a server and a client. Our precompiled executables for all platforms include both modes. This means you can use it as either a server or a client on any platform we support. Below are your download options:
+Like any proxy software, Hysteria consists of a server and a client. Our precompiled executables includes both modes on all platforms. You can download our latest releases using one of the following options:
 
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([What build should I choose?](#what-build-should-i-choose))
 
