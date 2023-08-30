@@ -120,7 +120,7 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
     iptables -t mangle -A HYSTERIA -d 224.0.0.0/4 -j RETURN
     iptables -t mangle -A HYSTERIA -d 240.0.0.0/4 -j RETURN
 
-    # 重定向流量到 TProxy 接口
+    # 重定向流量到 TProxy 端口
     iptables -t mangle -A HYSTERIA -p tcp -j TPROXY --on-port 2500 --on-ip 127.0.0.1 --tproxy-mark 0x1
     iptables -t mangle -A HYSTERIA -p udp -j TPROXY --on-port 2500 --on-ip 127.0.0.1 --tproxy-mark 0x1 # (4)!
 
@@ -179,7 +179,7 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
     # 仅对公网 IPv6 启用代理 (3)
     ip6tables -t mangle -A HYSTERIA ! -d 2000::/3 -j RETURN
 
-    # 重定向流量到 TProxy 接口
+    # 重定向流量到 TProxy 端口
     ip6tables -t mangle -A HYSTERIA -p tcp -j TPROXY --on-port 2500 --on-ip ::1 --tproxy-mark 0x1
     ip6tables -t mangle -A HYSTERIA -p udp -j TPROXY --on-port 2500 --on-ip ::1 --tproxy-mark 0x1 # (4)!
 
