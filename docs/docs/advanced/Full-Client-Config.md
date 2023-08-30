@@ -211,9 +211,7 @@ udpForwarding:
 
 ### TCP TProxy (Linux only)
 
-TPROXY (transparent proxy) is a Linux-specific feature that allows you to transparently proxy TCP connections. For information on setting up TPROXY, see [TPROXY.md](../advanced/TPROXY.md).
-
-TODO: link
+TPROXY (transparent proxy) is a Linux-specific feature that allows you to transparently proxy TCP connections. For information, please refer to [Setting up TPROXY](TPROXY.md).
 
 ```yaml
 tcpTProxy:
@@ -224,9 +222,7 @@ tcpTProxy:
 
 ### UDP TProxy (Linux only)
 
-TPROXY (transparent proxy) is a Linux-specific feature that allows you to transparently proxy UDP connections. For information on setting up TPROXY, see [TPROXY.md](../advanced/TPROXY.md).
-
-TODO: link
+TPROXY (transparent proxy) is a Linux-specific feature that allows you to transparently proxy UDP connections. For information, please refer to [Setting up TPROXY](TPROXY.md).
 
 ```yaml
 udpTProxy:

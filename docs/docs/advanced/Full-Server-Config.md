@@ -248,7 +248,7 @@ If omitted, Hysteria will use the system's default resolver.
 
 ACL, often used in combination with outbounds, is a very powerful feature of the Hysteria server that allows you to customize the way client's requests are handled. For example, you can use ACL to block certain addresses, or to route certain sites through a specific outbound.
 
-For details on syntax, usage and other information, please refer to the [ACL documentation](acl.md).
+For details on syntax, usage and other information, please refer to the [ACL documentation](ACL.md).
 
 You can have either `file` or `inline`, but not both.
 
@@ -277,6 +277,8 @@ You can have either `file` or `inline`, but not both.
 
     1. The list of inline ACL rules.
     2. Optional. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
+
+> **NOTE:** Hysteria only supports MaxMind's GeoLite2 Country database in MMDB format for GeoIP functionality. If you don't know how to get the right file, omit the geoip field and let Hysteria automatically download the latest version. The database file will only be downloaded if there is at least one GeoIP rule in the ACL.
 
 ## Outbounds
 
@@ -336,9 +338,11 @@ The available `mode` values are:
 - `6`: Always use IPv6. Fail if no IPv6 address is available.
 - `4`: Always use IPv4. Fail if no IPv4 address is available.
 
-## Traffic stats API (HTTP)
+## Traffic Stats API (HTTP)
 
-The Traffic Statistics API allows you to query the server's traffic statistics and kick clients using an HTTP API. **Note that this API has no authentication, so you should not expose it to the public Internet, and also block it with ACL to prevent clients from accessing it.**
+The Traffic Stats API allows you to query the server's traffic statistics and kick clients using an HTTP API. For endpoints and usage, please refer to the [Traffic Stats API documentation](Traffic-Stats-API.md).
+
+> **NOTE:** This API has no authentication, so you should not expose it to the public Internet. We also recommend blocking it with ACL to prevent clients from accessing it.
 
 ```yaml
 trafficStats:
@@ -346,43 +350,6 @@ trafficStats:
 ```
 
 1. The address to listen on.
-
-### GET `/traffic`
-
-This endpoint returns a JSON map of client IDs to their traffic statistics.
-
-Response:
-
-```json
-{
-  "wang": {
-    "tx": 514,
-    "rx": 4017
-  },
-  "joe": {
-    "tx": 7790,
-    "rx": 446623
-  }
-}
-```
-
-You can also use the query parameter `clear` to zero out the statistics after they are returned:
-
-```
-/traffic?clear=1
-```
-
-### POST `/kick`
-
-This endpoint allows you to kick a list of clients by their IDs.
-
-Request:
-
-```json
-["wang", "joe"]
-```
-
-> **NOTE:** Due to the reconnect logic built into the client, it will attempt to reconnect after being kicked. To avoid having to repeatedly kick the same client, you should also block the user in your authentication backend.
 
 ## Masquerade
 
