@@ -375,3 +375,13 @@ masquerade:
 1. The directory to serve files from.
 2. The URL of the website to proxy.
 3. Whether to rewrite the `Host` header to match the proxied website. This is required if the target web server uses `Host` to determine which site to serve.
+
+You can test your masquerade configuration by starting Chrome with a special flag (to force QUIC):
+
+```bash
+chrome --origin-to-force-quic-on=your.site.com:443 # (1)!
+```
+
+1. Replace with the domain name of your server.
+
+Then visit `https://your.site.com` to verify that it works as expected.

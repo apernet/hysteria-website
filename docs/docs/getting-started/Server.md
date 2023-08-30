@@ -76,7 +76,7 @@ Depending on whether you want to use ACME to automatically obtain a TLS certific
 
 One of the keys to Hysteria's censorship resistance is its ability to masquerade as standard HTTP/3 traffic. This means that not only do the packets appear as HTTP/3 to middleboxes, but the server also responds to HTTP requests like a regular web server. However, this means that your server must actually serve some content to make it appear authentic to potential censors.
 
-To accomplish this, our example uses reverse proxy mode to "steal" content from another website. Be sure to change the URL to a website you want to emulate. Hysteria also provides several other modes for serving content; please refer to the Advanced section of this documentation for more details.
+To accomplish this, our example uses reverse proxy mode to "steal" content from another website. Be sure to change the URL to a website you want to emulate. Hysteria also provides several other modes for serving content; please refer to the [Masquerade section of Full Server Config](../advanced/Full-Server-Config.md#masquerade) for more information.
 
 **If censorship is not a concern, you can remove the `masquerade` section from the configuration file altogether. In this case, Hysteria will always return "404 Not Found" for all HTTP requests.**
 

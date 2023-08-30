@@ -64,11 +64,12 @@ nav:
       - Advanced:
           - Full Server Config: docs/advanced/Full-Server-Config.md
           - Full Client Config: docs/advanced/Full-Client-Config.md
-          - What if I hate YAML?: docs/advanced/Hate-YAML.md
           - ACL: docs/advanced/ACL.md
           - Traffic Stats API: docs/advanced/Traffic-Stats-API.md
           - TProxy: docs/advanced/TProxy.md
           - Logging: docs/advanced/Logging.md
+      - Misc:
+          - What if I hate YAML?: docs/advanced/Hate-YAML.md
       - Developers:
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
