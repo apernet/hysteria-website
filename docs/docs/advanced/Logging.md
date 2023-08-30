@@ -11,3 +11,5 @@ You can also use the `HYSTERIA_LOG_FORMAT` environment variable to control the l
 
 - `console` (default)
 - `json` (time will be displayed as the Unix epoch in milliseconds)
+
+Hysteria also checks for version updates by default and prints log messages if a newer version is available. To disable this, set `HYSTERIA_DISABLE_UPDATE_CHECK` to 1.
