@@ -171,9 +171,9 @@ When using HTTP authentication, the server will send a `POST` request to the bac
 
 ```json
 {
-  "addr": "123.123.123.123:44556", // (1)
-  "auth": "something_something", // (2)
-  "tx": 123456 // (3)
+  "addr": "123.123.123.123:44556", // (1)!
+  "auth": "something_something", // (2)!
+  "tx": 123456 // (3)!
 }
 ```
 
@@ -185,8 +185,8 @@ Your endpoint must respond with a JSON object with the following fields:
 
 ```json
 {
-  "ok": true, // (1)
-  "id": "john_doe" // (2)
+  "ok": true, // (1)!
+  "id": "john_doe" // (2)!
 }
 ```
 
