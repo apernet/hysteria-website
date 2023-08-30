@@ -75,3 +75,4 @@ nav:
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
   - GitHub: https://github.com/apernet/hysteria
+  - Donation: docs/Donation.md
