@@ -31,6 +31,7 @@ extra_css:
 repo_url: https://github.com/apernet/hysteria
 
 plugins:
+  - search
   - i18n:
       default_language: en
       languages:
