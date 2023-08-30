@@ -69,7 +69,8 @@ nav:
           - TProxy: docs/advanced/TProxy.md
           - Logging: docs/advanced/Logging.md
       - Misc:
-          - What if I hate YAML?: docs/advanced/Hate-YAML.md
+          - What if I hate YAML?: docs/misc/Hate-YAML.md
+          - About HTTP/3: docs/misc/About-HTTP3.md
       - Developers:
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
