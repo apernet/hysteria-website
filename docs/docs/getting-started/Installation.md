@@ -14,4 +14,26 @@ For Windows/Linux PCs and servers, the most common architecture is `amd64`, also
 
 For Macs with the M1 chip or newer, use the `arm64` version. Older Macs should use the `amd64` version.
 
-TODO: table
+| File                           | OS      | Arch   | Note                      |
+| ------------------------------ | ------- | ------ | ------------------------- |
+| hysteria-windows-amd64.exe     | Windows | x86-64 |                           |
+| hysteria-windows-amd64-avx.exe | Windows | x86-64 | Requires AVX              |
+| hysteria-windows-386.exe       | Windows | x86    |                           |
+| hysteria-windows-arm64.exe     | Windows | ARM64  |                           |
+| hysteria-darwin-amd64          | macOS   | x86-64 |                           |
+| hysteria-darwin-amd64-avx      | macOS   | x86-64 | Requires AVX              |
+| hysteria-darwin-arm64          | macOS   | ARM64  | M1 or newer               |
+| hysteria-linux-amd64           | Linux   | x86-64 |                           |
+| hysteria-linux-amd64-avx       | Linux   | x86-64 | Requires AVX              |
+| hysteria-linux-386             | Linux   | x86    |                           |
+| hysteria-linux-arm             | Linux   | ARMv7  |                           |
+| hysteria-linux-armv5           | Linux   | ARMv5  |                           |
+| hysteria-linux-arm64           | Linux   | ARM64  |                           |
+| hysteria-linux-s390x           | Linux   | s390x  |                           |
+| hysteria-linux-mipsle          | Linux   | MIPS   | Little Endian             |
+| hysteria-linux-mipsle-sf       | Linux   | MIPS   | Little Endian, Soft Float |
+| hysteria-freebsd-amd64         | FreeBSD | x86-64 |                           |
+| hysteria-freebsd-amd64-avx     | FreeBSD | x86-64 | Requires AVX              |
+| hysteria-freebsd-386           | FreeBSD | x86    |                           |
+| hysteria-freebsd-arm           | FreeBSD | ARMv7  |                           |
+| hysteria-freebsd-arm64         | FreeBSD | ARM64  |                           |
