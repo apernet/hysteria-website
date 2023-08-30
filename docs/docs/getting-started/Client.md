@@ -15,19 +15,19 @@ Assuming you have already downloaded the executable for your platform into a dir
 **Be sure to replace the values according to your server's settings and your specific needs.**
 
 ```yaml
-server: your.domain.net:443 # (1)
+server: your.domain.net:443 # (1)!
 
-auth: Se7RAuFZ8Lzg # (2)
+auth: Se7RAuFZ8Lzg # (2)!
 
-bandwidth: # (3)
+bandwidth: # (3)!
   up: 20 mbps
   down: 100 mbps
 
 socks5:
-  listen: 127.0.0.1:1080 # (4)
+  listen: 127.0.0.1:1080 # (4)!
 
 http:
-  listen: 127.0.0.1:8080 # (5)
+  listen: 127.0.0.1:8080 # (5)!
 ```
 
 1. Replace with your server's address
@@ -48,7 +48,7 @@ If your server uses a self-signed certificate, you can either specify the CA to 
 
     ```yaml
     tls:
-      ca: ca.crt # (1)
+      ca: ca.crt # (1)!
     ```
 
     1. Replace with the path to the CA certificate file
@@ -67,7 +67,7 @@ If your server uses a self-signed certificate, you can either specify the CA to 
     ```yaml
     tls:
       insecure: true
-      pinSHA256: BA:88:45:17:A1... # (1)
+      pinSHA256: BA:88:45:17:A1... # (1)!
     ```
 
     1. You can obtain the fingerprint of your certificate using openssl: `openssl x509 -noout -fingerprint -sha256 -in your_cert.crt`

@@ -24,17 +24,17 @@ Depending on whether you want to use ACME to automatically obtain a TLS certific
 
     acme:
       domains:
-        - your.domain.net # (2)
-      email: your@email.com # (3)
+        - your.domain.net # (2)!
+      email: your@email.com # (3)!
 
     auth:
       type: password
-      password: Se7RAuFZ8Lzg # (4)
+      password: Se7RAuFZ8Lzg # (4)!
 
-    masquerade: # (5)
+    masquerade: # (5)!
       type: proxy
       proxy:
-        url: https://news.ycombinator.com/ # (6)
+        url: https://news.ycombinator.com/ # (6)!
         rewriteHost: true
     ```
 
@@ -51,17 +51,17 @@ Depending on whether you want to use ACME to automatically obtain a TLS certific
     # listen: :443 (1)
 
     tls:
-      cert: your_cert.crt # (2)
-      key: your_key.key # (3)
+      cert: your_cert.crt # (2)!
+      key: your_key.key # (3)!
 
     auth:
       type: password
-      password: Se7RAuFZ8Lzg # (4)
+      password: Se7RAuFZ8Lzg # (4)!
 
-    masquerade: # (5)
+    masquerade: # (5)!
       type: proxy
       proxy:
-        url: https://news.ycombinator.com/ # (6)
+        url: https://news.ycombinator.com/ # (6)!
         rewriteHost: true
     ```
 

@@ -22,7 +22,7 @@ example:
 The `listen` field is the server's listen address. If omitted, the server will listen on `:443' since that's the default HTTP/3 port.
 
 ```yaml
-listen: :443 # (1)
+listen: :443 # (1)!
 ```
 
 1. When the IP address is omitted, the server will listen on all interfaces.
@@ -47,12 +47,12 @@ You can have either `tls` or `acme`, but not both.
         - domain1.com
         - domain2.org
       email: your@email.net
-      ca: zerossl # (1)
-      disableHTTP: false # (2)
-      disableTLSALPN: false # (3)
-      altHTTPPort: 8080 # (4)
-      altTLSALPNPort: 4443 # (5)
-      dir: my_acme_dir # (6)
+      ca: zerossl # (1)!
+      disableHTTP: false # (2)!
+      disableTLSALPN: false # (3)!
+      altHTTPPort: 8080 # (4)!
+      altTLSALPNPort: 4443 # (5)!
+      dir: my_acme_dir # (6)!
 
     ```
 
@@ -73,7 +73,7 @@ By default, the Hysteria protocol mimics HTTP/3. If your network specifically bl
 obfs:
   type: salamander
   salamander:
-    password: cry_me_a_r1ver # (1)
+    password: cry_me_a_r1ver # (1)!
 ```
 
 1. Replace with a strong password of your choice.
@@ -82,13 +82,13 @@ obfs:
 
 ```yaml
 quic:
-  initStreamReceiveWindow: 8388608 # (1)
-  maxStreamReceiveWindow: 8388608 # (2)
-  initConnReceiveWindow: 20971520 # (3)
-  maxConnReceiveWindow: 20971520 # (4)
-  maxIdleTimeout: 30s # (5)
-  maxIncomingStreams: 1024 # (6)
-  disablePathMTUDiscovery: false # (7)
+  initStreamReceiveWindow: 8388608 # (1)!
+  maxStreamReceiveWindow: 8388608 # (2)!
+  initConnReceiveWindow: 20971520 # (3)!
+  maxConnReceiveWindow: 20971520 # (4)!
+  maxIdleTimeout: 30s # (5)!
+  maxIncomingStreams: 1024 # (6)!
+  disablePathMTUDiscovery: false # (7)!
 ```
 
 1. The initial QUIC stream receive window size.
@@ -148,15 +148,15 @@ udpIdleTimeout: 60s
 ```yaml
 auth:
   type: password
-  password: your_password # (1)
-  userpass: # (2)
+  password: your_password # (1)!
+  userpass: # (2)!
     user1: pass1
     user2: pass2
     user3: pass3
   http:
-    url: http://your.backend.com/auth # (3)
-    insecure: false # (4)
-  command: /etc/some_command # (5)
+    url: http://your.backend.com/auth # (3)!
+    insecure: false # (4)!
+  command: /etc/some_command # (5)!
 ```
 
 1. Replace with a strong password of your choice.
@@ -200,7 +200,7 @@ Your endpoint must respond with a JSON object with the following fields:
 When using command authentication, the server will execute the specified command with the following arguments when a client attempts to connect:
 
 ```bash
-/etc/some_command addr auth tx # (1)
+/etc/some_command addr auth tx # (1)!
 ```
 
 1. The definition of each argument is the same as in the HTTP authentication section above.
@@ -217,18 +217,18 @@ You can specify what resolver (DNS server) to use to resolve domain names in cli
 resolver:
   type: udp
   tcp:
-    addr: 8.8.8.8:53 # (1)
-    timeout: 4s # (2)
+    addr: 8.8.8.8:53 # (1)!
+    timeout: 4s # (2)!
   udp:
-    addr: 8.8.4.4:53 # (3)
+    addr: 8.8.4.4:53 # (3)!
     timeout: 4s
   tls:
-    addr: 1.1.1.1:853 # (4)
+    addr: 1.1.1.1:853 # (4)!
     timeout: 10s
-    sni: cloudflare-dns.com # (5)
-    insecure: false # (6)
+    sni: cloudflare-dns.com # (5)!
+    insecure: false # (6)!
   https:
-    addr: 1.1.1.1:443 # (7)
+    addr: 1.1.1.1:443 # (7)!
     timeout: 10s
     sni: cloudflare-dns.com
     insecure: false
@@ -256,7 +256,7 @@ You can have either `file` or `inline`, but not both.
 
     ```yaml
     acl:
-      file: some.txt # (1)
+      file: some.txt # (1)!
       # geoip: GeoLite2-Country.mmdb (2)
     ```
 
@@ -267,7 +267,7 @@ You can have either `file` or `inline`, but not both.
 
     ```yaml
     acl:
-      inline: # (1)
+      inline: # (1)!
         - reject(v2ex.com)
         - reject(*.v2ex.com)
         - reject(all, udp/443)
@@ -291,14 +291,14 @@ Currently, Hysteria supports the following outbound types:
 
 ```yaml
 outbounds:
-  - name: my_outbound_1 # (1)
+  - name: my_outbound_1 # (1)!
     type: direct
   - name: my_outbound_2
     type: socks5
     socks5:
-      addr: shady.proxy.ru:1080 # (2)
-      username: hackerman # (3)
-      password: Elliot Alderson # (4)
+      addr: shady.proxy.ru:1080 # (2)!
+      username: hackerman # (3)!
+      password: Elliot Alderson # (4)!
 ```
 
 1. The name of the outbound. This is used in ACL rules.
@@ -317,10 +317,10 @@ outbounds:
   - name: hoho
     type: direct
     direct:
-      mode: auto # (1)
-      bindIPv4: 2.4.6.8 # (2)
-      bindIPv6: 0:0:0:0:0:ffff:0204:0608 # (3)
-      bindDevice: eth233 # (4)
+      mode: auto # (1)!
+      bindIPv4: 2.4.6.8 # (2)!
+      bindIPv6: 0:0:0:0:0:ffff:0204:0608 # (3)!
+      bindDevice: eth233 # (4)!
 ```
 
 1. See the explanation below.
@@ -342,7 +342,7 @@ The Traffic Statistics API allows you to query the server's traffic statistics a
 
 ```yaml
 trafficStats:
-  listen: :9999 # (1)
+  listen: :9999 # (1)!
 ```
 
 1. The address to listen on.
@@ -399,10 +399,10 @@ Currently, Hysteria provides the following masquerade modes:
 masquerade:
   type: proxy
   file:
-    dir: /www/masq # (1)
+    dir: /www/masq # (1)!
   proxy:
-    url: https://some.site.net # (2)
-    rewriteHost: true # (3)
+    url: https://some.site.net # (2)!
+    rewriteHost: true # (3)!
 ```
 
 1. The directory to serve files from.

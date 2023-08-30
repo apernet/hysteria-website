@@ -47,10 +47,10 @@ auth: some_password
 
 ```yaml
 tls:
-  sni: another.example.com # (1)
-  insecure: false # (2)
-  pinSHA256: BA:88:45:17:A1... # (3)
-  ca: custom_ca.crt # (4)
+  sni: another.example.com # (1)!
+  insecure: false # (2)!
+  pinSHA256: BA:88:45:17:A1... # (3)!
+  ca: custom_ca.crt # (4)!
 ```
 
 1. Server name to use for TLS verification. If omitted, the server name will be extracted from the `server` field.
@@ -68,7 +68,7 @@ By default, the Hysteria protocol mimics HTTP/3. If your network specifically bl
 obfs:
   type: salamander
   salamander:
-    password: cry_me_a_r1ver # (1)
+    password: cry_me_a_r1ver # (1)!
 ```
 
 1. Replace with a strong password of your choice.
@@ -77,13 +77,13 @@ obfs:
 
 ```yaml
 quic:
-  initStreamReceiveWindow: 8388608 # (1)
-  maxStreamReceiveWindow: 8388608 # (2)
-  initConnReceiveWindow: 20971520 # (3)
-  maxConnReceiveWindow: 20971520 # (4)
-  maxIdleTimeout: 30s # (5)
-  keepAlivePeriod: 10s # (6)
-  disablePathMTUDiscovery: false # (7)
+  initStreamReceiveWindow: 8388608 # (1)!
+  maxStreamReceiveWindow: 8388608 # (2)!
+  initConnReceiveWindow: 20971520 # (3)!
+  maxConnReceiveWindow: 20971520 # (4)!
+  maxIdleTimeout: 30s # (5)!
+  keepAlivePeriod: 10s # (6)!
+  disablePathMTUDiscovery: false # (7)!
 ```
 
 1. The initial QUIC stream receive window size.
@@ -146,10 +146,10 @@ A SOCKS5 proxy server that can be used with any SOCKS5-compatible application. S
 
 ```yaml
 socks5:
-  listen: 127.0.0.1:1080 # (1)
-  username: user # (2)
-  password: pass # (3)
-  disableUDP: false # (4)
+  listen: 127.0.0.1:1080 # (1)!
+  username: user # (2)!
+  password: pass # (3)!
+  disableUDP: false # (4)!
 ```
 
 1. The address to listen on.
@@ -163,10 +163,10 @@ An HTTP proxy server that can be used with any HTTP proxy-compatible application
 
 ```yaml
 http:
-  listen: 127.0.0.1:8080 # (1)
-  username: king # (2)
-  password: kong # (3)
-  realm: martian # (4)
+  listen: 127.0.0.1:8080 # (1)!
+  username: king # (2)!
+  password: kong # (3)!
+  realm: martian # (4)!
 ```
 
 1. The address to listen on.
@@ -180,9 +180,9 @@ TCP Forwarding allows you to forward one or more TCP ports from the server (or a
 
 ```yaml
 tcpForwarding:
-  - listen: 127.0.0.1:6600 # (1)
-    remote: 127.0.0.1:6600 # (2)
-  - listen: 127.0.0.1:6601 # (3)
+  - listen: 127.0.0.1:6600 # (1)!
+    remote: 127.0.0.1:6600 # (2)!
+  - listen: 127.0.0.1:6601 # (3)!
     remote: other.machine.internal:6601
 ```
 
@@ -196,10 +196,10 @@ UDP Forwarding allows you to forward one or more UDP ports from the server (or a
 
 ```yaml
 udpForwarding:
-  - listen: 127.0.0.1:5300 # (1)
-    remote: 127.0.0.1:5300 # (2)
-    timeout: 20s # (3)
-  - listen: 127.0.0.1:5301 # (4)
+  - listen: 127.0.0.1:5300 # (1)!
+    remote: 127.0.0.1:5300 # (2)!
+    timeout: 20s # (3)!
+  - listen: 127.0.0.1:5301 # (4)!
     remote: other.machine.internal:5301
     timeout: 20s
 ```
@@ -217,7 +217,7 @@ TODO: link
 
 ```yaml
 tcpTProxy:
-  listen: 127.0.0.1:2500 # (1)
+  listen: 127.0.0.1:2500 # (1)!
 ```
 
 1. The address to listen on.
@@ -230,8 +230,8 @@ TODO: link
 
 ```yaml
 udpTProxy:
-  listen: 127.0.0.1:2500 # (1)
-  timeout: 20s # (2)
+  listen: 127.0.0.1:2500 # (1)!
+  timeout: 20s # (2)!
 ```
 
 1. The address to listen on.
