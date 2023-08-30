@@ -80,7 +80,7 @@ nav:
           - Full Client Config: docs/advanced/Full-Client-Config.md
           - ACL: docs/advanced/ACL.md
           - Traffic Stats API: docs/advanced/Traffic-Stats-API.md
-          - TProxy: docs/advanced/TProxy.md
+          - TProxy: docs/advanced/TPROXY.md
           - Logging: docs/advanced/Logging.md
       - Misc:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
