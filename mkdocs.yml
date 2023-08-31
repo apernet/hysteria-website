@@ -83,9 +83,12 @@ nav:
           - TProxy: docs/advanced/TPROXY.md
           - Port Hopping: docs/advanced/Port-Hopping.md
           - Logging: docs/advanced/Logging.md
+          - Performance: docs/advanced/Performance.md
+          - Troubleshooting: docs/advanced/Troubleshooting.md
       - Misc:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
           - About HTTP/3: docs/misc/About-HTTP3.md
+          - Can I use a CDN?: docs/misc/CDN.md
       - Developers:
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
