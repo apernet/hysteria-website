@@ -58,6 +58,19 @@ tls:
 3. Verify the server's certificate fingerprint. You can obtain the fingerprint of your certificate using openssl: `openssl x509 -noout -fingerprint -sha256 -in your_cert.crt`
 4. Use a custom CA certificate for TLS verification.
 
+## Transport
+
+The `transport` section is for customizing the underlying protocol used by the QUIC connection. Currently the only type available is `udp`, but we reserve it for possible future expansions.
+
+```yaml
+transport:
+  type: udp
+  udp:
+    hopInterval: 30s # (1)!
+```
+
+1. The port hopping interval. This is only relevant if you're using a port hopping address. See [Port Hopping](Port-Hopping.md) for more information.
+
 ## Obfuscation
 
 By default, the Hysteria protocol mimics HTTP/3. If your network specifically blocks QUIC or HTTP/3 traffic (but not UDP in general), obfuscation can be used to work around this. We currently have an obfuscation implementation called "Salamander" that converts packets into seamingly random bytes with no pattern. This feature requires a password that must be identical on both the client and server sides.
