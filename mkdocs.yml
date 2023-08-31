@@ -81,6 +81,7 @@ nav:
           - ACL: docs/advanced/ACL.md
           - Traffic Stats API: docs/advanced/Traffic-Stats-API.md
           - TProxy: docs/advanced/TPROXY.md
+          - Port Hopping: docs/advanced/Port-Hopping.md
           - Logging: docs/advanced/Logging.md
       - Misc:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
