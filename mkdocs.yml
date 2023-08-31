@@ -90,6 +90,7 @@ nav:
           - About HTTP/3: docs/misc/About-HTTP3.md
           - Can I use a CDN?: docs/misc/CDN.md
       - Developers:
+          - Build: docs/developers/Build.md
           - Protocol: docs/developers/Protocol.md
           - URI Scheme: docs/developers/URI-Scheme.md
   - GitHub: https://github.com/apernet/hysteria
