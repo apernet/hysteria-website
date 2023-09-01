@@ -169,7 +169,7 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
 === "IPv6"
 
     ```bash
-    iptables -t mangle -N HYSTERIA
+    ip6tables -t mangle -N HYSTERIA
 
     # 跳过已经由 TProxy 接管的流量 (1)
     ip6tables -t mangle -A HYSTERIA -p tcp -m socket --transparent -j MARK --set-mark 0x1
@@ -188,7 +188,7 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
 
     # === 代理本机流量 - 开始 === (2)
 
-    iptables -t mangle -N HYSTERIA_MARK
+    ip6tables -t mangle -N HYSTERIA_MARK
 
     # 通过匹配用户来避免环路
     ip6tables -t mangle -A HYSTERIA_MARK -m owner --uid-owner hysteria -j RETURN
