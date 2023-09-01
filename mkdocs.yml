@@ -46,14 +46,41 @@ repo_url: https://github.com/apernet/hysteria
 plugins:
   - search
   - i18n:
-      default_language: en
       languages:
-        en:
+        - locale: en
+          default: true
           name: English
           build: true
-        zh:
+        - locale: zh
           name: 简体中文
           build: true
+          nav_translations:
+            Home: 首页
+            Docs: 文档
+            GitHub: GitHub
+            Donation: 捐赠
+            Getting Started: 快速开始
+            Installation: 安装
+            Server: 服务端
+            Client: 客户端
+            Advanced: 进阶
+            Full Server Config: 完整服务端配置
+            Full Client Config: 完整客户端配置
+            ACL: ACL
+            Traffic Stats API: 流量统计 API
+            TProxy: 透明代理
+            Port Hopping: 端口跳跃
+            Logging: 日志
+            Performance: 性能优化
+            Troubleshooting: 故障排除
+            Misc: 杂项
+            What if I hate YAML?: 我不喜欢 YAML 怎么办？
+            About HTTP/3: 关于 HTTP/3
+            Can I use a CDN?: 可以套 CDN 吗？
+            Developers: 开发者
+            Build: 构建
+            Protocol: 协议
+            URI Scheme: URI 格式
 
 markdown_extensions:
   - attr_list
