@@ -13,6 +13,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Light mode
+  custom_dir: overrides
 
   logo: assets/logo.svg
   favicon: assets/favicon.png
@@ -25,6 +26,7 @@ theme:
     - navigation.footer
     - content.code.copy
     - content.code.annotate
+    - announce.dismiss
 
 extra:
   generator: false
