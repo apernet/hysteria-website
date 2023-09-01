@@ -1,0 +1,43 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - run: |
+          pip install mkdocs-material
+          pip install mkdocs-static-i18n
+
+      - run: mkdocs build --verbose --clean --strict
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: hy2doc
+          directory: site
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
