@@ -1,5 +1,5 @@
 ---
-title: Hysteria 2
+title: Home
 hide:
   - navigation
   - toc
