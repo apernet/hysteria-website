@@ -13,6 +13,25 @@ hide:
   }
 </style>
 
+<!-- Make the feature grid responsive -->
+<style>
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 600px) {
+    .feature-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 900px) {
+    .feature-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>
+
 ![Hysteria 2 Logo Banner](./assets/banner_light.svg#logo-light){: style="width: 80%; margin: 0 auto;"}
 ![Hysteria 2 Logo Banner](./assets/banner_dark.svg#logo-dark){: style="width: 80%; margin: 0 auto;"}
 
@@ -28,7 +47,7 @@ hide:
 
 ---
 
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+<div class="feature-grid">
   <div>
     <h3>🛠️ 功能齐全</h3>
     <p>SOCKS5、HTTP 代理、TCP/UDP 转发、Linux TProxy，更多模式不断添加中。</p>
