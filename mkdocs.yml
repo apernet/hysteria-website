@@ -27,6 +27,8 @@ theme:
     - content.code.copy
     - content.code.annotate
     - announce.dismiss
+    - search.suggest
+    - search.highlight
 
 extra:
   generator: false
