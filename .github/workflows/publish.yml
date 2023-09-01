@@ -41,3 +41,4 @@ jobs:
           projectName: hy2doc
           directory: site
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
