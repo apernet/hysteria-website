@@ -2,7 +2,6 @@
 
 TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和 UDP。
 
-
 ## 避免环路
 
 > 如果不需要代理本机（运行 Hysteria 客户端的设备自身）的流量， 则可跳过此章节。
@@ -43,7 +42,6 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
     或者， 如果使用 systemd 管理 Hysteria 服务，
     也可以在这个服务的 systemd 配置中的 `[Service]` 下添加 `User=hysteria`。
 
-
 ## 配置客户端
 
 > 在之后的示例中， 我们将使用 `2500` 作为 TProxy 的监听端口， 你也可以换用其他端口。
@@ -71,7 +69,6 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
 
     1. 如果同时需要 IPv4 和 IPv6 支持， 请不要在 `:` 的前面添加监听的 IP 地址。
 
-
 ## 配置路由规则
 
 这个步骤 **不可省略**。 请勿遗漏这个步骤， 否则 TProxy 将不会工作。
@@ -95,8 +92,7 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
     ip -6 route add local default dev lo table 100
     ```
 
-
-##  配置 iptables
+## 配置 iptables
 
 > 每次开机都需要执行这些命令， 除非进行持久化。
 
@@ -220,7 +216,6 @@ TProxy 是仅在 Linux 上可用的一种透明代理， 它同时支持 TCP 和
 
 ## 延伸阅读
 
-+ [XRay 使用指南 - TProxy 透明代理](https://xtls.github.io/document/level-2/tproxy_ipv4_and_ipv6.html)
-+ [XRay 使用指南 - 透明代理通过 gid 规避 Xray 流量](https://xtls.github.io/document/level-2/iptables_gid.html)
-+ [新 V2Ray 白话文指南 - 透明代理(TProxy)](https://guide.v2fly.org/app/tproxy.html)
-
+- [XRay 使用指南 - TProxy 透明代理](https://xtls.github.io/document/level-2/tproxy_ipv4_and_ipv6.html)
+- [XRay 使用指南 - 透明代理通过 gid 规避 Xray 流量](https://xtls.github.io/document/level-2/iptables_gid.html)
+- [新 V2Ray 白话文指南 - 透明代理(TProxy)](https://guide.v2fly.org/app/tproxy.html)
