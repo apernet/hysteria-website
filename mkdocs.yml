@@ -66,9 +66,9 @@ plugins:
             Donation: 捐赠
             Getting Started: 快速开始
             Installation: 安装
-            3rd-party apps: 第三方应用
             Server: 服务端
             Client: 客户端
+            3rd-party apps: 第三方应用
             Advanced: 进阶
             Full Server Config: 完整服务端配置
             Full Client Config: 完整客户端配置
@@ -80,6 +80,7 @@ plugins:
             Performance: 性能优化
             Troubleshooting: 故障排除
             Misc: 杂项
+            Hysteria 2 vs 1: Hysteria 1/2 对比
             What if I hate YAML?: 我不喜欢 YAML 怎么办？
             About HTTP/3: 关于 HTTP/3
             Can I use a CDN?: 可以套 CDN 吗？
@@ -106,9 +107,9 @@ nav:
   - Docs:
       - Getting Started:
           - Installation: docs/getting-started/Installation.md
-          - 3rd-party apps: docs/getting-started/3rd-party-apps.md
           - Server: docs/getting-started/Server.md
           - Client: docs/getting-started/Client.md
+          - 3rd-party apps: docs/getting-started/3rd-party-apps.md
       - Advanced:
           - Full Server Config: docs/advanced/Full-Server-Config.md
           - Full Client Config: docs/advanced/Full-Client-Config.md
@@ -120,10 +121,10 @@ nav:
           - Performance: docs/advanced/Performance.md
           - Troubleshooting: docs/advanced/Troubleshooting.md
       - Misc:
+          - Hysteria 2 vs 1: docs/misc/2-vs-1.md
           - What if I hate YAML?: docs/misc/Hate-YAML.md
           - About HTTP/3: docs/misc/About-HTTP3.md
           - Can I use a CDN?: docs/misc/CDN.md
-          - Hysteria 2 vs 1: docs/misc/2-vs-1.md
       - Developers:
           - Build: docs/developers/Build.md
           - Protocol: docs/developers/Protocol.md
