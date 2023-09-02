@@ -351,7 +351,7 @@ trafficStats:
 
 1. 监听地址。
 
-### 伪装 (Masquerade)
+## 伪装 (Masquerade)
 
 Hysteria 抵抗审查的关键之一就是它能伪装成标准的 HTTP/3 流量。这意味着数据包不仅对中间设备（middleboxes）看起来像是 HTTP/3，服务器还会像普通网站服务器一样真的响应 HTTP 请求。然而，这意味着你的服务器必须实际提供一些内容，以便看起来是真实的。
 
