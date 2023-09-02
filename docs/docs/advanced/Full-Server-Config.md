@@ -246,7 +246,7 @@ If omitted, Hysteria will use the system's default resolver.
 
 ## ACL
 
-ACL, often used in combination with outbounds, is a very powerful feature of the Hysteria server that allows you to customize the way client's requests are handled. For example, you can use ACL to block certain addresses, or to route certain sites through a specific outbound.
+ACL, often used in combination with outbounds, is a very powerful feature of the Hysteria server that allows you to customize the way client's requests are handled. For example, you can use ACL to block certain addresses, or to use different outbounds for different websites.
 
 For details on syntax, usage and other information, please refer to the [ACL documentation](ACL.md).
 
@@ -282,7 +282,7 @@ You can have either `file` or `inline`, but not both.
 
 ## Outbounds
 
-Outbounds are used to define the "exit" through which a connection should be routed. For example, when combined with ACL, you can route all traffic except Netflix directly through the local interface, while routing Netflix traffic through a SOCKS5 proxy.
+Outbounds are used to define the "exit" through which a connection should be routed. For example, when [combined with ACL](ACL.md), you can route all traffic except Netflix directly through the local interface, while routing Netflix traffic through a SOCKS5 proxy.
 
 Currently, Hysteria supports the following outbound types:
 
