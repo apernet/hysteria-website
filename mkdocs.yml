@@ -66,6 +66,7 @@ plugins:
             Donation: 捐赠
             Getting Started: 快速开始
             Installation: 安装
+            3rd-party apps: 第三方应用
             Server: 服务端
             Client: 客户端
             Advanced: 进阶
@@ -105,6 +106,7 @@ nav:
   - Docs:
       - Getting Started:
           - Installation: docs/getting-started/Installation.md
+          - 3rd-party apps: docs/getting-started/3rd-party-apps.md
           - Server: docs/getting-started/Server.md
           - Client: docs/getting-started/Client.md
       - Advanced:
