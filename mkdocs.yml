@@ -121,6 +121,7 @@ nav:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
           - About HTTP/3: docs/misc/About-HTTP3.md
           - Can I use a CDN?: docs/misc/CDN.md
+          - Hysteria 2 vs 1: docs/misc/2-vs-1.md
       - Developers:
           - Build: docs/developers/Build.md
           - Protocol: docs/developers/Protocol.md
