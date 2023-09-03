@@ -3,6 +3,10 @@
 像其他代理软件一样，Hysteria 由服务端和客户端组成。我们的可执行文件在所有平台上都包括这两种模式。可以通过以下几种方式下载我们的最新版本：
 
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([我该选择哪个版本？](#_2))
+- [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria)
+- [Linux 服务端部署脚本](https://raw.githubusercontent.com/apernet/hysteria/master/scripts/install_server.sh)
+- 自己用 [`hyperbole.py`](https://github.com/apernet/hysteria/blob/master/hyperbole.py) 从源码编译
+- 使用 [第三方应用](./3rd-party-apps.md)
 
 TODO: 更多选项
 
