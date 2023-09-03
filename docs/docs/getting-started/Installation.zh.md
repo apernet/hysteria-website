@@ -1,14 +1,12 @@
 # 安装
 
-像其他代理软件一样，Hysteria 由服务端和客户端组成。我们的可执行文件在所有平台上都包括这两种模式。可以通过以下几种方式下载我们的最新版本：
+像其他代理软件一样，Hysteria 由服务端和客户端组成。我们的可执行文件在所有平台上都包括这两种模式。**可以通过以下几种方式之一获取最新版本：**
 
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([我该选择哪个版本？](#_2))
+- [Linux 服务端部署脚本](#linux)
 - [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria)
-- [Linux 服务端部署脚本](https://raw.githubusercontent.com/apernet/hysteria/master/scripts/install_server.sh)
-- 自己用 [`hyperbole.py`](https://github.com/apernet/hysteria/blob/master/hyperbole.py) 从源码编译
-- 使用 [第三方应用](./3rd-party-apps.md)
-
-TODO: 更多选项
+- 使用 [第三方应用](3rd-party-apps.md)
+- [自行从源码编译](../developers/Build.md)
 
 ## 我该选择哪个版本？
 
@@ -41,3 +39,11 @@ TODO: 更多选项
 | hysteria-freebsd-386           | FreeBSD | x86    |                        |
 | hysteria-freebsd-arm           | FreeBSD | ARMv7  |                        |
 | hysteria-freebsd-arm64         | FreeBSD | ARM64  |                        |
+
+## Linux 服务端部署脚本
+
+我们提供了一个 bash 脚本，可以在常见的 Linux 发行版上自动下载最新版本的 Hysteria 并配置 systemd 服务。
+
+```bash
+curl -sL https://get.hy2.sh/ | sudo bash
+```

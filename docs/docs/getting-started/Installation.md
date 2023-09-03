@@ -1,10 +1,12 @@
 # Installation
 
-Like any proxy software, Hysteria consists of a server and a client. Our precompiled executables includes both modes on all platforms. You can download our latest releases using one of the following options:
+Like any proxy software, Hysteria consists of a server and a client. Our precompiled executables includes both modes on all platforms. **You can download our latest releases using one of the following options:**
 
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([What build should I choose?](#what-build-should-i-choose))
-
-TODO: more options
+- [Deployment script for Linux servers](#deployment-script-for-linux-servers)
+- [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria)
+- Use [3rd-party apps](3rd-party-apps.md)
+- [Build from source](../developers/Build.md)
 
 ## What build should I choose?
 
@@ -37,3 +39,11 @@ For Macs with the M1 chip or newer, use the `arm64` version. Older Macs should u
 | hysteria-freebsd-386           | FreeBSD | x86    |                           |
 | hysteria-freebsd-arm           | FreeBSD | ARMv7  |                           |
 | hysteria-freebsd-arm64         | FreeBSD | ARM64  |                           |
+
+## Deployment script for Linux servers
+
+We provide a bash script that automatically downloads the latest version of Hysteria and configures a systemd service on common Linux distributions.
+
+```bash
+curl -sL https://get.hy2.sh/ | sudo bash
+```
