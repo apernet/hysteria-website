@@ -39,7 +39,10 @@ hide:
 
 <p align="center">
   <a href="docs/getting-started/Installation/" style="padding: 14px 28px; background-color: #4A7B9D; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
-    Get Started
+    Get Started (English)
+  </a>
+  <a href="zh/" style="padding: 14px 28px; background-color: #D67676; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    中文文档 (Chinese)
   </a>
 </p>
 
