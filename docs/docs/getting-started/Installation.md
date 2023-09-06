@@ -5,6 +5,7 @@ Like any proxy software, Hysteria consists of a server and a client. Our precomp
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([What build should I choose?](#what-build-should-i-choose))
 - [Deployment script for Linux servers](#deployment-script-for-linux-servers)
 - [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria)
+- [Docker images](#docker-images)
 - Use [3rd-party apps](3rd-party-apps.md)
 - [Build from source](../developers/Build.md)
 
@@ -46,4 +47,23 @@ We provide a bash script that automatically downloads the latest version of Hyst
 
 ```bash
 bash <(curl -fsSL https://get.hy2.sh/)
+```
+
+## Docker images
+
+[Our official Docker images are hosted on Docker Hub.](https://hub.docker.com/r/tobyxdd/hysteria)
+
+### Compose example
+
+```yaml
+version: "3.9"
+services:
+  hysteria:
+    image: tobyxdd/hysteria
+    container_name: hysteria
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./hysteria.yaml:/etc/hysteria.yaml
+    command: ["server", "-c", "/etc/hysteria.yaml"]
 ```

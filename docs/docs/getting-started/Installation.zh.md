@@ -5,6 +5,7 @@
 - [GitHub Releases](https://github.com/apernet/hysteria/releases) ([我该选择哪个版本？](#_2))
 - [Linux 服务端部署脚本](#linux)
 - [Arch Linux AUR](https://aur.archlinux.org/packages/hysteria)
+- [Docker 镜像](#docker)
 - 使用 [第三方应用](3rd-party-apps.md)
 - [自行从源码编译](../developers/Build.md)
 
@@ -46,4 +47,23 @@
 
 ```bash
 bash <(curl -fsSL https://get.hy2.sh/)
+```
+
+## Docker 镜像
+
+[我们的官方 Docker 镜像在 Docker Hub 上。](https://hub.docker.com/r/tobyxdd/hysteria)
+
+### Compose 示例
+
+```yaml
+version: "3.9"
+services:
+  hysteria:
+    image: tobyxdd/hysteria
+    container_name: hysteria
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./hysteria.yaml:/etc/hysteria.yaml
+    command: ["server", "-c", "/etc/hysteria.yaml"]
 ```
