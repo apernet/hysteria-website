@@ -45,5 +45,5 @@
 我们提供了一个 bash 脚本，可以在常见的 Linux 发行版上自动下载最新版本的 Hysteria 并配置 systemd 服务。
 
 ```bash
-sudo bash <(curl -fsSL https://get.hy2.sh/)
+bash <(curl -fsSL https://get.hy2.sh/)
 ```
