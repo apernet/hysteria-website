@@ -45,5 +45,5 @@ For Macs with the M1 chip or newer, use the `arm64` version. Older Macs should u
 We provide a bash script that automatically downloads the latest version of Hysteria and configures a systemd service on common Linux distributions.
 
 ```bash
-sudo bash <(curl -fsSL https://get.hy2.sh/)
+bash <(curl -fsSL https://get.hy2.sh/)
 ```
