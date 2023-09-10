@@ -88,6 +88,39 @@ plugins:
             Build: 构建
             Protocol: 协议
             URI Scheme: URI 格式
+        - locale: ru
+          name: Русский
+          build: true
+          nav_translations:
+            Home: Главная
+            Docs: Документация
+            Changelog: История изменений
+            GitHub: GitHub
+            Donation: Пожертвования
+            Getting Started: Быстрый старт
+            Installation: Установка
+            Server: Сервер
+            Client: Клиент
+            3rd-party apps: Сторонние приложения
+            Advanced: Продвинутые настройки
+            Full Server Config: Полная конфигурация сервера
+            Full Client Config: Полная конфигурация клиента
+            ACL: ACL (Список управления доступом)
+            Traffic Stats API: API статистики трафика
+            TProxy: Прозрачный прокси
+            Port Hopping: Перепрыгивание портов
+            Logging: Логирование
+            Performance: Оптимизация производительности
+            Troubleshooting: Устранение неполадок
+            Misc: Разное
+            Hysteria 2 vs 1: Сравнение Hysteria 1/2
+            What if I hate YAML?: Что делать, если мне не нравится YAML?
+            About HTTP/3: О HTTP/3
+            Can I use a CDN?: Можно ли использовать CDN?
+            Developers: Разработчики
+            Build: Сборка
+            Protocol: Протокол
+            URI Scheme: Формат URI
 
 markdown_extensions:
   - attr_list
