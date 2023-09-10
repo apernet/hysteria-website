@@ -1,4 +1,5 @@
 site_name: Hysteria 2
+site_url: https://v2.hysteria.network/
 
 theme:
   name: material
