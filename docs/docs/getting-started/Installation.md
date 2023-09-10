@@ -51,7 +51,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 
 ## Docker images
 
-[Our official Docker images are hosted on Docker Hub.](https://hub.docker.com/r/tobyxdd/hysteria)
+Our official Docker images are hosted on Docker Hub: https://hub.docker.com/r/tobyxdd/hysteria
 
 ### Compose example
 

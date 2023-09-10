@@ -31,7 +31,7 @@
 
 ## 转换
 
-如果你已经有了一个 YAML 配置文件，可以使用 `yq` 将其转换为 JSON：
+如果你已经有了一个 YAML 配置文件，可以使用 `yq` (https://github.com/mikefarah/yq) 将其转换为 JSON：
 
 ```bash
 yq config.yaml -o json > config.json
