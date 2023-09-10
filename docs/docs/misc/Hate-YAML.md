@@ -31,7 +31,7 @@ Name the file `config.json` and run the client with the following command:
 
 ## Conversion
 
-If you already have a YAML configuration file, you can convert it to JSON using `yq`:
+If you already have a YAML configuration file, you can convert it to JSON using `yq` (https://github.com/mikefarah/yq):
 
 ```bash
 yq config.yaml -o json > config.json

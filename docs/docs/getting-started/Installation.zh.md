@@ -51,7 +51,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 
 ## Docker 镜像
 
-[我们的官方 Docker 镜像在 Docker Hub 上。](https://hub.docker.com/r/tobyxdd/hysteria)
+我们的官方 Docker 镜像在 Docker Hub： https://hub.docker.com/r/tobyxdd/hysteria
 
 ### Compose 示例
 
