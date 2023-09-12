@@ -245,3 +245,33 @@ udpTProxy:
 
 1. 监听地址。
 2. 可选。UDP 会话超时时间。如果省略，默认 60 秒。
+
+### TCP Redirect (Linux)
+
+REDIRECT 本质上是一种特殊的 DNAT，目标地址是本机。这种方法早于 TPROXY，是实现 TCP 透明代理的一种较旧方式。如果你的内核支持 TPROXY，我们建议使用 TPROXY 来代替 REDIRECT。
+
+```yaml
+tcpRedirect:
+  listen: 127.0.0.1:3500
+```
+
+示例：
+
+```bash
+iptables -t nat -A HYSTERIA -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A HYSTERIA -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A HYSTERIA -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A HYSTERIA -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A HYSTERIA -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+iptables -t nat -A OUTPUT -p tcp -j HYSTERIA
+iptables -t nat -A PREROUTING -p tcp -j HYSTERIA
+
+ip6tables -t nat -A HYSTERIA ! -d 2000::/3 -j RETURN
+ip6tables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+ip6tables -t nat -A OUTPUT -p tcp -j HYSTERIA
+ip6tables -t nat -A PREROUTING -p tcp -j HYSTERIA
+```
