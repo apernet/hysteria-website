@@ -123,6 +123,8 @@ The client's actual upload speed will be the lesser of the value specified here 
 
 One exception is that if the server has enabled the `ignoreClientBandwidth` option, the values specified here will be ignored.
 
+**[Bandwidth behavior explained](Full-Server-Config.md#bandwidth-behavior-explained)**
+
 Supported units are:
 
 - `bps` or `b` (bits per second)
