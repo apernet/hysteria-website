@@ -245,3 +245,33 @@ udpTProxy:
 
 1. The address to listen on.
 2. Optional. The timeout for each UDP session. If omitted, the default timeout is 60 seconds.
+
+### TCP Redirect (Linux only)
+
+REDIRECT is essentially a special case of DNAT where the destination address is localhost. This method predates TPROXY as an older way to implement a TCP transparent proxy. We recommend using TPROXY instead if your kernel supports it.
+
+```yaml
+tcpRedirect:
+  listen: 127.0.0.1:3500
+```
+
+Example:
+
+```bash
+iptables -t nat -A HYSTERIA -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A HYSTERIA -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A HYSTERIA -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A HYSTERIA -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A HYSTERIA -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A HYSTERIA -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+iptables -t nat -A OUTPUT -p tcp -j HYSTERIA
+iptables -t nat -A PREROUTING -p tcp -j HYSTERIA
+
+ip6tables -t nat -A HYSTERIA ! -d 2000::/3 -j RETURN
+ip6tables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+ip6tables -t nat -A OUTPUT -p tcp -j HYSTERIA
+ip6tables -t nat -A PREROUTING -p tcp -j HYSTERIA
+```
