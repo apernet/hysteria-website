@@ -129,6 +129,24 @@ ignoreClientBandwidth: false
 
 This feature is primarily useful for server owners who prefer congestion fairness over other network traffic, or who do not trust users to accurately set their own bandwidth values.
 
+### Bandwidth behavior explained
+
+**(The information in this section is considered internal implementation details of Hysteria and may change between versions)**
+
+Currently, Hysteria has 2 congestion control algorithms:
+
+**BBR:** Originally developed by Google for TCP, we adapted this algorithm for QUIC with minor modifications. BBR is a typical congestion control algorithm, including slow start phases and bandwidth estimation based on RTT variations. It works on its own and does not require bandwidth settings.
+
+**Brutal:** This is Hysteria's custom congestion control algorithm. Unlike BBR, Brutal operates on a fixed rate model and does not reduce its speed in response to packet loss or RTT changes. If it fails to meet the predetermined target rate, the algorithm calculates the rate of packet loss and compensates by increasing speed. This only works if you know and accurately specify the theoretical maximum speed of your current connection, and it works particularly well for grabbing bandwidth in congested, best-effort delivery networks, hence its name.
+
+> Brutal will work even if you set your bandwidth values below your connection's maximum speed; it will simply act as a speed limiter. However, it's important not to set it above that, as this will trigger the compensation mechanism, resulting in a slow and unstable connection.
+
+Congestion control only controls the sending part of a connection. From the client's point of view, if the user doesn't provide his bandwidth value for download (but provides it for upload), the Hysteria server will send data to the client using BBR, but the client will upload data to the server using Brutal, and vice versa. The client can provide both, so both directions will use Brutal, or neither, so both will use BBR.
+
+The special case, as mentioned above, is when the server has `ignoreClientBandwidth` enabled, in which case both sides will always use BBR, no matter what the client's bandwidth values are.
+
+**The server's bandwidth limit only applies to Brutal at the moment. It has no effect on BBR.**
+
 ## UDP
 
 ```yaml

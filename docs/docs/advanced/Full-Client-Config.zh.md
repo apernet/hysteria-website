@@ -123,6 +123,8 @@ bandwidth:
 
 一个例外是，如果服务器启用了 `ignoreClientBandwidth` 选项，这里指定的值将被忽略。
 
+**[带宽行为详解](Full-Server-Config.md#_6)**
+
 支持的单位有：
 
 - `bps` 或 `b`（每秒比特数）
