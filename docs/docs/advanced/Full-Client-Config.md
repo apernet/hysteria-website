@@ -260,6 +260,7 @@ tcpRedirect:
 Example:
 
 ```bash
+iptables -t nat -N HYSTERIA
 iptables -t nat -A HYSTERIA -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A HYSTERIA -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A HYSTERIA -d 127.0.0.0/8 -j RETURN
@@ -272,6 +273,7 @@ iptables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
 iptables -t nat -A OUTPUT -p tcp -j HYSTERIA
 iptables -t nat -A PREROUTING -p tcp -j HYSTERIA
 
+ip6tables -t nat -N HYSTERIA
 ip6tables -t nat -A HYSTERIA ! -d 2000::/3 -j RETURN
 ip6tables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
 ip6tables -t nat -A OUTPUT -p tcp -j HYSTERIA
