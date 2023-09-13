@@ -4,7 +4,9 @@ HTTP/3 based on QUIC is increasingly supported by many websites and major CDNs. 
 
 ## Why
 
-Hysteria is designed to forward TCP traffic over QUIC, using a modified congestion control algorithm to maximize throughput rather than minimize packet loss. While Hysteria does support UDP, it doesn't reduce packet loss. Simply put, you won't experience any "speed-up" effects when using Hysteria to proxy UDP-based protocols such as HTTP/3. The connection speed in this scenario depends solely on the congestion control algorithms of the web server and the browser's own QUIC implementation (typically Cubic, Reno, or BBR).
+Hysteria is designed to forward TCP traffic over QUIC, using a modified congestion control algorithm to maximize throughput rather than minimize packet loss. While Hysteria does support UDP, it does not reduce the packet loss of UDP itself. Simply put, you won't experience any "speed-up" effects when using Hysteria to proxy UDP-based protocols such as HTTP/3. The connection speed in this scenario depends solely on the congestion control algorithms of the web server and the browser's own QUIC implementation (typically Cubic, Reno, or BBR).
+
+> The same dilemma applies to basically any other proxy protocol, and is not a design or implementation problem specific to Hysteria.
 
 In addition, QUIC encrypts all transmission control information, such as sequence numbers, acknowledgments, etc., that would traditionally be in clear text. This encryption makes it impossible to implement something conceptually similar to a TCP transparent proxy to replace the original congestion control at either end of the connection.
 
