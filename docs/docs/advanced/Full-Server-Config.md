@@ -402,4 +402,6 @@ chrome --origin-to-force-quic-on=your.site.com:443 # (1)!
 
 1. Replace with the domain name of your server.
 
+> **NOTE:** Before you start Chrome with the flag, make sure you've completely shut it down so that no Chrome process is still running in the background. Otherwise, the flag will not take effect.
+
 Then visit `https://your.site.com` to verify that it works as expected.
