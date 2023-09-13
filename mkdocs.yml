@@ -85,6 +85,7 @@ plugins:
             What if I hate YAML?: 我不喜欢 YAML 怎么办？
             About HTTP/3: 关于 HTTP/3
             Can I use a CDN?: 可以套 CDN 吗？
+            Is Hysteria "brutal"?: Hysteria 是暴力多倍发包吗？
             Developers: 开发者
             Build: 构建
             Protocol: 协议
@@ -103,6 +104,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
 
 nav:
   - Home: index.md
@@ -127,6 +130,7 @@ nav:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
           - About HTTP/3: docs/misc/About-HTTP3.md
           - Can I use a CDN?: docs/misc/CDN.md
+          - Is Hysteria "brutal"?: docs/misc/Hysteria-Brutal.md
       - Developers:
           - Build: docs/developers/Build.md
           - Protocol: docs/developers/Protocol.md
@@ -134,3 +138,8 @@ nav:
   - Changelog: docs/Changelog.md
   - GitHub: https://github.com/apernet/hysteria
   - Donation: docs/Donation.md
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
