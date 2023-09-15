@@ -59,37 +59,37 @@ plugins:
         - locale: zh
           name: 简体中文
           build: true
-          nav_translations:
-            Home: 首页
-            Docs: 文档
-            Changelog: 更新日志
-            GitHub: GitHub
-            Donation: 捐赠
-            Getting Started: 快速开始
-            Installation: 安装
-            Server: 服务端
-            Client: 客户端
-            3rd-party apps: 第三方应用
-            Advanced: 进阶
-            Full Server Config: 完整服务端配置
-            Full Client Config: 完整客户端配置
-            ACL: ACL
-            Traffic Stats API: 流量统计 API
-            TProxy: 透明代理
-            Port Hopping: 端口跳跃
-            Logging: 日志
-            Performance: 性能优化
-            Troubleshooting: 故障排除
-            Misc: 杂项
-            Hysteria 2 vs 1: Hysteria 1/2 对比
-            What if I hate YAML?: 我不喜欢 YAML 怎么办？
-            About HTTP/3: 关于 HTTP/3
-            Can I use a CDN?: 可以套 CDN 吗？
-            Is Hysteria "brutal"?: Hysteria 是暴力多倍发包吗？
-            Developers: 开发者
-            Build: 构建
-            Protocol: 协议
-            URI Scheme: URI 格式
+          nav:
+            - 首页: index.md
+            - 文档:
+                - 快速开始:
+                    - 安装: docs/getting-started/Installation.md
+                    - 服务端: docs/getting-started/Server.md
+                    - 客户端: docs/getting-started/Client.md
+                    - 第三方应用: docs/getting-started/3rd-party-apps.md
+                - 进阶:
+                    - 完整服务端配置: docs/advanced/Full-Server-Config.md
+                    - 完整客户端配置: docs/advanced/Full-Client-Config.md
+                    - ACL: docs/advanced/ACL.md
+                    - 流量统计 API: docs/advanced/Traffic-Stats-API.md
+                    - 透明代理: docs/advanced/TPROXY.md
+                    - 端口跳跃: docs/advanced/Port-Hopping.md
+                    - 日志: docs/advanced/Logging.md
+                    - 性能优化: docs/advanced/Performance.md
+                    - 故障排除: docs/advanced/Troubleshooting.md
+                - 杂项:
+                    - Hysteria 1/2 对比: docs/misc/2-vs-1.md
+                    - 我不喜欢 YAML 怎么办？: docs/misc/Hate-YAML.md
+                    - 关于 HTTP/3: docs/misc/About-HTTP3.md
+                    - 可以套 CDN 吗？: docs/misc/CDN.md
+                    - Hysteria 是暴力多倍发包吗？: docs/misc/Hysteria-Brutal.md
+                - 开发者:
+                    - 构建: docs/developers/Build.md
+                    - 协议: docs/developers/Protocol.md
+                    - URI Scheme: docs/developers/URI-Scheme.md
+            - 更新日志: docs/Changelog.md
+            - GitHub: https://github.com/apernet/hysteria
+            - 捐赠: docs/Donation.md
 
 markdown_extensions:
   - attr_list
@@ -130,7 +130,6 @@ nav:
           - What if I hate YAML?: docs/misc/Hate-YAML.md
           - About HTTP/3: docs/misc/About-HTTP3.md
           - Can I use a CDN?: docs/misc/CDN.md
-          - Is Hysteria "brutal"?: docs/misc/Hysteria-Brutal.md
       - Developers:
           - Build: docs/developers/Build.md
           - Protocol: docs/developers/Protocol.md
