@@ -383,11 +383,6 @@ Hysteria 抵抗审查的关键之一就是它能伪装成标准的 HTTP/3 流量
 ```yaml
 masquerade:
   type: proxy
-
-  # listenHTTP: :80 (4)
-  # listenHTTPS: :443 (5)
-  # forceHTTPS: true (6)
-
   file:
     dir: /www/masq # (1)!
   proxy:
@@ -398,9 +393,6 @@ masquerade:
 1. 用于提供文件的目录。
 2. 要代理的网站的 URL。
 3. 是否重写 `Host` 头以匹配被代理的网站。如果目标网站通过 `Host` 识别请求的网站，这个选项是必须的。
-4. HTTP (TCP) 监听地址，见下文。取消注释以启用。
-5. HTTPS (TCP) 监听地址，见下文。取消注释以启用。
-6. 是否强制使用 HTTPS。如果启用，HTTP 请求将被重定向到 HTTPS。取消注释以启用。
 
 可以通过特定参数启动 Chrome 以强制使用 QUIC，测试你的伪装配置：
 
@@ -417,5 +409,17 @@ chrome --origin-to-force-quic-on=your.site.com:443 # (1)!
 ### HTTP/HTTPS 伪装
 
 通常支持 HTTP/3 的网站只是将其作为一个升级选项，在 80/443 端口上也提供 TCP 的 HTTP/HTTPS。如果希望模仿这种模式，可以使用 `listenHTTP` 和 `listenHTTPS` 选项来启用 HTTP/HTTPS 伪装。这种情况下，不需要用上述特殊参数启动 Chrome，和普通的网站一样访问即可验证伪装。
+
+```yaml
+masquerade:
+  # ... (上述其他字段)
+  listenHTTP: :80 # (1)!
+  listenHTTPS: :443 # (2)!
+  forceHTTPS: true # (3)!
+```
+
+1. HTTP (TCP) 监听地址。
+2. HTTPS (TCP) 监听地址。
+3. 是否强制使用 HTTPS。如果启用，HTTP 请求将被重定向到 HTTPS。
 
 > **注意：** 目前没有迹象表明有任何政府/商业防火墙在利用 "缺少 TCP HTTP/HTTPS" 这点来检测 Hysteria 服务器。本功能仅为执着于 "做戏做全套" 的用户提供。既然要 "做戏做全套"，就没有理由将 HTTP/HTTPS 监听在 80/443 之外的自定义端口上（虽然 Hysteria 允许自定义监听地址）。
