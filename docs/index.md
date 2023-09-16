@@ -5,6 +5,10 @@ hide:
   - toc
 ---
 
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
 <!-- Hack to hide the title -->
 <style>
   .md-typeset h1,
@@ -81,3 +85,18 @@ hide:
     <p>We have well-documented specifications and code for developers to contribute and build their own apps.</p>
   </div>
 </div>
+
+---
+
+<h2 style="text-align: center;">Get connected</h2>
+<p align="center">
+  <a href="https://t.me/hysteria_releases" style="padding: 14px 28px; background-color: #0088CC; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fa-brands fa-telegram"></i> Telegram Channel
+  </a>
+  <a href="https://t.me/hysteria_github" style="padding: 14px 28px; background-color: #0088CC; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fa-brands fa-telegram"></i> Telegram Group
+  </a>
+  <a href="https://github.com/apernet/hysteria/discussions" style="padding: 14px 28px; background-color: #333; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fab fa-github"></i> GitHub Discussions
+  </a>
+</p>

@@ -5,6 +5,10 @@ hide:
   - toc
 ---
 
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
 <!-- Hack to hide the title -->
 <style>
   .md-typeset h1,
@@ -79,3 +83,18 @@ hide:
   </div>
 
 </div>
+
+---
+
+<h2 style="text-align: center;">保持联络</h2>
+<p align="center">
+  <a href="https://t.me/hysteria_releases" style="padding: 14px 28px; background-color: #0088CC; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fa-brands fa-telegram"></i> Telegram 频道
+  </a>
+  <a href="https://t.me/hysteria_github" style="padding: 14px 28px; background-color: #0088CC; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fa-brands fa-telegram"></i> Telegram 群组
+  </a>
+  <a href="https://github.com/apernet/hysteria/discussions" style="padding: 14px 28px; background-color: #333; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    <i class="fab fa-github"></i> GitHub 讨论区
+  </a>
+</p>
