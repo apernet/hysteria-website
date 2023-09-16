@@ -4,6 +4,12 @@ hide:
   - navigation
 ---
 
+## 2.0.2
+
+- 修复在某些设备上由于不支持 GSO 导致的无法连接/断流问题
+- 新增 HTTP/HTTPS (TCP) 伪装服务器
+- 新增 Android 构建
+
 ## 2.0.1
 
 - 新增 TCP Redirect 模式
