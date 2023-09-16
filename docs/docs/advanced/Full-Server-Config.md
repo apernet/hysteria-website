@@ -279,7 +279,7 @@ You can have either `file` or `inline`, but not both.
     ```
 
     1. The path to the ACL file.
-    2. Optional. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
+    2. Optional. Uncomment to enable. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
 
 === "Inline"
 
@@ -294,7 +294,7 @@ You can have either `file` or `inline`, but not both.
     ```
 
     1. The list of inline ACL rules.
-    2. Optional. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
+    2. Optional. Uncomment to enable. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
 
 > **NOTE:** Hysteria only supports MaxMind's GeoLite2 Country database in MMDB format for GeoIP functionality. If you don't know how to get the right file, omit the geoip field and let Hysteria automatically download the latest version. The database file will only be downloaded if there is at least one GeoIP rule in the ACL.
 
@@ -388,11 +388,17 @@ masquerade:
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
+  # listenHTTP: :80 (4)
+  # listenHTTPS: :443 (5)
+  # forceHTTPS: true (6)
 ```
 
 1. The directory to serve files from.
 2. The URL of the website to proxy.
 3. Whether to rewrite the `Host` header to match the proxied website. This is required if the target web server uses `Host` to determine which site to serve.
+4. HTTP (TCP) listen address, see below. Uncomment to enable.
+5. HTTPS (TCP) listen address, see below. Uncomment to enable.
+6. Whether to force HTTPS. If enabled, all HTTP requests will be redirected to HTTPS. Uncomment to enable.
 
 You can test your masquerade configuration by starting Chrome with a special flag (to force QUIC):
 
@@ -405,3 +411,9 @@ chrome --origin-to-force-quic-on=your.site.com:443 # (1)!
 > **NOTE:** Before you start Chrome with the flag, make sure you've completely shut it down so that no Chrome process is still running in the background. Otherwise, the flag will not take effect.
 
 Then visit `https://your.site.com` to verify that it works as expected.
+
+### HTTP/HTTPS Masquerading
+
+Websites that support HTTP/3 usually offer it as an upgrade option, also providing TCP-based HTTP/HTTPS on ports 80/443. If you want to mimic this behavior, you can use the `listenHTTP` and `listenHTTPS` options to enable HTTP/HTTPS masquerading. In this case, you don't need to launch Chrome with the special flag mentioned above; you can test it by accessing the site as you would with any other website.
+
+> **Note:** There is no evidence that any government or commercial firewalls are using "missing TCP HTTP/HTTPS" as a means of detecting Hysteria servers. This feature is only provided for users who want to "go the extra mile". And if so, there's no reason to listen on ports other than the default 80/443 (although Hysteria does allow it).

@@ -279,7 +279,7 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
     ```
 
     1. ACL 文件的路径。
-    2. 可选。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库。**
+    2. 可选。取消注释以启用。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库。**
 
 === "内联"
 
@@ -294,7 +294,7 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
     ```
 
     1. 内联 ACL 规则的列表。
-    2. 可选。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库。**
+    2. 可选。取消注释以启用。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库。**
 
 > **注意：** Hysteria 只支持 MaxMind 的 GeoLite2 Country MMDB 格式的数据库来实现 GeoIP 功能。如果你不知道如何获取正确的文件，可以省略 geoip 字段，让 Hysteria 自动下载最新版本。只有在 ACL 中至少有一个 GeoIP 规则时，才会下载数据库。
 
@@ -388,11 +388,17 @@ masquerade:
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
+  # listenHTTP: :80 (4)
+  # listenHTTPS: :443 (5)
+  # forceHTTPS: true (6)
 ```
 
 1. 用于提供文件的目录。
 2. 要代理的网站的 URL。
 3. 是否重写 `Host` 头以匹配被代理的网站。如果目标网站通过 `Host` 识别请求的网站，这个选项是必须的。
+4. HTTP (TCP) 监听地址，见下文。取消注释以启用。
+5. HTTPS (TCP) 监听地址，见下文。取消注释以启用。
+6. 是否强制使用 HTTPS。如果启用，HTTP 请求将被重定向到 HTTPS。取消注释以启用。
 
 可以通过特定参数启动 Chrome 以强制使用 QUIC，测试你的伪装配置：
 
@@ -405,3 +411,9 @@ chrome --origin-to-force-quic-on=your.site.com:443 # (1)!
 > **注意：** 在用参数启动 Chrome 之前，请先确保完全退出了 Chrome，没有任何 Chrome 进程还在后台运行。否则参数可能不会生效。
 
 然后访问 `https://your.site.com` 验证伪装是否生效。
+
+### HTTP/HTTPS 伪装
+
+通常支持 HTTP/3 的网站只是将其作为一个升级选项，在 80/443 端口上也提供 TCP 的 HTTP/HTTPS。如果希望模仿这种模式，可以使用 `listenHTTP` 和 `listenHTTPS` 选项来启用 HTTP/HTTPS 伪装。这种情况下，不需要用上述特殊参数启动 Chrome，和普通的网站一样访问即可验证伪装。
+
+> **注意：** 目前没有迹象表明有任何政府/商业防火墙在利用 "缺少 TCP HTTP/HTTPS" 这点来检测 Hysteria 服务器。本功能仅为执着于 "做戏做全套" 的用户提供。既然要 "做戏做全套"，就没有理由将 HTTP/HTTPS 监听在 80/443 之外的自定义端口上（虽然 Hysteria 允许自定义监听地址）。
