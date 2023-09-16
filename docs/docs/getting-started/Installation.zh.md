@@ -35,6 +35,10 @@
 | hysteria-linux-s390x           | Linux   | s390x  |                        |
 | hysteria-linux-mipsle          | Linux   | MIPS   | 小端序                 |
 | hysteria-linux-mipsle-sf       | Linux   | MIPS   | 小端序, 无硬件浮点支持 |
+| hysteria-android-amd64         | Android | x86-64 |                        |
+| hysteria-android-386           | Android | x86    |                        |
+| hysteria-android-armv7         | Android | ARMv7  |                        |
+| hysteria-android-arm64         | Android | ARM64  |                        |
 | hysteria-freebsd-amd64         | FreeBSD | x86-64 |                        |
 | hysteria-freebsd-amd64-avx     | FreeBSD | x86-64 | 需要 AVX               |
 | hysteria-freebsd-386           | FreeBSD | x86    |                        |
