@@ -383,14 +383,16 @@ Currently, Hysteria provides the following masquerade modes:
 ```yaml
 masquerade:
   type: proxy
+
+  # listenHTTP: :80 (4)
+  # listenHTTPS: :443 (5)
+  # forceHTTPS: true (6)
+
   file:
     dir: /www/masq # (1)!
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
-  # listenHTTP: :80 (4)
-  # listenHTTPS: :443 (5)
-  # forceHTTPS: true (6)
 ```
 
 1. The directory to serve files from.
