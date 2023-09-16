@@ -4,6 +4,12 @@ hide:
   - navigation
 ---
 
+## 2.0.2
+
+- Fixed connection issues on some devices due to lack of GSO support
+- Added HTTP/HTTPS (TCP) masquerade servers
+- Added Android builds
+
 ## 2.0.1
 
 - Added TCP redirect mode
