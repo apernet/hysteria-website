@@ -35,6 +35,10 @@ For Macs with the M1 chip or newer, use the `arm64` version. Older Macs should u
 | hysteria-linux-s390x           | Linux   | s390x  |                           |
 | hysteria-linux-mipsle          | Linux   | MIPS   | Little Endian             |
 | hysteria-linux-mipsle-sf       | Linux   | MIPS   | Little Endian, Soft Float |
+| hysteria-android-amd64         | Android | x86-64 |                           |
+| hysteria-android-386           | Android | x86    |                           |
+| hysteria-android-armv7         | Android | ARMv7  |                           |
+| hysteria-android-arm64         | Android | ARM64  |                           |
 | hysteria-freebsd-amd64         | FreeBSD | x86-64 |                           |
 | hysteria-freebsd-amd64-avx     | FreeBSD | x86-64 | Requires AVX              |
 | hysteria-freebsd-386           | FreeBSD | x86    |                           |
