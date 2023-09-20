@@ -17,33 +17,21 @@ hide:
   }
 </style>
 
-<!-- Make the feature grid responsive -->
-<style>
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  @media (min-width: 600px) {
-    .feature-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (min-width: 900px) {
-    .feature-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-</style>
-
-![Hysteria 2 Logo Banner](./assets/banner_light.svg#logo-light){: style="width: 80%; margin: 0 auto;"}
-![Hysteria 2 Logo Banner](./assets/banner_dark.svg#logo-dark){: style="width: 80%; margin: 0 auto;"}
+![Hysteria 2 Logo Banner](./assets/banner_light.svg#logo-light){: style="width: 90%; margin: 0 auto;" id="wiggle-logo"}
+![Hysteria 2 Logo Banner](./assets/banner_dark.svg#logo-dark){: style="width: 90%; margin: 0 auto;" id="wiggle-logo"}
 
 <h2 style="text-align: center;">Hysteria 是一个强大、快速、抗审查的代理工具。</h2>
 
+<h3 style="text-align: center;">
+  <a href="docs/Artworks/">可能也是最可爱的。</a>
+</h3>
+
 <p align="center">
   <a href="docs/getting-started/Installation/" style="padding: 14px 28px; background-color: #4A7B9D; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
-    了解一下
+    快速开始 (中文文档)
+  </a>
+  <a href="../" style="padding: 14px 28px; background-color: #5AB1BB; color: white; border: none; border-radius: 8px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.25);">
+    English (英文文档)
   </a>
 </p>
 
