@@ -14,7 +14,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Light mode
-  custom_dir: overrides
 
   logo: assets/logo.svg
   favicon: assets/favicon.png
@@ -50,6 +49,9 @@ repo_url: https://github.com/apernet/hysteria
 
 plugins:
   - search
+  - glightbox:
+      skip_classes:
+        - skip-lightbox
   - i18n:
       languages:
         - locale: en
