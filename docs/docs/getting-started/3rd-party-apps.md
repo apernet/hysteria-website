@@ -4,6 +4,8 @@ We welcome and actively work with third-party proxy app developers to integrate 
 
 > Please note that Hysteria 2 is quite new. While there are many projects that support Hysteria, many of them refer to the older 1.x version. The protocols between Hysteria 1.x and Hysteria 2 are incompatible, so make sure you are using a client that is specifically compatible with Hysteria 2 when connecting to a Hysteria 2 server.
 
+> We don't control these third-party implementations. They may or may not have the latest features or fixes from our official releases, and may have their own bugs. If you encounter problems, please contact the developers of the respective projects directly.
+
 | Name                                                                    | Description                                                                                                                | Platforms                           | Modes          |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | -------------- |
 | [sing-box](https://github.com/SagerNet/sing-box)                        | A universal proxy platform (supports Hysteria 2 since 1.5.0-beta.2)                                                        | Windows, Linux, macOS, Android, iOS | client, server |
