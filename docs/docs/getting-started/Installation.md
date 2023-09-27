@@ -68,6 +68,9 @@ services:
     restart: always
     network_mode: "host"
     volumes:
+      - acme:/acme
       - ./hysteria.yaml:/etc/hysteria.yaml
     command: ["server", "-c", "/etc/hysteria.yaml"]
+volumes:
+  acme:
 ```
