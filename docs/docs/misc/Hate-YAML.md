@@ -29,7 +29,7 @@ Even though our documentation uses YAML, Hysteria has full support for JSON and 
 
     ```toml
     server = "your.server.net"
-    auth = "i_still_love_jason"
+    auth = "i_still_love_tom"
     fastOpen = true
     lazy = true
 

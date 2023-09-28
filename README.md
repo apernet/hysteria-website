@@ -7,6 +7,7 @@ It's built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 ```bash
 pip install mkdocs-material
 pip install mkdocs-static-i18n
+pip install mkdocs-glightbox
 
 mkdocs serve
 ```
