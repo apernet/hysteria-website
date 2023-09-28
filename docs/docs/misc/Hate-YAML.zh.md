@@ -29,7 +29,7 @@
 
     ```toml
     server = "your.server.net"
-    auth = "i_still_love_jason"
+    auth = "i_still_love_tom"
     fastOpen = true
     lazy = true
 

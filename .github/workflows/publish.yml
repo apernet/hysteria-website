@@ -31,7 +31,6 @@ jobs:
           pip install mkdocs-material
           pip install mkdocs-static-i18n
           pip install mkdocs-glightbox
-          pip install jieba
 
       - run: mkdocs build --verbose --clean --strict
 
