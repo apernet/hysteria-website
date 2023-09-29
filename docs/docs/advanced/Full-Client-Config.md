@@ -117,13 +117,9 @@ bandwidth:
   down: 200 mbps
 ```
 
-**Set the `up` and `down` bandwidth values to match the maximum rates of your current Internet connection.** Although highly recommended, these settings are optional. If you're unsure about the bandwidth on one or both sides, you can either set only one side or remove this bandwidth section entirely.
-
-The client's actual upload speed will be the lesser of the value specified here and the server's maximum download speed (if set by the server). Similarly, the client's actual download speed will be the lesser of the value specified here and the server's maximum upload speed (if set by the server).
+**Please set the bandwidth values for `up` and `down` to the maximum speed of your current network connection. For best performance, be sure to set them as accurately as possible.** If you really don't know the bandwidth for either the upload or download side, or both, you can just set the bandwidth for one side and remove the other side, or remove both sides entirely. **[Bandwidth behavior explained](Full-Server-Config.md#bandwidth-behavior-explained)**
 
 One exception is that if the server has enabled the `ignoreClientBandwidth` option, the values specified here will be ignored.
-
-**[Bandwidth behavior explained](Full-Server-Config.md#bandwidth-behavior-explained)**
 
 Supported units are:
 
