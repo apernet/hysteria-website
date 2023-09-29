@@ -49,8 +49,22 @@
 
 我们提供了一个 bash 脚本，可以在常见的 Linux 发行版上自动下载最新版本的 Hysteria 并配置 systemd 服务。
 
+安装或升级到最新版本：
+
 ```bash
 bash <(curl -fsSL https://get.hy2.sh/)
+```
+
+安装或升级为指定版本（跳过版本检查）：
+
+```bash
+bash <(curl -fsSL https://get.hy2.sh/) --version v2.0.2
+```
+
+移除 Hysteria：
+
+```bash
+bash <(curl -fsSL https://get.hy2.sh/) --remove
 ```
 
 ## Docker 镜像
