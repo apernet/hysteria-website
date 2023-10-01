@@ -38,7 +38,7 @@ http:
 
 ### Bandwidth
 
-**Please set the bandwidth values for `up` and `down` to the maximum speed of your current network connection. For best performance, be sure to set them as accurately as possible.** If you really don't know the bandwidth for either the upload or download side, or both, you can just set the bandwidth for one side and remove the other side, or remove both sides entirely. The behavior controlled by these bandwidth settings is described in the [Bandwidth section of Full Client Config](../advanced/Full-Client-Config.md#bandwidth).
+**Please set the bandwidth values for `up` and `down` to the maximum speed of your current network connection. For best performance, be sure to set them as accurately as possible.** Although highly recommended, if you really don't know the bandwidth for either the upload or download side, or both, you can simply set the bandwidth for one side and remove the other, or remove both sides entirely. The behavior controlled by these bandwidth settings is described in the [Bandwidth section of Full Client Config](../advanced/Full-Client-Config.md#bandwidth).
 
 ### TLS
 
