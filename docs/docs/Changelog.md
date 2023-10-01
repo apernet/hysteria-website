@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.0.3
+
+> This release contains important fixes and we strongly encourage everyone to upgrade.
+
+- **[Important]** Fixed the problem where when using BBR (either the client doesn't set bandwidth or the server has `ignoreClientBandwidth` enabled), due to a bug in the BBR implementation, it could not accurately determine the bandwidth and send packets much faster than the limit.
+- Fixed the problem where ZeroSSL couldn't acquire certificates due to missing EAB.
+
 ## 2.0.2
 
 - Fixed connection issues on some devices due to lack of GSO support
