@@ -12,6 +12,8 @@ The steps were performed in a Linux environment, but should be similar on other 
 
 Assuming you have already downloaded the executable for your platform into a directory, say `hysteria-linux-amd64-avx`. Create a `config.yaml` file in the same directory.
 
+> **Note**: Some values may conflict with YAML syntax. For instance, IPv6 addresses with ports, such as `[2001:db8::1]:443`, can cause the configuration file to fail to parse. To work around such problems, simply enclose the value in `""` like this: `"[2001:db8::1]:443"`.
+
 **Be sure to replace the values according to your server's settings and your specific needs.**
 
 ```yaml
