@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.0.4
+
+- Optimized and fixed some issues in Brutal CC
+- Fixed problem where BBR could freeze the connection and cause CPU usage to spike under certain conditions
+- Fixed two race condition issues
+- Added `HYSTERIA_BRUTAL_DEBUG` environment variable. When enabled, it prints information like current RTT, packet loss, MTU, etc.
+
 ## 2.0.3
 
 > This release contains important fixes and we strongly encourage everyone to upgrade.
