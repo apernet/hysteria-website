@@ -13,3 +13,5 @@ Hysteria 提供以下日志级别，可以通过 `HYSTERIA_LOG_LEVEL` 环境变�
 - `json`（时间将以 Unix epoch 毫秒形式显示）
 
 Hysteria 默认会检查版本更新，并在有新版本时打印日志消息。要禁用此功能，将 `HYSTERIA_DISABLE_UPDATE_CHECK` 设置为 1。
+
+当使用 Brutal 拥塞控制模式时，将 `HYSTERIA_BRUTAL_DEBUG` 设置为 1 可开启输出当前延迟、丢包率、MTU 等信息（两秒一次）。
