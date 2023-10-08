@@ -5,7 +5,7 @@ The Hysteria 2 URI scheme is designed to provide a compact representation of the
 ## Structure
 
 ```
-hysteria2://[auth@]hostname[:port]/?[key=value]&[key=value]...
+hysteria2://[auth]@hostname[:port]/?[key=value]&[key=value]...
 ```
 
 ## Components
