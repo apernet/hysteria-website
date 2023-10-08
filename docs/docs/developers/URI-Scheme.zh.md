@@ -5,7 +5,7 @@ Hysteria 2 的 URI 格式旨在提供一种简洁的方式来表示连接到 Hys
 ## 结构
 
 ```
-hysteria2://[auth@]hostname[:port]/?[key=value]&[key=value]...
+hysteria2://[auth]@hostname[:port]/?[key=value]&[key=value]...
 ```
 
 ## 组件
