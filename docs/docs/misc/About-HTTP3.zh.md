@@ -19,5 +19,5 @@ Hysteria 的设计思路是使用修改过的拥塞控制算法来最大化吞�
 **如果你是在手机上使用像 Shadowrocket、SagerNet 这样的 VPN 客户端（或在 PC 上使用 tun 模式），建议使用以下其中一种方法手动禁用 HTTP/3。**
 
 - Chrome：进入 `chrome://flags/`，找到 `Experimental QUIC protocol` 将其切换为 `Disabled`。
-- Firefox：进入 `about:config`，找到 `network.http.http3.enabled` 将其切换为 `false`。
+- Firefox：进入 `about:config`，找到 `network.http.http3.enable` 将其切换为 `false`。
 - 使用 ACL 规则阻止 UDP 端口 443。`reject(all, udp/443)`

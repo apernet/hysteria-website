@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.1.0
+
+- Fixed a memory leak in BBR
+- Minor tweaks to Brutal congestion control
+- Added string mode to masquerade
+- Added HTTP/HTTPS proxy outbound
+
 ## 2.0.4
 
 - Optimized and fixed some issues in Brutal CC

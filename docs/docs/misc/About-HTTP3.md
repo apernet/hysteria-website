@@ -19,5 +19,5 @@ If you are using Chrome or Firefox with an HTTP/SOCKS5 proxy on a PC, the browse
 **If you are using a VPN client like Shadowrocket, SagerNet on your phone (or tun on your PC), it is recommended to manually disable HTTP/3 using one of the following methods.**
 
 - Chrome: Go to `chrome://flags/`, find `Experimental QUIC protocol` and toggle it to `Disabled`.
-- Firefox: Go to `about:config`, find `network.http.http3.enabled` and toggle it to `false`.
+- Firefox: Go to `about:config`, find `network.http.http3.enable` and toggle it to `false`.
 - Block UDP port 443 with an ACL rule. `reject(all, udp/443)`

@@ -306,6 +306,9 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
 
 - `direct`：通过本地网络直接连接。
 - `socks5`：SOCKS5 代理。
+- `http`：HTTP/HTTPS 代理。
+
+> **注意：** HTTP/HTTPS 代理在协议层面不支持 UDP。将 UDP 流量发送到 HTTP 出站将导致连接被拒绝。
 
 **如果不使用 ACL，所有连接将始终通过列表中的第一个（“默认”）出站规则进行路由，所有其他出站规则将被忽略。**
 
@@ -319,12 +322,19 @@ outbounds:
       addr: shady.proxy.ru:1080 # (2)!
       username: hackerman # (3)!
       password: Elliot Alderson # (4)!
+  - name: my_outbound_3
+    type: http
+    http:
+      url: http://username:password@sketchy-proxy.cc:8081 # (5)!
+      insecure: false # (6)!
 ```
 
 1. 出站规则的名称。在 ACL 中使用。
 2. SOCKS5 代理地址。
 3. 可选。SOCKS5 代理用户名。
 4. 可选。SOCKS5 代理密码。
+5. HTTP/HTTPS 代理 URL。(可以是 `http://` 或 `https://` 开头)
+6. 可选。禁用 TLS 证书验证。仅适用于 HTTPS 代理。
 
 ### 关于 `direct` 出站
 
@@ -379,6 +389,7 @@ Hysteria 抵抗审查的关键之一就是它能伪装成标准的 HTTP/3 流量
 
 - `file`：作为一个静态文件服务器，从一个目录提供内容。
 - `proxy`：作为一个反向代理，从另一个网站提供内容。
+- `string`：返回一个固定的字符串。
 
 ```yaml
 masquerade:
@@ -388,11 +399,20 @@ masquerade:
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
+  string:
+    content: hello stupid world # (4)!
+    headers: # (5)!
+      content-type: text/plain
+      custom-stuff: ice cream so good
+    statusCode: 200 # (6)!
 ```
 
 1. 用于提供文件的目录。
 2. 要代理的网站的 URL。
 3. 是否重写 `Host` 头以匹配被代理的网站。如果目标网站通过 `Host` 识别请求的网站，这个选项是必须的。
+4. 要返回的字符串。
+5. 可选。要返回的 HTTP 头列表。
+6. 可选。要返回的 HTTP 状态码。默认为 200。
 
 可以通过特定参数启动 Chrome 以强制使用 QUIC，测试你的伪装配置：
 
