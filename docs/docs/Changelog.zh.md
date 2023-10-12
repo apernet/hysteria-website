@@ -8,8 +8,8 @@ hide:
 
 - 修复 BBR 内存泄漏问题
 - 微调 Brutal 拥塞控制
-- 新增 masquerade 字符串 (string) 模式
-- 新增 HTTP/HTTPS 代理出站
+- 伪装 (masquerade) 新增字符串 (string) 模式
+- 出站 (outbound) 新增 HTTP/HTTPS 代理
 
 ## 2.0.4
 
