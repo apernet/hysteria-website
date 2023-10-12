@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.1.0
+
+- 修复 BBR 内存泄漏问题
+- 微调 Brutal 拥塞控制
+- 新增 masquerade 字符串 (string) 模式
+- 新增 HTTP/HTTPS 代理出站
+
 ## 2.0.4
 
 - 优化并修复 Brutal 拥塞控制中的一些问题

@@ -306,6 +306,9 @@ Currently, Hysteria supports the following outbound types:
 
 - `direct`: Direct connection through the local interface.
 - `socks5`: SOCKS5 proxy.
+- `http`: HTTP/HTTPS proxy.
+
+> **NOTE:** HTTP/HTTPS proxies do not support UDP at the protocol level. Sending UDP traffic to HTTP outbounds will result in rejection.
 
 **If you do not use ACL, all connections will always be routed through the first ("default") outbound in the list, and all other outbounds will be ignored.**
 
@@ -319,12 +322,19 @@ outbounds:
       addr: shady.proxy.ru:1080 # (2)!
       username: hackerman # (3)!
       password: Elliot Alderson # (4)!
+  - name: my_outbound_3
+    type: http
+    http:
+      url: http://username:password@sketchy-proxy.cc:8081 # (5)!
+      insecure: false # (6)!
 ```
 
 1. The name of the outbound. This is used in ACL rules.
 2. The address of the SOCKS5 proxy.
 3. Optional. The username for the SOCKS5 proxy, if authentication is required.
 4. Optional. The password for the SOCKS5 proxy, if authentication is required.
+5. The URL of the HTTP/HTTPS proxy. (Can be `http://` or `https://`)
+6. Optional. Whether to disable TLS verification. Applies to HTTPS proxies only.
 
 ### Customizing `direct` outbound
 
@@ -379,6 +389,7 @@ Currently, Hysteria provides the following masquerade modes:
 
 - `file`: Act as a static file server, serving files from a directory.
 - `proxy`: Act as a reverse proxy, serving content from another website.
+- `string`: Act as a server that always returns a user-supplied string.
 
 ```yaml
 masquerade:
@@ -388,11 +399,20 @@ masquerade:
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
+  string:
+    content: hello stupid world # (4)!
+    headers: # (5)!
+      content-type: text/plain
+      custom-stuff: ice cream so good
+    statusCode: 200 # (6)!
 ```
 
 1. The directory to serve files from.
 2. The URL of the website to proxy.
 3. Whether to rewrite the `Host` header to match the proxied website. This is required if the target web server uses `Host` to determine which site to serve.
+4. The string to return.
+5. Optional. The headers to return.
+6. Optional. The status code to return. 200 by default.
 
 You can test your masquerade configuration by starting Chrome with a special flag (to force QUIC):
 
