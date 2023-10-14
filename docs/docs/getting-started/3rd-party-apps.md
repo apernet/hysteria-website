@@ -14,6 +14,7 @@ The following list is in alphabetical order. It does not indicate preference or 
 | [Pharos Pro](https://apps.apple.com/app/pharos-pro/id1456610173)        | MultiProtocol Proxy Client for iPhone/iPad (supports Hysteria 2 since v1.8.3)                                              | iOS                                 | client         |
 | [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)     | Rule based proxy utility client for iPhone/iPad (supports Hysteria 2 since 2.2.35)                                         | iOS                                 | client         |
 | [sing-box](https://github.com/SagerNet/sing-box)                        | A universal proxy platform (supports Hysteria 2 since 1.5.0-beta.2)                                                        | Windows, Linux, macOS, Android, iOS | client, server |
+| [Surge](https://nssurge.com)                        | A proxy app (supports Hysteria 2 since iOS 5.21.0 (2875) and macOS 5.4.0 (2399))                                                        |  macOS, iOS | client |
 
 > We don't control these third-party implementations. They may or may not have the latest features or fixes from our official releases, and may have their own bugs. If you encounter problems, please contact the developers of the respective projects directly.
 
