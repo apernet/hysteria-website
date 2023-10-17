@@ -42,7 +42,7 @@ http:
 
 **Please set the bandwidth values for `up` and `down` to the maximum speed of your current network connection. For best performance, be sure to set them as accurately as possible.**
 
-Although highly recommended, if you really don't know the bandwidth of your current network, you can remove the bandwidth section entirely, or set only one of `up`/`down`. For more information on what it controls, see **[Bandwidth behavior explained](Full-Server-Config.md#bandwidth-behavior-explained)**
+Although highly recommended, if you really don't know the bandwidth of your current network, you can remove the bandwidth section entirely, or set only one of `up`/`down`. For more information on what it controls, see **[Bandwidth behavior explained](../advanced/Full-Server-Config.md#bandwidth-behavior-explained)**
 
 ### TLS
 
