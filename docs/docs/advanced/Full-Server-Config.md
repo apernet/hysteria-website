@@ -279,7 +279,7 @@ You can have either `file` or `inline`, but not both.
     ```
 
     1. The path to the ACL file.
-    2. Optional. Uncomment to enable. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
+    2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
 
 === "Inline"
 
@@ -294,9 +294,9 @@ You can have either `file` or `inline`, but not both.
     ```
 
     1. The list of inline ACL rules.
-    2. Optional. Uncomment to enable. The path to the GeoIP database file. **Hysteria will automatically download the latest database if this field is omitted.**
+    2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
 
-> **NOTE:** Hysteria only supports MaxMind's GeoLite2 Country database in MMDB format for GeoIP functionality. If you don't know how to get the right file, omit the geoip field and let Hysteria automatically download the latest version. The database file will only be downloaded if there is at least one GeoIP rule in the ACL.
+> **NOTE:** Hysteria only supports MaxMind's GeoLite2 Country database in MMDB format for GeoIP functionality. If you don't know how to get the right file, omit the `geoip` field and let Hysteria automatically download the latest version (to your working directory). The database file will only be downloaded if there is at least one GeoIP rule in the ACL.
 
 ## Outbounds
 
