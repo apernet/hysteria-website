@@ -9,6 +9,7 @@ A valid ACL rule must be in one of the following formats:
 - `outbound(address)`
 - `outbound(address, proto/port)`
 - `outbound(address, proto/port, hijack_address)`
+- `# This is a comment`
 
 ### Address types
 
@@ -16,8 +17,8 @@ The `address` field can be one of the following:
 
 - A single IPv4/IPv6 address, e.g. `1.1.1.1` or `2606:4700:4700::1111`
 - An IPv4/IPv6 CIDR, e.g. `73.0.0.0/8` or `2001:db8::/32`
-- A domain name, e.g. `example.com`
-- A domain name with wildcard, e.g. `*.example.com`
+- A domain name, e.g. `example.com` (does not include subdomains)
+- A domain name with wildcard, e.g. `*.example.com` or `*.google.*`
 - GeoIP country code, e.g. `geoip:cn` or `geoip:us`
 - `all` - match all addresses. Usually placed at the end as the default rule for everything else.
 

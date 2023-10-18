@@ -9,6 +9,7 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
 - `outbound(address)`
 - `outbound(address, proto/port)`
 - `outbound(address, proto/port, hijack_address)`
+- `# 这是一条注释`
 
 ### 地址类型
 
@@ -16,8 +17,8 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
 
 - 单一 IPv4/IPv6 地址，例如 `1.1.1.1` 或 `2606:4700:4700::1111`
 - IPv4/IPv6 CIDR，例如 `73.0.0.0/8` 或 `2001:db8::/32`
-- 域名，例如 `example.com`
-- 通配域名，例如 `*.example.com`
+- 域名，例如 `example.com` （不包括子域名）
+- 通配域名，例如 `*.example.com` 或 `*.google.*`
 - GeoIP 国家代码，例如 `geoip:cn` 或 `geoip:us`
 - `all` - 匹配所有地址。通常放在最后作为其他所有连接的默认出站规则。
 
