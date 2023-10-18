@@ -197,7 +197,7 @@ When using HTTP authentication, the server will send a `POST` request to the bac
 
 1. The client's IP address and port.
 2. The client's authentication payload.
-3. The tx rate (in bytes per second) the client requested.
+3. The tx rate (in bytes per second). Tx as seen by the server; corresponds to the rx (download) rate of the client.
 
 Your endpoint must respond with a JSON object with the following fields:
 
