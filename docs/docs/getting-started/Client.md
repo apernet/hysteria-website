@@ -94,6 +94,8 @@ Start the client by the following command:
 
 > **TIP:** You can also use `./hysteria-linux-amd64-avx client`, but client is the default mode so it can be omitted.
 
+> **:fontawesome-brands-windows: Windows users:** You can launch the client directly by double-clicking the exe file, assuming you have placed the configuration file in the same directory and named it `config.yaml`.
+
 If you see the log message "connected to server" and no errors, congratulations 🎉! You have successfully deployed a Hysteria client.
 
 You will also see a log message "use this URI to share your server" with a URI. This URI can be used as the `server` value in the client's configuration file. Since it already contains the password and a few other settings, you won't need to specify them separately. For more information on the URI format, please refer to [URI Scheme](../developers/URI-Scheme.md).

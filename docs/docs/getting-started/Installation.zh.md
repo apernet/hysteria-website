@@ -77,7 +77,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 安装或升级为指定版本（跳过版本检查）：
 
 ```bash
-bash <(curl -fsSL https://get.hy2.sh/) --version v2.1.0
+bash <(curl -fsSL https://get.hy2.sh/) --version v2.1.1
 ```
 
 移除 Hysteria：

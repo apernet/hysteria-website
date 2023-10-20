@@ -94,6 +94,8 @@ http:
 
 > **提示：** 你也可以使用 `./hysteria-linux-amd64-avx client`，但由于客户端是默认模式，所以这部分可以省略。
 
+> **:fontawesome-brands-windows: Windows 用户：** 你可以通过双击 exe 文件直接启动客户端，前提是你已经将配置文件放在同一目录下并命名为 `config.yaml`。
+
 如果你看到日志显示 "connected to server" 且没有错误，恭喜 🎉！你已成功部署了一个 Hysteria 客户端。
 
 你还会看到一个日志信息 "use this URI to share your server" 包含一个 URI。这个 URI 可以用作客户端配置文件中的 `server` 值。由于它已经包含了密码和一些其他设置，因此不再需要单独指定它们。有关 URI 格式的更多信息，请参考 [URI 格式](../developers/URI-Scheme.md)。
