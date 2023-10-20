@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.1.1
+
+> This release contains important fixes and we strongly encourage everyone to upgrade.
+
+- Fixed a bug where a specially crafted UDP message packet could cause the server to crash
+- Fixed compatibility issues on FreeBSD
+- Windows users can now launch directly by double-clicking the exe file
+
 ## 2.1.0
 
 - Fixed a memory leak in BBR
