@@ -20,7 +20,13 @@ The `address` field can be one of the following:
 - A domain name, e.g. `example.com` (does not include subdomains)
 - A domain name with wildcard, e.g. `*.example.com` or `*.google.*`
 - GeoIP country code, e.g. `geoip:cn` or `geoip:us`
+- GeoSite category, e.g. `geosite:netflix` or `geosite:google` (supports attributes, e.g. `geosite:google@cn`)
 - `all` - match all addresses. Usually placed at the end as the default rule for everything else.
+
+> To see what's available as GeoSite categories, check here:
+>
+> - https://github.com/Loyalsoldier/v2ray-rules-dat
+> - https://github.com/v2fly/domain-list-community/tree/master/data
 
 ### Proto/port
 
@@ -86,6 +92,9 @@ v4_only(*.twitter.com)
 some_proxy(ipinfo.io)
 some_proxy(*.ipinfo.io)
 
+# Non-English IDN domains are also supported
+v6_only(战狼*.中国)
+
 # Block QUIC protocol
 reject(all, udp/443)
 
@@ -95,6 +104,10 @@ reject(all, tcp/25)
 # Block China and North Korea
 reject(geoip:cn)
 reject(geoip:kp)
+
+# Block Facebook and Google Ads
+reject(geosite:facebook)
+reject(geosite:google@ads)
 
 # Block some random ranges
 reject(73.0.0.0/8)
@@ -114,6 +127,7 @@ direct(all)
 
 ```python
 reject(geoip:cn)
+reject(geosite:facebook)
 reject(10.0.0.0/8)
 reject(172.16.0.0/12)
 reject(192.168.0.0/16)

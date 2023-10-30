@@ -275,11 +275,13 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
     ```yaml
     acl:
       file: some.txt # (1)!
-      # geoip: GeoLite2-Country.mmdb (2)
+      # geoip: geoip.dat (2)
+      # geosite: geosite.dat (3)
     ```
 
     1. ACL 文件的路径。
     2. 可选。取消注释以启用。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
+    3. 可选。取消注释以启用。GeoSite 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
 
 === "内联"
 
@@ -290,13 +292,15 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
         - reject(*.v2ex.com)
         - reject(all, udp/443)
         - reject(geoip:cn)
-      # geoip: GeoLite2-Country.mmdb (2)
+      # geoip: geoip.dat (2)
+      # geosite: geosite.dat (3)
     ```
 
     1. 内联 ACL 规则的列表。
     2. 可选。取消注释以启用。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
+    3. 可选。取消注释以启用。GeoSite 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
 
-> **注意：** Hysteria 只支持 MaxMind 的 GeoLite2 Country MMDB 格式的数据库来实现 GeoIP 功能。如果你不知道如何获取正确的文件，可以省略 `geoip` 字段，让 Hysteria 自动下载最新版本到工作目录。只有在 ACL 中至少有一个 GeoIP 规则时，才会下载数据库。
+> **注意：** Hysteria 目前使用的是源自 v2ray 的，基于 protobuf 的 GeoIP/GeoSite 数据库格式。如果没有自定义的需求，可以省略这两个字段，Hysteria 会自动 (从 https://github.com/Loyalsoldier/v2ray-rules-dat) 下载最新的数据库到工作目录。只有在 ACL 中有至少一条 GeoIP/GeoSite 规则时才会下载对应的数据库。
 
 ## 出站规则 (Outbounds)
 
@@ -370,14 +374,16 @@ outbounds:
 
 流量统计 API 允许你通过 HTTP API 查询服务器的流量统计信息，以及踢用户下线。具体使用方法请参考 [流量统计 API 文档](Traffic-Stats-API.md)。
 
-> **注意：** 此 API 没有验证，注意不要暴露在公网上。另外建议通过 ACL 阻止客户端访问。
-
 ```yaml
 trafficStats:
   listen: :9999 # (1)!
+  secret: some_secret # (2)!
 ```
 
 1. 监听地址。
+2. 用于验证的密钥。设置后需要在 HTTP 请求的 `Authorization` 头中提供正确的密钥才能访问 API。
+
+> **注意：** 如果不设置密钥，任何能访问 API 监听地址的人都可以查询用户流量信息和踢用户下线。强烈建议设置密钥，或至少用 ACL 阻拦对 API 监听地址的访问。
 
 ## 伪装 (Masquerade)
 

@@ -275,11 +275,13 @@ You can have either `file` or `inline`, but not both.
     ```yaml
     acl:
       file: some.txt # (1)!
-      # geoip: GeoLite2-Country.mmdb (2)
+      # geoip: geoip.dat (2)
+      # geosite: geosite.dat (3)
     ```
 
     1. The path to the ACL file.
     2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
+    3. Optional. Uncomment to enable. The path to the GeoSite database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
 
 === "Inline"
 
@@ -290,13 +292,16 @@ You can have either `file` or `inline`, but not both.
         - reject(*.v2ex.com)
         - reject(all, udp/443)
         - reject(geoip:cn)
-      # geoip: GeoLite2-Country.mmdb (2)
+        - reject(geosite:netflix)
+      # geoip: geoip.dat (2)
+      # geosite: geosite.dat (3)
     ```
 
     1. The list of inline ACL rules.
     2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
+    3. Optional. Uncomment to enable. The path to the GeoSite database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
 
-> **NOTE:** Hysteria only supports MaxMind's GeoLite2 Country database in MMDB format for GeoIP functionality. If you don't know how to get the right file, omit the `geoip` field and let Hysteria automatically download the latest version (to your working directory). The database file will only be downloaded if there is at least one GeoIP rule in the ACL.
+> **NOTE:** Hysteria currently uses the protobuf-based "dat" format for geoip/geosite data originating from v2ray. If you don't need any customization, you can omit the `geoip` or `geosite` fields and let Hysteria automatically download the latest version (from https://github.com/Loyalsoldier/v2ray-rules-dat) to your working directory. The files will only be downloaded and used if your ACL has at least one rule that uses this feature.
 
 ## Outbounds
 
@@ -370,14 +375,16 @@ The available `mode` values are:
 
 The Traffic Stats API allows you to query the server's traffic statistics and kick clients using an HTTP API. For endpoints and usage, please refer to the [Traffic Stats API documentation](Traffic-Stats-API.md).
 
-> **NOTE:** This API has no authentication, so you should not expose it to the public Internet. We also recommend blocking it with ACL to prevent clients from accessing it.
-
 ```yaml
 trafficStats:
   listen: :9999 # (1)!
+  secret: some_secret # (2)!
 ```
 
 1. The address to listen on.
+2. The secret key to use for authentication. Attach this to the `Authorization` header in your HTTP requests.
+
+> **NOTE:** If you don't set a secret, anyone with access to your API listening address will be able to see traffic stats and kick users. We strongly recommend setting a secret, or at least using ACL to block users from accessing the API.
 
 ## Masquerade
 

@@ -20,7 +20,13 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
 - 域名，例如 `example.com` （不包括子域名）
 - 通配域名，例如 `*.example.com` 或 `*.google.*`
 - GeoIP 国家代码，例如 `geoip:cn` 或 `geoip:us`
+- GeoSite 分类，例如 `geosite:netflix` 或 `geosite:google` （支持标签，例如 `geosite:google@cn`）
 - `all` - 匹配所有地址。通常放在最后作为其他所有连接的默认出站规则。
+
+> 要查看可用的 GeoSite 分类，可以参考这里：
+>
+> - https://github.com/Loyalsoldier/v2ray-rules-dat
+> - https://github.com/v2fly/domain-list-community/tree/master/data
 
 ### Proto/port
 
@@ -86,6 +92,9 @@ v4_only(*.twitter.com)
 some_proxy(ipinfo.io)
 some_proxy(*.ipinfo.io)
 
+# 也支持非英语 IDN 域名
+v6_only(战狼*.中国)
+
 # 屏蔽 QUIC 协议
 reject(all, udp/443)
 
@@ -95,6 +104,10 @@ reject(all, tcp/25)
 # 屏蔽中国和朝鲜
 reject(geoip:cn)
 reject(geoip:kp)
+
+# 屏蔽 Facebook 和 Google Ads
+reject(geosite:facebook)
+reject(geosite:google@ads)
 
 # 屏蔽一些 IP 范围
 reject(73.0.0.0/8)
@@ -114,6 +127,7 @@ direct(all)
 
 ```python
 reject(geoip:cn)
+reject(geosite:facebook)
 reject(10.0.0.0/8)
 reject(172.16.0.0/12)
 reject(192.168.0.0/16)
