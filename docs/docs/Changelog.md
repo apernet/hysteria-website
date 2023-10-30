@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.2.0
+
+- Added GeoSite support to ACL (both GeoIP and GeoSite now use the v2ray "dat" format database)
+- Added support for non-English domains (IDN) to ACL (e.g. `v6_only(战狼*.中国)`)
+- Added WebSocket support to masquerade proxy mode
+- Added secret-based authentication to Traffic Stats API
+- Fixed compatibility issues on certain Linux systems
+
 ## 2.1.1
 
 > This release contains important fixes and we strongly encourage everyone to upgrade.

@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.2.0
+
+- ACL 新增 GeoSite 支持 (GeoIP 和 GeoSite 现在都使用 v2ray 的 "dat" 格式数据库)
+- ACL 新增对非英文域名 (IDN) 的支持 (例如 `v6_only(战狼*.中国)`)
+- 伪装 (masquerade) proxy 模式添加 WebSocket 支持
+- 流量统计 API 新增基于密钥 (secret) 的认证
+- 修复某些 Linux 系统上的兼容性问题
+
 ## 2.1.1
 
 > 此版本包含重要修复，强烈建议更新
