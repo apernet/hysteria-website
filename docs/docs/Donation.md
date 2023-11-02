@@ -11,7 +11,7 @@ Should you wish to be recognized for your support, we are more than happy to lis
 ## Crypto
 
 <a href="https://nowpayments.io/donation?api_key=EJH83FM-FDC40ZW-QGDZRR4-A7SC67S" target="_blank">
- <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
+ <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments" class="skip-lightbox">
 </a>
 
 ## Hall of Fame
