@@ -11,7 +11,7 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 ## Crypto
 
 <a href="https://nowpayments.io/donation?api_key=EJH83FM-FDC40ZW-QGDZRR4-A7SC67S" target="_blank">
- <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments">
+ <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="Crypto donation button by NOWPayments" class="skip-lightbox">
 </a>
 
 ## 荣誉榜
