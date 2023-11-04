@@ -8,6 +8,19 @@ Hysteria is an open source project born out of a passion to bring value to the c
 
 Should you wish to be recognized for your support, we are more than happy to list your name or the name of your organization as an official Hysteria sponsor on our project page.
 
+## Stripe
+
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+buy-button-id="buy_btn_1O8jlNA8nFCZ9Rnl6pDDhzXS"
+publishable-key="pk_live_51JYHHRA8nFCZ9Rnl6BDcmV2INY18fA4ozslLsgKy6NosK53vpgsrv4EYSUdTZz7OjpiXEi666dFjXsDCcv7phSUI00pJR4Z7Ee">
+</stripe-buy-button>
+
+Link: https://donate.stripe.com/5kAaFx93KbWt11KdQQ
+
 ## Crypto
 
 <a href="https://nowpayments.io/donation?api_key=EJH83FM-FDC40ZW-QGDZRR4-A7SC67S" target="_blank">
