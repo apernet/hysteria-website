@@ -92,6 +92,7 @@ plugins:
                     - URI Scheme: docs/developers/URI-Scheme.md
             - 更新日志: docs/Changelog.md
             - GitHub: https://github.com/apernet/hysteria
+            - TCP Brutal: https://github.com/apernet/tcp-brutal
             - 艺术创作: docs/Artworks.md
             - 捐赠: docs/Donation.md
 
@@ -143,6 +144,7 @@ nav:
           - URI Scheme: docs/developers/URI-Scheme.md
   - Changelog: docs/Changelog.md
   - GitHub: https://github.com/apernet/hysteria
+  - TCP Brutal: https://github.com/apernet/tcp-brutal
   - Artworks: docs/Artworks.md
   - Donation: docs/Donation.md
 
