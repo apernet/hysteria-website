@@ -40,9 +40,9 @@ http:
 
 ### Bandwidth
 
-**Please set the bandwidth values for `up` and `down` to the maximum speed of your current network connection. For best performance, be sure to set them as accurately as possible.**
+Hysteria has two built-in congestion control algorithms (BBR & Brutal). **Which one to use depends on whether bandwidth information is provided.** If you want to use BBR instead of Brutal, you can delete the entire `bandwidth` section. For more details, see [Bandwidth behavior explained](../advanced/Full-Server-Config.md#bandwidth-behavior-explained)
 
-Although highly recommended, if you really don't know the bandwidth of your current network, you can remove the bandwidth section entirely, or set only one of `up`/`down`. For more information on what it controls, see **[Bandwidth behavior explained](../advanced/Full-Server-Config.md#bandwidth-behavior-explained)**
+> **⚠️ Warning** Higher bandwidth values are not always better; be very careful not to exceed the maximum bandwidth that your current network can support. Doing so will backfire, causing network congestion and unstable connections.
 
 ### TLS
 

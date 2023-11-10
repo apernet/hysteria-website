@@ -139,7 +139,7 @@ Currently, Hysteria has 2 congestion control algorithms:
 
 **Brutal:** This is Hysteria's custom congestion control algorithm. Unlike BBR, Brutal operates on a fixed rate model and does not reduce its speed in response to packet loss or RTT changes. If it fails to meet the predetermined target rate, the algorithm calculates the rate of packet loss and compensates by increasing speed. This only works if you know (and accurately specify) the theoretical maximum speed of your current connection. It's particularly effective at seizing bandwidth in congested, best-effort delivery networks, hence its name.
 
-> Brutal will work even if you set your bandwidth values below your connection's maximum speed; it will simply serve as a speed limiter. However, it's important not to set it higher than what's possible, as this will trigger the compensation mechanism, resulting in a slow, unstable connection and wasted data.
+> Brutal will also work if you set your bandwidth values below your connection's maximum speed; it will simply serve as a speed limiter. However, DO NOT set it higher than what's possible, as this will result in a slow, unstable connection and wasted data.
 
 Congestion control algorithms controls the sending of data. From the client's point of view, if the user doesn't provide his bandwidth value for download (but provides it for upload), the Hysteria server will send data to the client using BBR, but the client will upload data to the server using Brutal, and vice versa. The client can provide both, so both directions will use Brutal, or neither, so both will use BBR.
 
