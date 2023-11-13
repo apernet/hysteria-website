@@ -12,6 +12,10 @@
 - 服务器监听的网络对客户端不可访问
 - 域名没有解析到正确的 IP 地址
 - 混淆设置不正确
+- 服务端使用了过于老旧的内核（不建议使用 CentOS 7）， 请参考
+  [[1]](https://github.com/apernet/hysteria/issues/810#issuecomment-1807690164)
+  [[2]](https://blog.yywq.me/article/39f87fd6-1c3e-4826-90d9-5d031393ca8d)
+  以了解更多细节
 
 ## failed to initialize client (authentication error, HTTP status code: 404)
 
