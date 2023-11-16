@@ -12,6 +12,10 @@ This error occurs when the client is unable to connect to the server. The most c
 - The server is listening on a network that's inaccessible to the client.
 - The domain name is not resolving to the correct IP address.
 - Incorrect obfuscation settings
+- The Linux kernel version is too old (there's a known issue on CentOS 7). Refer to
+  [[1]](https://github.com/apernet/hysteria/issues/810#issuecomment-1807690164)
+  [[2]](https://blog.yywq.me/article/39f87fd6-1c3e-4826-90d9-5d031393ca8d)
+  for more details.
 
 ## failed to initialize client (authentication error, HTTP status code: 404)
 
