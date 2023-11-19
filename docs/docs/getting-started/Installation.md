@@ -33,17 +33,18 @@ Like any proxy software, Hysteria consists of a server and a client. Our precomp
 
 === ":fontawesome-brands-linux: Linux"
 
-      | File                                                                                              | Arch   | Note         |
-      | ------------------------------------------------------------------------------------------------- | ------ | ------------ |
-      | [hysteria-linux-amd64](https://download.hysteria.network/app/latest/hysteria-linux-amd64)         | x86-64 |              |
-      | [hysteria-linux-amd64-avx](https://download.hysteria.network/app/latest/hysteria-linux-amd64-avx) | x86-64 | Requires AVX |
-      | [hysteria-linux-386](https://download.hysteria.network/app/latest/hysteria-linux-386)             | x86    |              |
-      | [hysteria-linux-arm](https://download.hysteria.network/app/latest/hysteria-linux-arm)             | ARMv7  |              |
-      | [hysteria-linux-armv5](https://download.hysteria.network/app/latest/hysteria-linux-armv5)         | ARMv5  |              |
-      | [hysteria-linux-arm64](https://download.hysteria.network/app/latest/hysteria-linux-arm64)         | ARM64  |              |
-      | [hysteria-linux-s390x](https://download.hysteria.network/app/latest/hysteria-linux-s390x)         | s390x  |              |
-      | [hysteria-linux-mipsle](https://download.hysteria.network/app/latest/hysteria-linux-mipsle)       | MIPS   | Little Endian |
-      | [hysteria-linux-mipsle-sf](https://download.hysteria.network/app/latest/hysteria-linux-mipsle-sf) | MIPS   | Little Endian, Soft Float |
+    | File                                                                                              | Arch   | Note         |
+    | ------------------------------------------------------------------------------------------------- | ------ | ------------ |
+    | [hysteria-linux-amd64](https://download.hysteria.network/app/latest/hysteria-linux-amd64)         | x86-64 |              |
+    | [hysteria-linux-amd64-avx](https://download.hysteria.network/app/latest/hysteria-linux-amd64-avx) | x86-64 | Requires AVX |
+    | [hysteria-linux-386](https://download.hysteria.network/app/latest/hysteria-linux-386)             | x86    |              |
+    | [hysteria-linux-arm](https://download.hysteria.network/app/latest/hysteria-linux-arm)             | ARMv7  |              |
+    | [hysteria-linux-armv5](https://download.hysteria.network/app/latest/hysteria-linux-armv5)         | ARMv5  |              |
+    | [hysteria-linux-arm64](https://download.hysteria.network/app/latest/hysteria-linux-arm64)         | ARM64  |              |
+    | [hysteria-linux-s390x](https://download.hysteria.network/app/latest/hysteria-linux-s390x)         | s390x  |              |
+    | [hysteria-linux-mipsle](https://download.hysteria.network/app/latest/hysteria-linux-mipsle)       | MIPS   | Little Endian |
+    | [hysteria-linux-mipsle-sf](https://download.hysteria.network/app/latest/hysteria-linux-mipsle-sf) | MIPS   | Little Endian, Soft Float |
+    | [hysteria-linux-riscv64](https://download.hysteria.network/app/latest/hysteria-linux-riscv64)     | RISC-V 64 |              |
 
 === ":fontawesome-brands-android: Android"
 
@@ -56,13 +57,13 @@ Like any proxy software, Hysteria consists of a server and a client. Our precomp
 
 === ":fontawesome-brands-freebsd: FreeBSD"
 
-      | File                                                                                                    | Arch   | Note         |
-      | ------------------------------------------------------------------------------------------------------- | ------ | ------------ |
-      | [hysteria-freebsd-amd64](https://download.hysteria.network/app/latest/hysteria-freebsd-amd64)           | x86-64 |              |
-      | [hysteria-freebsd-amd64-avx](https://download.hysteria.network/app/latest/hysteria-freebsd-amd64-avx)   | x86-64 | Requires AVX |
-      | [hysteria-freebsd-386](https://download.hysteria.network/app/latest/hysteria-freebsd-386)               | x86    |              |
-      | [hysteria-freebsd-arm](https://download.hysteria.network/app/latest/hysteria-freebsd-arm)               | ARMv7  |              |
-      | [hysteria-freebsd-arm64](https://download.hysteria.network/app/latest/hysteria-freebsd-arm64)           | ARM64  |              |
+    | File                                                                                                    | Arch   | Note         |
+    | ------------------------------------------------------------------------------------------------------- | ------ | ------------ |
+    | [hysteria-freebsd-amd64](https://download.hysteria.network/app/latest/hysteria-freebsd-amd64)           | x86-64 |              |
+    | [hysteria-freebsd-amd64-avx](https://download.hysteria.network/app/latest/hysteria-freebsd-amd64-avx)   | x86-64 | Requires AVX |
+    | [hysteria-freebsd-386](https://download.hysteria.network/app/latest/hysteria-freebsd-386)               | x86    |              |
+    | [hysteria-freebsd-arm](https://download.hysteria.network/app/latest/hysteria-freebsd-arm)               | ARMv7  |              |
+    | [hysteria-freebsd-arm64](https://download.hysteria.network/app/latest/hysteria-freebsd-arm64)           | ARM64  |              |
 
 ## Deployment script for Linux servers
 
@@ -88,7 +89,7 @@ bash <(curl -fsSL https://get.hy2.sh/) --remove
 
 ## Docker images
 
-Our official Docker images are hosted on Docker Hub: https://hub.docker.com/r/tobyxdd/hysteria
+Docker Hub: <https://hub.docker.com/r/tobyxdd/hysteria>
 
 ### Compose example
 
