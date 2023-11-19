@@ -6,7 +6,7 @@ hide:
 
 Hysteria is an open source project born out of a passion to bring value to the community - especially those living behind walls of censorship. If you share our belief in the cause and are willing to provide financial support, your contribution will play an important role in sustaining and growing this project.
 
-Should you wish to be recognized for your support, we are more than happy to list your name or the name of your organization as an official Hysteria sponsor on our project page.
+We are willing to list anyone who has donated more than $10 as an official sponsor in the Hall of Fame below.
 
 === ":fontawesome-solid-dollar-sign: Stripe"
 
@@ -35,5 +35,6 @@ Should you wish to be recognized for your support, we are more than happy to lis
 
 ## Hall of Fame
 
-- [Aperture Internet Laboratory](https://apernet.io/)
+- [Aperture Internet Laboratory](https://apernet.io/) - dedicated to developing free software, conducting research, and building infrastructure to facilitate and enhance the free exchange of information and communication
+- [狗狗加速](https://狗狗加速.com) - high-performance overseas VPN, free trial, unlock streaming services/ChatGPT, the world's first to support Hysteria, currently fully supporting Hysteria 2
 - **Will you be next?**

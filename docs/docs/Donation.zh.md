@@ -6,7 +6,7 @@ hide:
 
 Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你支持这个愿景并愿意提供支持，捐赠可以帮助我们维持和发展这个项目。
 
-我们也非常乐意在项目页面上列出你或你组织的名字，作为 Hysteria 的 "官方赞助商"。
+我们愿意将任何捐赠超过 $10 的用户/组织列入下面的荣誉榜。
 
 === ":fontawesome-solid-dollar-sign: Stripe"
 
@@ -35,5 +35,6 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 
 ## 荣誉榜
 
-- [Aperture Internet Laboratory](https://apernet.io/)
+- [Aperture Internet Laboratory](https://apernet.io/) - 致力于开发自由软件、研究、构建促进和加强信息自由交换的基础设施
+- [狗狗加速](https://狗狗加速.com) - 高性能海外 VPN 机场，免费试用，解锁流媒体/ChatGPT，全球首家支持 Hysteria 协议，目前全面支持 Hysteria 2
 - **虚位以待**
