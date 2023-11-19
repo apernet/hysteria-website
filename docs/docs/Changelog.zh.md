@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.2.1
+
+- 添加了 GeoIP 和 GeoSite 自动更新功能（ACL 下的 `geoUpdateInterval` 字段，默认为一周）
+- 客户端现在在连接到服务器后会显示握手信息，目前包括 UDP 转发是否开启和协商的传输速率
+- 带宽单位换算（Kbps/Mbps/Gbps/Tbps）从 1024 改为 1000
+- 添加了 RISC-V (riscv64) 支持
+- quic-go 更新到 v0.40.0
+
 ## 2.2.0
 
 - ACL 新增 GeoSite 支持 (GeoIP 和 GeoSite 现在都使用 v2ray 的 "dat" 格式数据库)

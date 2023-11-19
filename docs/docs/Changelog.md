@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.2.1
+
+- Added GeoIP & GeoSite auto update (`geoUpdateInterval` field under ACL, default is 1 week)
+- Client now shows handshake information after connecting to the server, currently includes UDP forwarding availability & tx rate
+- Changed the basis for bandwidth conversion (Kbps/Mbps/Gbps/Tbps) from 1024 to 1000
+- Added RISC-V (riscv64) support
+- Updated quic-go to v0.40.0
+
 ## 2.2.0
 
 - Added GeoSite support to ACL (both GeoIP and GeoSite now use the v2ray "dat" format database)

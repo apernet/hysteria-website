@@ -44,6 +44,7 @@
     | [hysteria-linux-s390x](https://download.hysteria.network/app/latest/hysteria-linux-s390x)         | s390x  |                        |
     | [hysteria-linux-mipsle](https://download.hysteria.network/app/latest/hysteria-linux-mipsle)       | MIPS   | 小端序                 |
     | [hysteria-linux-mipsle-sf](https://download.hysteria.network/app/latest/hysteria-linux-mipsle-sf) | MIPS   | 小端序，无硬件浮点支持 |
+    | [hysteria-linux-riscv64](https://download.hysteria.network/app/latest/hysteria-linux-riscv64)     | RISC-V 64 |                        |
 
 === ":fontawesome-brands-android: Android"
 
@@ -88,7 +89,7 @@ bash <(curl -fsSL https://get.hy2.sh/) --remove
 
 ## Docker 镜像
 
-我们的官方 Docker 镜像在 Docker Hub： https://hub.docker.com/r/tobyxdd/hysteria
+Docker Hub: <https://hub.docker.com/r/tobyxdd/hysteria>
 
 ### Compose 示例
 
