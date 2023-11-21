@@ -16,6 +16,7 @@ The following list is in alphabetical order. It does not indicate preference or 
 | [sing-box](https://github.com/SagerNet/sing-box)                           | A universal proxy platform (supports Hysteria 2 since 1.5.0-beta.2)                                                        | Windows, Linux, macOS, Android, iOS | client, server |
 | [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349) | Simple & Powerful Network Tool (supports Hysteria 2 since 2.5.0)                                                           | macOS, iOS                          | client         |
 | [Surge](https://nssurge.com)                                               | Advanced Network Toolbox (supports Hysteria 2 since 5.8.0)                                                                 | macOS, iOS                          | client         |
+| [Loon](https://apps.apple.com/us/app/loon/id1373567447)| Loon is a powerful network debugging tool (supports Hysteria 2 since 3.1.3) | iOS | client | 
 
 > We don't control these third-party implementations. They may or may not have the latest features or fixes from our official releases, and may have their own bugs. If you encounter problems, please contact the developers of the respective projects directly.
 

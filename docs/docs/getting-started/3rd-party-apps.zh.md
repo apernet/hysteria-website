@@ -16,6 +16,7 @@
 | [sing-box](https://github.com/SagerNet/sing-box)                           | A universal proxy platform (1.5.0-beta.2 后支持 Hysteria 2)                                                        | Windows, Linux, macOS, Android, iOS | 客户端，服务端 |
 | [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349) | Simple & Powerful Network Tool (2.5.0 后支持 Hysteria 2)                                                           | macOS, iOS                          | 客户端         |
 | [Surge](https://nssurge.com)                                               | Advanced Network Toolbox (5.8.0 后 支持 Hysteria 2)                                                                | macOS, iOS                          | 客户端         |
+| [Loon](https://apps.apple.com/us/app/loon/id1373567447)| Loon is a powerful network debugging tool (3.1.3 后 支持 Hysteria 2) | iOS | 客户端 | 
 
 > 我们并不直接控制第三方应用的开发。它们未必包括官方版本的最新功能和修复，并可能存在特有的 bug。如遇到任何问题，请先反馈给这些项目对应的开发者。
 
