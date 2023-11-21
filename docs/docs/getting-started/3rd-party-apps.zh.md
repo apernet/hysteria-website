@@ -6,15 +6,16 @@
 
 以下列表按字母顺序排列，不代表任何偏好或排名。
 
-| 名称                                                                    | 描述                                                                                                               | 平台                                | 模式           |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | -------------- |
-| [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta)                   | A rule-based tunnel in Go (v1.16.0 后支持 Hysteria 2)                                                              | Windows, Linux, macOS, Android, iOS | 客户端         |
-| [Furious](https://github.com/LorenEteval/Furious)                       | A PySide6-based cross platform GUI client that launches your beloved GFW to outer space. (0.2.6 后支持 Hysteria 2) | Windows, Linux, macOS               | 客户端         |
-| [NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid) | Universal proxy toolchain for Android (1.2.4 后支持 Hysteria 2)                                                    | Android                             | 客户端         |
-| [Pharos Pro](https://apps.apple.com/app/pharos-pro/id1456610173)        | MultiProtocol Proxy Client for iPhone/iPad (v1.8.3 后支持 Hysteria 2)                                              | iOS                                 | 客户端         |
-| [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)     | Rule based proxy utility client for iPhone/iPad (2.2.35 后支持 Hysteria 2)                                         | iOS                                 | 客户端         |
-| [sing-box](https://github.com/SagerNet/sing-box)                        | A universal proxy platform (1.5.0-beta.2 后支持 Hysteria 2)                                                        | Windows, Linux, macOS, Android, iOS | 客户端，服务端 |
-| [Surge](https://nssurge.com)                                            | Advanced Network Toolbox (5.8.0 后 支持 Hysteria 2)                                                                | macOS, iOS                          | 客户端         |
+| 名称                                                                       | 描述                                                                                                               | 平台                                | 模式           |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | -------------- |
+| [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta)                      | A rule-based tunnel in Go (v1.16.0 后支持 Hysteria 2)                                                              | Windows, Linux, macOS, Android, iOS | 客户端         |
+| [Furious](https://github.com/LorenEteval/Furious)                          | A PySide6-based cross platform GUI client that launches your beloved GFW to outer space. (0.2.6 后支持 Hysteria 2) | Windows, Linux, macOS               | 客户端         |
+| [NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid)    | Universal proxy toolchain for Android (1.2.4 后支持 Hysteria 2)                                                    | Android                             | 客户端         |
+| [Pharos Pro](https://apps.apple.com/app/pharos-pro/id1456610173)           | MultiProtocol Proxy Client for iPhone/iPad (v1.8.3 后支持 Hysteria 2)                                              | iOS                                 | 客户端         |
+| [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)        | Rule based proxy utility client for iPhone/iPad (2.2.35 后支持 Hysteria 2)                                         | iOS                                 | 客户端         |
+| [sing-box](https://github.com/SagerNet/sing-box)                           | A universal proxy platform (1.5.0-beta.2 后支持 Hysteria 2)                                                        | Windows, Linux, macOS, Android, iOS | 客户端，服务端 |
+| [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349) | Simple & Powerful Network Tool (2.5.0 后支持 Hysteria 2)                                                           | macOS, iOS                          | 客户端         |
+| [Surge](https://nssurge.com)                                               | Advanced Network Toolbox (5.8.0 后 支持 Hysteria 2)                                                                | macOS, iOS                          | 客户端         |
 
 > 我们并不直接控制第三方应用的开发。它们未必包括官方版本的最新功能和修复，并可能存在特有的 bug。如遇到任何问题，请先反馈给这些项目对应的开发者。
 
