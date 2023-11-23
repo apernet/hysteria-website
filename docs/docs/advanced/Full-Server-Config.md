@@ -290,8 +290,7 @@ You can have either `file` or `inline`, but not both.
     ```yaml
     acl:
       inline: # (1)!
-        - reject(v2ex.com)
-        - reject(*.v2ex.com)
+        - reject(suffix:v2ex.com)
         - reject(all, udp/443)
         - reject(geoip:cn)
         - reject(geosite:netflix)

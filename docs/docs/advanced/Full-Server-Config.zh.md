@@ -290,10 +290,10 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
     ```yaml
     acl:
       inline: # (1)!
-        - reject(v2ex.com)
-        - reject(*.v2ex.com)
+        - reject(suffix:v2ex.com)
         - reject(all, udp/443)
         - reject(geoip:cn)
+        - reject(geosite:netflix)
       # geoip: geoip.dat (2)
       # geosite: geosite.dat (3)
       # geoUpdateInterval: 168h (4)
