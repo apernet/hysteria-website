@@ -4,6 +4,11 @@ hide:
   - navigation
 ---
 
+## 2.2.2
+
+- 修复了上个版本引入的一个导致客户端无法自动重连的 bug
+- ACL 新增 `suffix:` 支持，用来匹配一个域名和其所有子域名 (例如 `reject(suffix:baidu.com)`)
+
 ## 2.2.1
 
 - 添加了 GeoIP 和 GeoSite 自动更新功能（ACL 下的 `geoUpdateInterval` 字段，默认为一周）
