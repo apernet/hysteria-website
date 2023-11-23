@@ -4,6 +4,11 @@ hide:
   - navigation
 ---
 
+## 2.2.2
+
+- Fixed a bug introduced in the previous version that broke the automatic reconnection of the client
+- Added `suffix:` support to ACL for matching a domain and all its subdomains (e.g. `reject(suffix:baidu.com)`)
+
 ## 2.2.1
 
 - Added GeoIP & GeoSite auto update (`geoUpdateInterval` field under ACL, default is 1 week)

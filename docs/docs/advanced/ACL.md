@@ -19,6 +19,7 @@ The `address` field can be one of the following:
 - An IPv4/IPv6 CIDR, e.g. `73.0.0.0/8` or `2001:db8::/32`
 - A domain name, e.g. `example.com` (does not include subdomains)
 - A domain name with wildcard, e.g. `*.example.com` or `*.google.*`
+- A domain suffix, e.g. `suffix:example.com` (matches `example.com` and all its subdomains)
 - GeoIP country code, e.g. `geoip:cn` or `geoip:us`
 - GeoSite category, e.g. `geosite:netflix` or `geosite:google` (supports attributes, e.g. `geosite:google@cn`)
 - `all` - match all addresses. Usually placed at the end as the default rule for everything else.
@@ -81,16 +82,13 @@ outbounds:
 
 ```python
 # Use the v6_only outbound for Google
-v6_only(google.com)
-v6_only(*.google.com)
+v6_only(suffix:google.com)
 
 # Use the v4_only outbound for Twitter
-v4_only(twitter.com)
-v4_only(*.twitter.com)
+v4_only(suffix:twitter.com)
 
 # Use the some_proxy outbound for ipinfo.io
-some_proxy(ipinfo.io)
-some_proxy(*.ipinfo.io)
+some_proxy(suffix:ipinfo.io)
 
 # Non-English IDN domains are also supported
 v6_only(战狼*.中国)

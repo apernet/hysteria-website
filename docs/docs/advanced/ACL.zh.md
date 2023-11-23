@@ -19,6 +19,7 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
 - IPv4/IPv6 CIDR，例如 `73.0.0.0/8` 或 `2001:db8::/32`
 - 域名，例如 `example.com` （不包括子域名）
 - 通配域名，例如 `*.example.com` 或 `*.google.*`
+- 域名后缀，例如 `suffix:example.com` （匹配 `example.com` 及其所有子域名）
 - GeoIP 国家代码，例如 `geoip:cn` 或 `geoip:us`
 - GeoSite 分类，例如 `geosite:netflix` 或 `geosite:google` （支持标签，例如 `geosite:google@cn`）
 - `all` - 匹配所有地址。通常放在最后作为其他所有连接的默认出站规则。
@@ -81,16 +82,13 @@ outbounds:
 
 ```python
 # 为 Google 使用 v6_only 出站
-v6_only(google.com)
-v6_only(*.google.com)
+v6_only(suffix:google.com)
 
 # 为 Twitter 使用 v4_only 出站
-v4_only(twitter.com)
-v4_only(*.twitter.com)
+v4_only(suffix:twitter.com)
 
 # 为 ipinfo.io 使用 some_proxy 出站
 some_proxy(ipinfo.io)
-some_proxy(*.ipinfo.io)
 
 # 也支持非英语 IDN 域名
 v6_only(战狼*.中国)
