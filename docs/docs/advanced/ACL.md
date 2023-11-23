@@ -88,7 +88,7 @@ v6_only(suffix:google.com)
 v4_only(suffix:twitter.com)
 
 # Use the some_proxy outbound for ipinfo.io
-some_proxy(suffix:ipinfo.io)
+some_proxy(ipinfo.io)
 
 # Non-English IDN domains are also supported
 v6_only(战狼*.中国)
