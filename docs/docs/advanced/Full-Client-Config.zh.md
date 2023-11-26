@@ -230,7 +230,7 @@ TPROXY（透明代理）是一个仅限 Linux 的特性，允许透明代理 TCP
 
 ```yaml
 tcpTProxy:
-  listen: 127.0.0.1:2500 # (1)!
+  listen: :2500 # (1)!
 ```
 
 1. 监听地址。
@@ -241,7 +241,7 @@ TPROXY（透明代理）是一个仅限 Linux 的特性，允许透明代理 UDP
 
 ```yaml
 udpTProxy:
-  listen: 127.0.0.1:2500 # (1)!
+  listen: :2500 # (1)!
   timeout: 20s # (2)!
 ```
 
@@ -254,7 +254,7 @@ REDIRECT 本质上是一种特殊的 DNAT，目标地址是本机。这种方法
 
 ```yaml
 tcpRedirect:
-  listen: 127.0.0.1:3500
+  listen: :3500
 ```
 
 示例：

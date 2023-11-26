@@ -230,7 +230,7 @@ TPROXY (transparent proxy) is a Linux-specific feature that allows you to transp
 
 ```yaml
 tcpTProxy:
-  listen: 127.0.0.1:2500 # (1)!
+  listen: :2500 # (1)!
 ```
 
 1. The address to listen on.
@@ -241,7 +241,7 @@ TPROXY (transparent proxy) is a Linux-specific feature that allows you to transp
 
 ```yaml
 udpTProxy:
-  listen: 127.0.0.1:2500 # (1)!
+  listen: :2500 # (1)!
   timeout: 20s # (2)!
 ```
 
@@ -254,7 +254,7 @@ REDIRECT is essentially a special case of DNAT where the destination address is 
 
 ```yaml
 tcpRedirect:
-  listen: 127.0.0.1:3500
+  listen: :3500
 ```
 
 Example:
