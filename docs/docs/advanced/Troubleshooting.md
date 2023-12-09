@@ -7,7 +7,7 @@ Below is a list of common issues you may encounter while setting up the client o
 This error occurs when the client is unable to connect to the server. The most common causes are:
 
 - The server is not running
-- The port is blocked by a firewall
+- The port is blocked by a firewall (apart from the system, many providers have separate firewall settings in the panel)
 - The server is running at a different address or port.
 - The server is listening on a network that's inaccessible to the client.
 - The domain name is not resolving to the correct IP address.
