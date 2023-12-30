@@ -36,4 +36,5 @@ We are willing to list anyone who has donated more than $10 as an official spons
 ## Hall of Fame
 
 - [狗狗加速](https://狗狗加速.com) - high-performance overseas VPN, free trial, unlock streaming services/ChatGPT, the world's first to support Hysteria, currently fully supporting Hysteria 2
+- **Asahi** (Individual Donor)
 - **Will you be next?**
