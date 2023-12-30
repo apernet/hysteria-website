@@ -4,6 +4,12 @@ hide:
   - navigation
 ---
 
+## 2.2.3
+
+- Fixed a bug where using an IPv4/IPv6 specific listening address like `0.0.0.0:443` or `[::]:443` would still result in listening on both IPv4/IPv6
+- Delay server address DNS resolution until connection attempt when lazy mode is enabled
+- Local TLS certificates are now read every time a TLS handshake takes place, allowing users to update files without restarting the server
+
 ## 2.2.2
 
 - Fixed a bug introduced in the previous version that broke the automatic reconnection of the client
