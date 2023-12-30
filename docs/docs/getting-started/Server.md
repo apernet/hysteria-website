@@ -38,7 +38,7 @@ Depending on whether you want to use ACME to automatically obtain a TLS certific
         rewriteHost: true
     ```
 
-    1. The server listens on port 443 by default. Uncomment this line if you want to change the port.
+    1. The server listens on port 443 by default. Uncomment this line if you want to change the port. If only a port number is specified (without an address), as in the example, it will listen on both IPv4 and IPv6 by default. To listen on IPv4 only, you can use `0.0.0.0:443`. To listen on IPv6 only, you can use `[::]:443`.
     2. Replace with your domain name
     3. Replace with your email address
     4. Replace with a strong password of your choice
@@ -65,7 +65,7 @@ Depending on whether you want to use ACME to automatically obtain a TLS certific
         rewriteHost: true
     ```
 
-    1. The server listens on port 443 by default. Uncomment this line if you want to change the port.
+    1. The server listens on port 443 by default. Uncomment this line if you want to change the port. If only a port number is specified (without an address), as in the example, it will listen on both IPv4 and IPv6 by default. To listen on IPv4 only, you can use `0.0.0.0:443`. To listen on IPv6 only, you can use `[::]:443`.
     2. Replace with the path to your certificate file
     3. Replace with the path to your key file
     4. Replace with a strong password of your choice

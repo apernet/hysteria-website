@@ -78,7 +78,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 Install or update to a specific version (skips version check):
 
 ```bash
-bash <(curl -fsSL https://get.hy2.sh/) --version v2.2.2
+bash <(curl -fsSL https://get.hy2.sh/) --version v2.2.3
 ```
 
 Remove Hysteria:

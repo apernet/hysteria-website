@@ -25,7 +25,7 @@ The `listen` field is the server's listen address. If omitted, the server will l
 listen: :443 # (1)!
 ```
 
-1. When the IP address is omitted, the server will listen on all interfaces.
+1. When the IP address is omitted, the server will listen on all interfaces, both IPv4 and IPv6. To listen on IPv4 only, you can use `0.0.0.0:443`. To listen on IPv6 only, you can use `[::]:443`.
 
 ## TLS
 
@@ -34,10 +34,12 @@ You can have either `tls` or `acme`, but not both.
 === "TLS"
 
     ```yaml
-    tls:
+    tls: # (1)!
       cert: some.crt
       key: some.key
     ```
+
+    1. Certificates are read on every TLS handshake. This means you can update the files without restarting the server.
 
 === "ACME"
 
