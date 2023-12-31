@@ -38,4 +38,5 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 - [Aperture Internet Laboratory](https://apernet.io/) - 致力于开发自由软件、研究、构建促进和加强信息自由交换的基础设施
 - [狗狗加速](https://狗狗加速.com) - 高性能海外 VPN 机场，免费试用，解锁流媒体/ChatGPT，全球首家支持 Hysteria 协议，目前全面支持 Hysteria 2
 - **Asahi** (个人捐赠)
+- [莫蒂默贝克特](https://space.bilibili.com/375736195) (个人捐赠)
 - **虚位以待**

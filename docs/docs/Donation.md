@@ -38,4 +38,5 @@ We are willing to list anyone who has donated more than $10 as an official spons
 - [Aperture Internet Laboratory](https://apernet.io/) - dedicated to developing free software, conducting research, and building infrastructure to facilitate and enhance the free exchange of information and communication
 - [狗狗加速](https://狗狗加速.com) - high-performance overseas VPN, free trial, unlock streaming services/ChatGPT, the world's first to support Hysteria, currently fully supporting Hysteria 2
 - **Asahi** (Individual Donor)
+- [modimobeikete](https://space.bilibili.com/375736195) (Individual Donor)
 - **Will you be next?**
