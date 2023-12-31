@@ -19,7 +19,7 @@ example:
 
 ## Listen
 
-The `listen` field is the server's listen address. If omitted, the server will listen on `:443' since that's the default HTTP/3 port.
+The `listen` field is the server's listen address. If omitted, the server will listen on `:443` since that's the default HTTP/3 port.
 
 ```yaml
 listen: :443 # (1)!
