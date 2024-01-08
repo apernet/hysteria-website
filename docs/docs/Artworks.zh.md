@@ -10,3 +10,5 @@ hide:
 ![Ayaha Hideri](../assets/artworks/hc_name.png)
 
 ![Ayaha Hideri Q](../assets/artworks/hc_q.png)
+
+![Ayaha Hideri Dark](../assets/artworks/ebiblue.png)
