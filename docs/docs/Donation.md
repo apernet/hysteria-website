@@ -39,4 +39,5 @@ We are willing to list anyone who has donated more than $10 as an official spons
 - [狗狗加速](https://狗狗加速.com) - high-performance overseas VPN, free trial, unlock streaming services/ChatGPT, the world's first to support Hysteria, currently fully supporting Hysteria 2
 - **Asahi** (Individual Donor)
 - [modimobeikete](https://space.bilibili.com/375736195) (Individual Donor)
+- [洋葱游戏盾](https://youxidun.vip/) - Security products based on modern anti-censorship protocols, inspired by Hysteria 2's anti-censorship designs and optimizations for unstable networks
 - **Will you be next?**
