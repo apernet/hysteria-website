@@ -40,4 +40,5 @@ We are willing to list anyone who has donated more than $10 as an official spons
 - **Asahi** (Individual Donor)
 - [modimobeikete](https://space.bilibili.com/375736195) (Individual Donor)
 - [洋葱游戏盾](https://youxidun.vip/) - Security products based on modern anti-censorship protocols, inspired by Hysteria 2's anti-censorship designs and optimizations for unstable networks
+- [PlayerCatboy](https://github.com/Catboy96) (Individual Donor)
 - **Will you be next?**

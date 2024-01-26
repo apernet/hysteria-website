@@ -40,4 +40,5 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 - **Asahi** (个人捐赠)
 - [莫蒂默贝克特](https://space.bilibili.com/375736195) (个人捐赠)
 - [洋葱游戏盾](https://youxidun.vip/) - 基于多种现代化防审查协议的安全产品，参考了 Hysteria 2 在防审查和不稳定网络中传输优化的设计
+- [PlayerCatboy](https://github.com/Catboy96) (个人捐赠)
 - **虚位以待**
