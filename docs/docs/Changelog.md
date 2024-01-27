@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.2.4
+
+> This release contains important fixes and we strongly encourage everyone to upgrade.
+
+- **[Important]** Fixed a bug where a connection timeout would block other connections from being established
+- Updated quic-go to v0.41.0
+
 ## 2.2.3
 
 - Fixed a bug where using an IPv4/IPv6 specific listening address like `0.0.0.0:443` or `[::]:443` would still result in listening on both IPv4/IPv6
