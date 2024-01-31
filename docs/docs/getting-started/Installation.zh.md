@@ -48,6 +48,8 @@
 
 === ":fontawesome-brands-android: Android"
 
+    > **注意：** 这里的文件并不是可以直接安装的 Android app (APK) 而是 NDK 编译的 Linux ELF 可执行文件。如果你不知道如何使用，请使用 [第三方应用](3rd-party-apps.md)。
+
     | 文件                                                                                          | 架构   | 注意 |
     | --------------------------------------------------------------------------------------------- | ------ | ---- |
     | [hysteria-android-amd64](https://download.hysteria.network/app/latest/hysteria-android-amd64) | x86-64 |      |
