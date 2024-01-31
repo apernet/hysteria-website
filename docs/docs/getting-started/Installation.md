@@ -48,6 +48,8 @@ Like any proxy software, Hysteria consists of a server and a client. Our precomp
 
 === ":fontawesome-brands-android: Android"
 
+    > **Note:** These files are not Android app (APK) but Linux ELF executables built with NDK. If you don't know how to use them, please use [3rd-party apps](3rd-party-apps.md) instead.
+
     | File                                                                                                    | Arch   | Note         |
     | ------------------------------------------------------------------------------------------------------- | ------ | ------------ |
     | [hysteria-android-amd64](https://download.hysteria.network/app/latest/hysteria-android-amd64)           | x86-64 |              |
