@@ -34,11 +34,20 @@ transport:
 
 Hysteria 服务端并不能同时监听多个端口，因此不能在服务器端使用上面的格式作为监听地址。**建议配合 iptables 的 DNAT 将端口转发到服务器的监听端口。**
 
+### iptables
 ```bash
 # IPv4
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
 # IPv6
 ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+```
+
+### nftables
+```zsh
+# IPv4
+nft add ip nat pretouing udp dport {20000-50000} redirect to :443
+# IPv6
+nft add ip6 nat pretouing udp dport {20000-50000} redirect to :443
 ```
 
 在这个示例，服务器监听 443 端口，但客户端可以通过 20000-50000 范围内的任何端口连接。

@@ -34,11 +34,20 @@ Assuming the server is reachable on all the ports you specified, the hopping pro
 
 The Hysteria server does not have built-in support for listening on multiple ports, so you cannot use the above format as a listening address on the server side. **We recommend using iptables DNAT to forward the ports to the server's listening port.**
 
+### iptables
 ```bash
 # IPv4
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
 # IPv6
 ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+```
+
+### nftables
+```zsh
+# IPv4
+nft add ip nat pretouing udp dport {20000-50000} redirect to :443
+# IPv6
+nft add ip6 nat pretouing udp dport {20000-50000} redirect to :443
 ```
 
 In this example, the server listens on port 443, but the client can connect to any port in the range 20000-50000.
