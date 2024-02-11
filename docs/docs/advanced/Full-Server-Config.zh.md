@@ -52,8 +52,8 @@ listen: :443 # (1)!
       ca: zerossl # (1)!
       disableHTTP: false # (2)!
       disableTLSALPN: false # (3)!
-      altHTTPPort: 8080 # (4)!
-      altTLSALPNPort: 4443 # (5)!
+      altHTTPPort: 80 # (4)!
+      altTLSALPNPort: 443 # (5)!
       dir: my_acme_dir # (6)!
 
     ```
@@ -61,8 +61,10 @@ listen: :443 # (1)!
     1. 要使用的 CA。可以是 `letsencrypt` 或 `zerossl`。
     2. 禁用 HTTP 挑战。
     3. 禁用 TLS-ALPN 挑战。
-    4. 备用的 HTTP 挑战端口。
-    5. 备用的 TLS-ALPN 挑战端口。
+    4. 用于 HTTP 挑战的监听端口。
+       （注意： 改为非 80 需要另行配置端口转发或者 HTTP 反向代理，否则证书会签署失败！）
+    5. 用于 TLS-ALPN 挑战的监听端口。
+       （注意： 改为非 443 需要另行配置端口转发或者 SNI Proxy，否则证书会签署失败！）
     6. 存储 ACME 账户密钥和证书的目录。
 
 ## 混淆

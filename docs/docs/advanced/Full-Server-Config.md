@@ -52,8 +52,8 @@ You can have either `tls` or `acme`, but not both.
       ca: zerossl # (1)!
       disableHTTP: false # (2)!
       disableTLSALPN: false # (3)!
-      altHTTPPort: 8080 # (4)!
-      altTLSALPNPort: 4443 # (5)!
+      altHTTPPort: 80 # (4)!
+      altTLSALPNPort: 443 # (5)!
       dir: my_acme_dir # (6)!
 
     ```
