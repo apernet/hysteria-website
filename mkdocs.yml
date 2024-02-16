@@ -41,7 +41,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/apernet/hysteria
 
-copyright: Copyright &copy; 2020 - 2023 The Hysteria Project
+copyright: Copyright &copy; 2020 - 2024 The Hysteria Project
 
 extra_css:
   - stylesheets/extra.css
