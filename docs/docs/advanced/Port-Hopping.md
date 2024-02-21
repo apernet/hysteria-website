@@ -32,13 +32,30 @@ Assuming the server is reachable on all the ports you specified, the hopping pro
 
 ## Server
 
-The Hysteria server does not have built-in support for listening on multiple ports, so you cannot use the above format as a listening address on the server side. **We recommend using iptables DNAT to forward the ports to the server's listening port.**
+The Hysteria server does not have built-in support for listening on multiple ports, so you cannot use the above format as a listening address on the server side. **We recommend using iptables or nftables DNAT to forward the ports to the server's listening port.**
 
-```bash
-# IPv4
-iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
-# IPv6
-ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
-```
+=== "iptables"
+
+    ```bash
+    # IPv4
+    iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+    # IPv6
+    ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+    ```
+
+=== "nftables"
+
+    ```nginx
+    define INGRESS_INTERFACE="eth0"
+    define PORT_RANGE=20000-50000
+    define HYSTERIA_SERVER_PORT=443
+
+    table inet hysteria_porthopping {
+      chain prerouting {
+        type nat hook prerouting priority dstnat; policy accept;
+        iifname $INGRESS_INTERFACE udp dport $PORT_RANGE counter dnat to :$HYSTERIA_SERVER_PORT
+      }
+    }
+    ```
 
 In this example, the server listens on port 443, but the client can connect to any port in the range 20000-50000.

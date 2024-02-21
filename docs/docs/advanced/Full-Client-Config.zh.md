@@ -259,23 +259,55 @@ tcpRedirect:
 
 示例：
 
-```bash
-iptables -t nat -N HYSTERIA
-iptables -t nat -A HYSTERIA -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A HYSTERIA -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A HYSTERIA -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A HYSTERIA -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A HYSTERIA -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A HYSTERIA -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A HYSTERIA -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A HYSTERIA -d 240.0.0.0/4 -j RETURN
-iptables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
-iptables -t nat -A OUTPUT -p tcp -j HYSTERIA
-iptables -t nat -A PREROUTING -p tcp -j HYSTERIA
+=== "iptables"
 
-ip6tables -t nat -N HYSTERIA
-ip6tables -t nat -A HYSTERIA ! -d 2000::/3 -j RETURN
-ip6tables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
-ip6tables -t nat -A OUTPUT -p tcp -j HYSTERIA
-ip6tables -t nat -A PREROUTING -p tcp -j HYSTERIA
-```
+    ```bash
+    iptables -t nat -N HYSTERIA
+    iptables -t nat -A HYSTERIA -d 0.0.0.0/8 -j RETURN
+    iptables -t nat -A HYSTERIA -d 10.0.0.0/8 -j RETURN
+    iptables -t nat -A HYSTERIA -d 127.0.0.0/8 -j RETURN
+    iptables -t nat -A HYSTERIA -d 169.254.0.0/16 -j RETURN
+    iptables -t nat -A HYSTERIA -d 172.16.0.0/12 -j RETURN
+    iptables -t nat -A HYSTERIA -d 192.168.0.0/16 -j RETURN
+    iptables -t nat -A HYSTERIA -d 224.0.0.0/4 -j RETURN
+    iptables -t nat -A HYSTERIA -d 240.0.0.0/4 -j RETURN
+    iptables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+    iptables -t nat -A OUTPUT -p tcp -j HYSTERIA
+    iptables -t nat -A PREROUTING -p tcp -j HYSTERIA
+
+    ip6tables -t nat -N HYSTERIA
+    ip6tables -t nat -A HYSTERIA ! -d 2000::/3 -j RETURN
+    ip6tables -t nat -A HYSTERIA -p tcp -j REDIRECT --to-ports 3500
+    ip6tables -t nat -A OUTPUT -p tcp -j HYSTERIA
+    ip6tables -t nat -A PREROUTING -p tcp -j HYSTERIA
+    ```
+
+=== "nftables"
+
+    ```nginx
+    define HYSTERIA_REDIRECT_PORT=3500
+    define BYPASS_IPV4={
+        0.0.0.0/8, 10.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16,
+        172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/3
+    }
+    define BYPASS_IPV6={ ::/128 }
+
+    table inet hysteria_redirect {
+      chain prerouting {
+        type nat hook prerouting priority filter; policy accept;
+        meta l4proto tcp counter jump hysteria
+      }
+
+      chain output {
+        type nat hook output priority filter; policy accept;
+        meta l4proto tcp counter jump hysteria
+      }
+
+      chain hysteria {
+        ip daddr $BYPASS_IPV4 counter return
+        ip6 daddr $BYPASS_IPV6 counter return
+        ip6 daddr != 2000::/3 counter return
+        meta l4proto tcp counter redirect to :$HYSTERIA_REDIRECT_PORT
+      }
+    }
+    ```

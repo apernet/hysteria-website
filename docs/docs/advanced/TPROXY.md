@@ -71,19 +71,15 @@ This step is **not optional**. Do not skip this step; otherwise TProxy will not 
 
 > In the following examples, we will use `0x1` as the fwmark for TProxy policy routing rules and `100` as the Table ID for the TProxy routing table. Feel free to use different values if you wish.
 
-=== "IPv4"
+```bash
+# IPv4
+ip rule add fwmark 0x1 lookup 100
+ip route add local default dev lo table 100
 
-    ```bash
-    ip rule add fwmark 0x1 lookup 100
-    ip route add local default dev lo table 100
-    ```
-
-=== "IPv6"
-
-    ```bash
-    ip -6 rule add fwmark 0x1 lookup 100
-    ip -6 route add local default dev lo table 100
-    ```
+# IPv6
+ip -6 rule add fwmark 0x1 lookup 100
+ip -6 route add local default dev lo table 100
+```
 
 ## Configuring iptables
 

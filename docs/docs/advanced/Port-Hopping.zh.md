@@ -32,13 +32,30 @@ transport:
 
 ## 服务器
 
-Hysteria 服务端并不能同时监听多个端口，因此不能在服务器端使用上面的格式作为监听地址。**建议配合 iptables 的 DNAT 将端口转发到服务器的监听端口。**
+Hysteria 服务端并不能同时监听多个端口，因此不能在服务器端使用上面的格式作为监听地址。**建议配合 iptables 或 nftables 的 DNAT 将端口转发到服务器的监听端口。**
 
-```bash
-# IPv4
-iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
-# IPv6
-ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
-```
+=== "iptables"
 
-在这个示例，服务器监听 443 端口，但客户端可以通过 20000-50000 范围内的任何端口连接。
+    ```bash
+    # IPv4
+    iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+    # IPv6
+    ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j DNAT --to-destination :443
+    ```
+
+=== "nftables"
+
+    ```nginx
+    define INGRESS_INTERFACE="eth0"
+    define PORT_RANGE=20000-50000
+    define HYSTERIA_SERVER_PORT=443
+
+    table inet hysteria_porthopping {
+      chain prerouting {
+        type nat hook prerouting priority dstnat; policy accept;
+        iifname $INGRESS_INTERFACE udp dport $PORT_RANGE counter dnat to :$HYSTERIA_SERVER_PORT
+      }
+    }
+    ```
+
+在这个示例中，服务器监听 443 端口，但客户端可以通过 20000-50000 范围内的任何端口连接。
