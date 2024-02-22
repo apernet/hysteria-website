@@ -6,7 +6,7 @@ TPROXY is a transparent proxy framework available only on Linux, supporting both
 
 > Skip this section if you don't need to proxy traffic from the device itself that is running the Hysteria client.
 
-In scenarios where the device's own traffic needs to be proxied, to avoid traffic loops with Hysteria, it's essential to separate the Hysteria client's own traffic from the traffic that's being proxied. The best way to achieve this is to run the Hysteria client as a dedicated user and then perform user-based matching in iptables.
+In scenarios where the device's own traffic needs to be proxied, to avoid traffic loops with Hysteria, it's essential to separate the Hysteria client's own traffic from the traffic that's being proxied. The best way to achieve this is to run the Hysteria client as a dedicated user and then perform user-based matching in iptables or nftables.
 
 > We also recommend running Hysteria as a dedicated user when using one-click installation scripts and Linux distribution packages, and to configure it according to this section.
 
@@ -81,11 +81,11 @@ ip -6 rule add fwmark 0x1 lookup 100
 ip -6 route add local default dev lo table 100
 ```
 
-## Configuring iptables
+## Configuring iptables or nftables
 
 > You will need to run these commands every time the system boots, unless you make them persistent.
 
-=== "IPv4"
+=== "iptables (IPv4)"
 
     ```bash
     iptables -t mangle -N HYSTERIA
@@ -147,7 +147,7 @@ ip -6 route add local default dev lo table 100
 
     4. If you do not need to proxy UDP traffic, you can remove all rules that include `-p udp`.
 
-=== "IPv6"
+=== "iptables (IPv6)"
 
     ```bash
     ip6tables -t mangle -N HYSTERIA
@@ -194,6 +194,72 @@ ip -6 route add local default dev lo table 100
     3. When proxying local traffic (enabling OUTPUT chain rules), additional rules are needed if you require access to this router via a public IPv6 address assigned by your ISP.
 
     4. If you do not need to proxy UDP traffic, you can remove all rules that include `-p udp`.
+
+=== "nftables"
+
+    ```nginx
+    define TPROXY_MARK=0x1
+    define HYSTERIA_USER=hysteria
+    define HYSTERIA_TPROXY_PORT=2500
+
+    # Protocols to proxy (4)
+    define TPROXY_L4PROTO={ tcp, udp }
+
+    # Bypass addresses (3)
+    define BYPASS_IPV4={
+        0.0.0.0/8, 10.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16,
+        172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/3
+    }
+    define BYPASS_IPV6={ ::/128 }
+
+    table inet hysteria_tproxy {
+      chain prerouting {
+        type filter hook prerouting priority mangle; policy accept;
+
+        # Bypass traffic already handled by TProxy (1)
+        meta l4proto $TPROXY_L4PROTO socket transparent 1 counter mark set $TPROXY_MARK
+        socket transparent 0 counter return
+
+        # Bypass private and special IP addresses
+        ip daddr $BYPASS_IPV4 counter return
+        ip6 daddr $BYPASS_IPV6 counter return
+
+        # Only proxy public IPv6 addresses
+        ip6 daddr != 2000::/3 counter return
+
+        # Redirect traffic to the TProxy port
+        meta l4proto $TPROXY_L4PROTO counter tproxy to :$HYSTERIA_TPROXY_PORT meta mark set $TPROXY_MARK accept
+      }
+    }
+
+    # Proxy local traffic (2)
+    table inet hysteria_tproxy_local {
+      chain output {
+        type route hook output priority mangle; policy accept;
+
+        # Match user to prevent loops
+        meta skuid $HYSTERIA_USER counter return
+
+        # Bypass private and special IP addresses
+        ip daddr $BYPASS_IPV4 counter return
+        ip6 daddr $BYPASS_IPV6 counter return
+
+        # Only proxy public IPv6 addresses
+        ip6 daddr != 2000::/3 counter return
+
+        # Redirect OUTPUT traffic to PREROUTING
+        meta l4proto $TPROXY_L4PROTO counter meta mark set $TPROXY_MARK
+      }
+    }
+    ```
+
+    1. If the interface for the default route has a public IP address, omitting these rules will result in incorrect proxy behavior for local traffic.
+
+    2. The following table is the **additional** table for proxying local traffic. The table before this is still mandatory even if you only need to proxy local traffic. If you only need to proxy traffic within the network (but not the local device itself), you can skip this one.
+
+    3. When proxying local traffic (having OUTPUT chain rules), if you still need to access this router via the public IP address assigned by your ISP, please add the IP address to the bypass list.
+
+    4. If you don't want to proxy UDP traffic, you can change the line below to `define TPROXY_L4PROTO=tcp`.
 
 ## References
 
