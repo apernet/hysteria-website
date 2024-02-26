@@ -93,6 +93,7 @@ plugins:
             - 更新日志: docs/Changelog.md
             - GitHub: https://github.com/apernet/hysteria
             - TCP Brutal: https://github.com/apernet/tcp-brutal
+            - OpenGFW: https://github.com/apernet/OpenGFW
             - 艺术创作: docs/Artworks.md
             - 捐赠: docs/Donation.md
 
@@ -145,6 +146,7 @@ nav:
   - Changelog: docs/Changelog.md
   - GitHub: https://github.com/apernet/hysteria
   - TCP Brutal: https://github.com/apernet/tcp-brutal
+  - OpenGFW: https://github.com/apernet/OpenGFW
   - Artworks: docs/Artworks.md
   - Donation: docs/Donation.md
 
