@@ -4,6 +4,13 @@ hide:
   - navigation
 ---
 
+## 2.3.0
+
+- Added a built-in speed test subcommand for client & its server-side support
+- Automatically try to re-download GeoIP/GeoSite DB files if they fail to load
+- Better SOCKS5 outbound error messages
+- Fixed a bug where the dual stack listen address was actually only listening for IPv6 on FreeBSD
+
 ## 2.2.4
 
 > This release contains important fixes and we strongly encourage everyone to upgrade.

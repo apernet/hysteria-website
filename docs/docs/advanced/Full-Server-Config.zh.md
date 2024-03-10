@@ -151,6 +151,14 @@ ignoreClientBandwidth: false
 
 **目前，服务端的带宽限制限制的只是 Brutal 最大速率。因此在使用 BBR 的情况下并不会生效。**
 
+## 速度测试
+
+```yaml
+speedTest: false
+```
+
+`speedTest` 启用后，服务端将允许客户端进行下载和上传速度测试。详细信息请参考 [速度测试文档](Speed-Test.md)。
+
 ## UDP
 
 ```yaml
