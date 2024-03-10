@@ -149,6 +149,14 @@ The special case, as mentioned above, is when the server has `ignoreClientBandwi
 
 **The server's bandwidth limit only applies to Brutal at the moment. It has no effect on BBR.**
 
+## Speed Test
+
+```yaml
+speedTest: false
+```
+
+`speedTest` enables the built-in speed test server. When enabled, clients can test their download and upload speeds with the server. For more information, see the [Speed Test documentation](Speed-Test.md).
+
 ## UDP
 
 ```yaml

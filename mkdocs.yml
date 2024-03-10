@@ -78,6 +78,7 @@ plugins:
                     - 透明代理: docs/advanced/TPROXY.md
                     - 端口跳跃: docs/advanced/Port-Hopping.md
                     - 环境变量: docs/advanced/Environment-Variables.md
+                    - 速度测试: docs/advanced/Speed-Test.md
                     - 性能优化: docs/advanced/Performance.md
                     - 故障排除: docs/advanced/Troubleshooting.md
                 - 杂项:
@@ -132,6 +133,7 @@ nav:
           - TProxy: docs/advanced/TPROXY.md
           - Port Hopping: docs/advanced/Port-Hopping.md
           - Environment Variables: docs/advanced/Environment-Variables.md
+          - Speed Test: docs/advanced/Speed-Test.md
           - Performance: docs/advanced/Performance.md
           - Troubleshooting: docs/advanced/Troubleshooting.md
       - Misc:
