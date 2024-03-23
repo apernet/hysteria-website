@@ -35,6 +35,7 @@ The `address` field can be one of the following:
 - `udp` or `udp/*` - match all UDP ports
 - `tcp/80` - match TCP port 80
 - `udp/53` - match UDP port 53
+- `udp/20000-30000` - match UDP ports 20000 to 30000
 - `*/443` - match TCP and UDP port 443
 - `*`, `*/*` or omitted - match both protocols and all ports
 
