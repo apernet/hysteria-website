@@ -314,11 +314,11 @@ tcpRedirect:
 
 ### TUN
 
-TUN 是一种多平台可用的透明代理方案。它在系统中创建虚拟网络接口，并依赖系统的路由功能来拦截与重定向流量。
+TUN 是一个跨平台的透明代理解决方案，在系统中创建虚拟网卡，利用系统路由功能来捕获及重定向流量。目前兼容 Windows、Linux 和 macOS 平台。
 
-与常见的第三层 VPN （如 WireGuard 或 OpenVPN）不同，Hysteria 的 TUN 模式仅处理 TCP 和 UDP 流量（这意味着你无法通过 Hysteria 的 TUN 接口执行 ping 操作），且会完全接管 TCP 协议栈以加速 TCP 连接。
+不同于常规的三层 VPN 技术（如 WireGuard 和 OpenVPN），Hysteria 的 TUN 模式只能处理 TCP 和 UDP 流量，不支持 ICMP 等其它协议（这意味着不支持 ping 等操作）。其会完全接管 TCP 协议栈以加速 TCP 连接。
 
-相较于 Hysteria 1 中的 TUN 实现，Hysteria 2 的 TUN 模式采用了 [sing-tun](https://github.com/SagerNet/sing-tun) 的 "system" 栈。因此必须由 Hysteria 在接口上配置一个 /30 的 IPv4 地址和一个 /126（对于 IPv6）地址才能正常使用，且 Hysteria 会自动配置好接口、地址和路由规则。
+与 Hysteria 1 的 TUN 实现相比，Hysteria 2 的 TUN 基于 [sing-tun](https://github.com/SagerNet/sing-tun) 的 "system" 栈，需要在虚拟网卡上配置一个 /30 的 IPv4 地址和一个 /126 的 IPv6 地址。Hysteria 会自动完成网卡、地址和路由规则的配置。
 
 ```yaml
 tun:
@@ -342,10 +342,10 @@ tun:
 5. 可选。路由规则。省略或者置空所有子项将禁用自动添加路由。<br>绝大部分情况下只需配置 `ipv4Exclude` 或者 `ipv6Exclude` 即可。
 6. 可选。要代理的 IPv4 前缀。若配置了任何其它子项则默认 `0.0.0.0/0`。
 7. 可选。要代理的 IPv6 前缀。由于 YAML 的限制必须加上引号。若配置了任何其它子项则默认 `::/0`。
-8. 可选。要排除的 IPv4 前缀。<br>可填入 Hysteria 服务端的地址来避免形成环路。<br>如果你希望完全禁用 IPv4 代理，也可在此项中添加 `0.0.0.0/0`。
-9. 可选。要排除的 IPv6 前缀。由于 YAML 的限制必须加上引号。<br>可填入 Hysteria 服务端的地址来避免形成环路。<br>如果你希望完全禁用 IPv6 代理，也可在此项中添加 `"::/0"`。
+8. 可选。要排除的 IPv4 前缀。<br>**可填入 Hysteria 服务端的地址来避免形成环路。**<br>如果你希望完全禁用 IPv4 代理，也可在此项中添加 `0.0.0.0/0`。
+9. 可选。要排除的 IPv6 前缀。由于 YAML 的限制必须加上引号。<br>**可填入 Hysteria 服务端的地址来避免形成环路。**<br>如果你希望完全禁用 IPv6 代理，也可在此项中添加 `"::/0"`。
 
-注意：有时需要禁用 `rp_filter` 才能让一个网卡接收来自其他网卡的流量。
+注意：Linux 上有时需要禁用 `rp_filter` 才能让一个网卡接收来自其他网卡的流量。
 
 ```bash
 sysctl net.ipv4.conf.default.rp_filter=2
@@ -354,9 +354,9 @@ sysctl net.ipv4.conf.all.rp_filter=2
 
 已知的兼容性问题：
 
-| 操作系统 | 兼容性问题 |
-|----------|------------|
-| macOS    | TUN 接口的名称必须是 utun+数字， 例如 `utun123`。 |
-| Windows Server 2022 | 需要禁用防火墙才能正常使用。 |
-| CentOS 7 | 需要禁用防火墙才能正常使用。<br>对于 4.17 之前的内核，自动添加的路由规则将无法正常工作（[原因](https://github.com/torvalds/linux/commit/bfff4862653bb96001ab57c1edd6d03f48e5f035)）， 可将内核升级到 4.17 或更高版本，或者在 Hysteria 客户端启动后执行 `ip rule del from all goto 9010; ip -6 rule del from all goto 9010` 来解决此问题。 |
-| FreeBSD  | 无法使用，[不被 sing-tun 支持](https://github.com/SagerNet/sing-tun/blob/v0.2.4/tun_other.go#L10)。 |
+| 操作系统            | 问题                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| macOS               | TUN 接口的名称必须是 utun+数字， 例如 `utun123`。                                                                                                                                                                                                                                                                                         |
+| Windows Server 2022 | 需要禁用防火墙才能正常使用。                                                                                                                                                                                                                                                                                                              |
+| CentOS 7            | 需要禁用防火墙才能正常使用。<br>对于 4.17 之前的内核，自动添加的路由规则将无法正常工作（[原因](https://github.com/torvalds/linux/commit/bfff4862653bb96001ab57c1edd6d03f48e5f035)）， 可将内核升级到 4.17 或更高版本，或者在 Hysteria 客户端启动后执行 `ip rule del from all goto 9010; ip -6 rule del from all goto 9010` 来解决此问题。 |
+| FreeBSD             | 无法使用，[不被 sing-tun 支持](https://github.com/SagerNet/sing-tun/blob/v0.2.4/tun_other.go#L10)。                                                                                                                                                                                                                                       |
