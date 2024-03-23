@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.4.0
+
+- Added TUN mode to client (supports Windows, Linux & macOS)
+- ACL now supports matching port ranges (e.g. `reject(all, udp/40000-50000)`)
+- Added a `listenHost' field to the server ACME config to allow specifying the listening address for receiving validation requests
+- Updated quic-go to v0.42.0
+- Lowered the log level for proxied connection errors from error to warning
+
 ## 2.3.0
 
 - Added a built-in speed test subcommand for client & its server-side support

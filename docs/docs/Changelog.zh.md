@@ -4,6 +4,14 @@ hide:
   - navigation
 ---
 
+## 2.4.0
+
+- 客户端新增 TUN 模式，支持 Windows, Linux 和 macOS
+- ACL 端口匹配支持范围 (如 `reject(all, udp/40000-50000)`)
+- 服务端 ACME 配置新增 `listenHost` 字段，用于指定接收验证请求的监听地址
+- quic-go 更新到 v0.42.0
+- 被代理的连接的错误日志级别由 error 降低到 warning
+
 ## 2.3.0
 
 - 客户端新增速度测试子命令，以及对应的服务端支持
