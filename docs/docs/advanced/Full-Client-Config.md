@@ -311,3 +311,52 @@ Example:
       }
     }
     ```
+
+### TUN
+
+TUN mode is a cross-platform transparent proxy solution that creates a virtual network interface in the system and uses the system's routes to capture and redirect traffic. It currently works on Windows, Linux, and macOS.
+
+Unlike traditional L3 VPNs (such as WireGuard and OpenVPN), Hysteria's TUN mode can only handle TCP and UDP and does not support other protocols including ICMP (e.g. ping). It also takes control of the TCP stack to speed up TCP connections.
+
+Compared to Hysteria 1's implementation, Hysteria 2's TUN is based on [sing-tun](https://github.com/SagerNet/sing-tun)'s "system" stack, requiring a /30 IPv4 address and a /126 IPv6 address to be configured on the interface. Hysteria will automatically set up the network interface, addresses, and routes.
+
+```yaml
+tun:
+  name: "hytun" # (1)!
+  mtu: 1500 # (2)!
+  timeout: 5m # (3)!
+  address: # (4)!
+    ipv4: 100.100.100.101/30
+    ipv6: 2001::ffff:ffff:ffff:fff1/126
+  route: # (5)!
+    ipv4: [0.0.0.0/0] # (6)!
+    ipv6: ["2000::/3"] # (7)!
+    ipv4Exclude: [192.0.2.1/32] # (8)!
+    ipv6Exclude: ["2001:db8::1/128"] # (9)!
+```
+
+1. Name of the TUN interface.
+2. Optional. The maximum packet size accepted by the TUN interface. The default is 1500 bytes.
+3. Optional. UDP session timeout. The default is 5 minutes.
+4. Optional. Addresses to use on the interface. Set to any private address that does not conflict with your LAN. The defaults are as shown.
+5. Optional. Routing rules. Omitting or skipping all fields means that no routes will be added automatically. In most cases, just having `ipv4Exclude` or `ipv6Exclude` is enough.
+6. Optional. IPv4 prefix to proxy. If any other field is configured, the default is `0.0.0.0/0`.
+7. Optional. IPv6 prefix to proxy. Due to YAML limitations, quotes are required. If any other field is configured, the default is `::/0`.
+8. Optional. IPv4 prefix to exclude. Can be filled with the Hysteria server's address to avoid a loop. If you wish to completely disable IPv4 proxying, you can also add `0.0.0.0/0` here.
+9. Optional. IPv6 prefix to exclude. Due to YAML limitations, quotes are required. Can be filled with the Hysteria server's address to avoid a loop. If you wish to completely disable IPv6 proxying, you can also add `"::/0"` here.
+
+Note: On Linux, it is sometimes necessary to disable `rp_filter` to allow an interface to receive traffic from other interfaces.
+
+```bash
+sysctl net.ipv4.conf.default.rp_filter=2
+sysctl net.ipv4.conf.all.rp_filter=2
+```
+
+Known compatibility issues:
+
+| OS                  | Issue                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| macOS               | The name of the TUN interface must be utun followed by a number, for example `utun123`.                                                                                                                                                                                                                                                                                            |
+| Windows Server 2022 | Windows Firewall must be disabled for this to work.                                                                                                                                                                                                                                                                                                                                |
+| CentOS 7            | Firewall must be disabled for this to work. For kernels before 4.17, the automatically added routes will not work properly ([reason](https://github.com/torvalds/linux/commit/bfff4862653bb96001ab57c1edd6d03f48e5f035)). Upgrade the kernel to 4.17 or higher, or execute `ip rule del from all goto 9010; ip -6 rule del from all goto 9010` after starting the Hysteria client. |
+| FreeBSD             | [Not supported](https://github.com/SagerNet/sing-tun/blob/v0.2.4/tun_other.go#L10)                                                                                                                                                                                                                                                                                                 |
