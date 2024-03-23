@@ -338,8 +338,8 @@ tun:
 1. TUN 接口的名称。
 2. 可选。TUN 接口接受的单个包大小。默认 1500 字节。
 3. 可选。UDP 会话超时时间。默认 5 分钟。
-4. 可选。要在接口上使用的地址。设置成不和你的 LAN 冲突的私有地址即可。默认值如下所示。
-5. 可选。路由规则。省略或者置空所有子项会禁用路由功能。<br>绝大部分情况下只需配置 `ipv4Exclude` 或者 `ipv6Exclude` 即可。
+4. 可选。要在接口上使用的地址。设置成任意不和你的 LAN 冲突的私有地址即可。默认值如下所示。
+5. 可选。路由规则。省略或者置空所有子项将禁用自动添加路由。<br>绝大部分情况下只需配置 `ipv4Exclude` 或者 `ipv6Exclude` 即可。
 6. 可选。要代理的 IPv4 前缀。若配置了任何其它子项则默认 `0.0.0.0/0`。
 7. 可选。要代理的 IPv6 前缀。由于 YAML 的限制必须加上引号。若配置了任何其它子项则默认 `::/0`。
 8. 可选。要排除的 IPv4 前缀。<br>可填入 Hysteria 服务端的地址来避免形成环路。<br>如果你希望完全禁用 IPv4 代理，也可在此项中添加 `0.0.0.0/0`。
@@ -356,6 +356,7 @@ sysctl net.ipv4.conf.all.rp_filter=2
 
 | 操作系统 | 兼容性问题 |
 |----------|------------|
+| macOS    | TUN 接口的名称必须是 utun+数字， 例如 `utun123`。 |
 | Windows Server 2022 | 需要禁用防火墙才能正常使用。 |
 | CentOS 7 | 需要禁用防火墙才能正常使用。<br>对于 4.17 之前的内核，自动添加的路由规则将无法正常工作（[原因](https://github.com/torvalds/linux/commit/bfff4862653bb96001ab57c1edd6d03f48e5f035)）， 可将内核升级到 4.17 或更高版本，或者在 Hysteria 客户端启动后执行 `ip rule del from all goto 9010; ip -6 rule del from all goto 9010` 来解决此问题。 |
 | FreeBSD  | 无法使用，[不被 sing-tun 支持](https://github.com/SagerNet/sing-tun/blob/v0.2.4/tun_other.go#L10)。 |
