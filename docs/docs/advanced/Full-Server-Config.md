@@ -55,6 +55,7 @@ You can have either `tls` or `acme`, but not both.
       altHTTPPort: 80 # (4)!
       altTLSALPNPort: 443 # (5)!
       dir: my_acme_dir # (6)!
+      listenHost: 0.0.0.0 # (7)!
 
     ```
 
@@ -64,6 +65,7 @@ You can have either `tls` or `acme`, but not both.
     4. Alternate HTTP challenge port. (Note: If you want to use anything other than 80, you must set up port forward/HTTP reverse proxy from 80 to that port, otherwise ACME will not be able to issue the certificate.)
     5. Alternate TLS-ALPN challenge port. (Note: If you want to use anything other than 443, you must set up port forward/SNI proxy from 443 to that port, otherwise ACME will not be able to issue the certificate.)
     6. The directory to store the ACME account key and certificates.
+    7. The host address (not including the port) to listen on for the ACME challenge. If omitted, the server will listen on all interfaces.
 
 ## Obfuscation
 
