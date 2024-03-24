@@ -320,6 +320,8 @@ TUN 是一个跨平台的透明代理解决方案，在系统中创建虚拟网�
 
 与 Hysteria 1 的 TUN 实现相比，Hysteria 2 的 TUN 基于 [sing-tun](https://github.com/SagerNet/sing-tun) 的 "system" 栈，需要在虚拟网卡上配置一个 /30 的 IPv4 地址和一个 /126 的 IPv6 地址。Hysteria 会自动完成网卡、地址和路由规则的配置。
 
+> **注意：** `ipv4Exclude`/`ipv6Exclude` 对于避免形成路由环路非常重要。请见这两个字段的注释以了解更多信息。
+
 ```yaml
 tun:
   name: "hytun" # (1)!

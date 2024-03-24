@@ -320,6 +320,8 @@ Unlike traditional L3 VPNs (such as WireGuard and OpenVPN), Hysteria's TUN mode 
 
 Compared to Hysteria 1's implementation, Hysteria 2's TUN is based on [sing-tun](https://github.com/SagerNet/sing-tun)'s "system" stack, requiring a /30 IPv4 address and a /126 IPv6 address to be configured on the interface. Hysteria will automatically set up the network interface, addresses, and routes.
 
+> **NOTE:** `ipv4Exclude`/`ipv6Exclude` is important to avoid getting a routing loop. See the comments for these fields for more information.
+
 ```yaml
 tun:
   name: "hytun" # (1)!
@@ -342,8 +344,8 @@ tun:
 5. Optional. Routing rules. Omitting or skipping all fields means that no routes will be added automatically. In most cases, just having `ipv4Exclude` or `ipv6Exclude` is enough.
 6. Optional. IPv4 prefix to proxy. If any other field is configured, the default is `0.0.0.0/0`.
 7. Optional. IPv6 prefix to proxy. Due to YAML limitations, quotes are required. If any other field is configured, the default is `::/0`.
-8. Optional. IPv4 prefix to exclude. Can be filled with the Hysteria server's address to avoid a loop. If you wish to completely disable IPv4 proxying, you can also add `0.0.0.0/0` here.
-9. Optional. IPv6 prefix to exclude. Due to YAML limitations, quotes are required. Can be filled with the Hysteria server's address to avoid a loop. If you wish to completely disable IPv6 proxying, you can also add `"::/0"` here.
+8. Optional. IPv4 prefix to exclude. **Add your Hysteria server address here to avoid a routing loop.** If you want to disable IPv4 proxying completely, you can also put `0.0.0.0/0` here.
+9. Optional. IPv6 prefix to exclude. Due to YAML limitations, quotes are required. **Add your Hysteria server address here to avoid a routing loop.** If you want to disable IPv6 proxying completely, you can also put `"::/0"` here.
 
 Note: On Linux, it is sometimes necessary to disable `rp_filter` to allow an interface to receive traffic from other interfaces.
 
