@@ -316,9 +316,11 @@ ACL 是 Hysteria 服务端中一个非常强大的功能，可以用来自定义
     1. 内联 ACL 规则的列表。
     2. 可选。取消注释以启用。GeoIP 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
     3. 可选。取消注释以启用。GeoSite 数据库文件的路径。**如果省略这个字段，Hysteria 会自动下载最新的数据库到工作目录。**
-    4. 可选。GeoIP/GeoSite 数据库刷新的间隔。默认为 168 小时（1 周）。仅在 GeoIP/GeoSite 数据库是自动下载的情况下生效。
+    4. 可选。GeoIP/GeoSite 数据库刷新的间隔。默认为 168 小时（1 周）。仅在 GeoIP/GeoSite 数据库是自动下载的情况下生效。（另请参阅下方注意事项）
 
 > **注意：** Hysteria 目前使用的是源自 v2ray 的，基于 protobuf 的 GeoIP/GeoSite 数据库格式。如果没有自定义的需求，可以省略这两个字段，Hysteria 会自动 (从 <https://github.com/Loyalsoldier/v2ray-rules-dat>) 下载最新的数据库到工作目录。只有在 ACL 中有至少一条 GeoIP/GeoSite 规则时才会下载对应的数据库。
+
+> **注意：** 当前版本的 Hysteria 仅在启动时下载和载入 GeoIP/GeoSite 数据库， 你需要借助外部工具定期重启 Hysteria 服务端， 才能通过 `geoUpdateInterval` 定期更新 GeoIP/GeoSite 数据库。 我们计划在以后的版本中完善这个功能。
 
 ## 出站规则 (Outbounds)
 
