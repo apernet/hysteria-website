@@ -295,7 +295,7 @@ You can have either `file` or `inline`, but not both.
     1. The path to the ACL file.
     2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
     3. Optional. Uncomment to enable. The path to the GeoSite database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
-    4. Optional. The interval at which to refresh the GeoIP/GeoSite databases. 168 hours (1 week) by default. Only applies if the GeoIP/GeoSite databases are automatically downloaded.
+    4. Optional. The interval at which to refresh the GeoIP/GeoSite databases. 168 hours (1 week) by default. Only applies if the GeoIP/GeoSite databases are automatically downloaded. (Check the note below for more information.)
 
 === "Inline"
 
@@ -314,9 +314,11 @@ You can have either `file` or `inline`, but not both.
     1. The list of inline ACL rules.
     2. Optional. Uncomment to enable. The path to the GeoIP database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
     3. Optional. Uncomment to enable. The path to the GeoSite database file. **If this field is omitted, Hysteria will automatically download the latest database to your working directory.**
-    4. Optional. The interval at which to refresh the GeoIP/GeoSite databases. 168 hours (1 week) by default. Only applies if the GeoIP/GeoSite databases are automatically downloaded.
+    4. Optional. The interval at which to refresh the GeoIP/GeoSite databases. 168 hours (1 week) by default. Only applies if the GeoIP/GeoSite databases are automatically downloaded. (Check the note below for more information.)
 
 > **NOTE:** Hysteria currently uses the protobuf-based "dat" format for geoip/geosite data originating from v2ray. If you don't need any customization, you can omit the `geoip` or `geosite` fields and let Hysteria automatically download the latest version (from <https://github.com/Loyalsoldier/v2ray-rules-dat>) to your working directory. The files will only be downloaded and used if your ACL has at least one rule that uses this feature.
+
+> **NOTE:** Hysteria currently only downloads the GeoIP/GeoSite databases once at startup. You will need to use external tools to periodically restart the Hysteria server in order to update the databases regularly through `geoUpdateInterval`. This may change in future versions.
 
 ## Outbounds
 
