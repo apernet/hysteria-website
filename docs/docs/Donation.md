@@ -6,7 +6,7 @@ hide:
 
 Hysteria is an open source project born out of a passion to bring value to the community - especially those living behind walls of censorship. If you share our belief in the cause and are willing to provide financial support, your contribution will play an important role in sustaining and growing this project.
 
-We are willing to list anyone who has donated more than $10 as an official sponsor in the Hall of Fame below.
+**We are willing to list anyone who has donated more than $10 as an official sponsor in the Hall of Fame below.** After donating, send an email to d400os4or@mozmail.com with your name and optionally a link and description you would like to display.
 
 === ":fontawesome-solid-dollar-sign: Stripe"
 
