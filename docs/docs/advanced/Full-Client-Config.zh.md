@@ -97,6 +97,10 @@ quic:
   maxIdleTimeout: 30s # (5)!
   keepAlivePeriod: 10s # (6)!
   disablePathMTUDiscovery: false # (7)!
+  sockopts:
+    bindInterface: eth0 # (8)!
+    fwmark: 1234 # (9)!
+    fdControlUnixSocket: ./test.sock # (10)!
 ```
 
 1. 初始的 QUIC 流接收窗口大小。
@@ -106,8 +110,13 @@ quic:
 5. 最长空闲超时时间。客户端会在多长时间没有收到任何服务端数据后关闭连接。
 6. 心跳包发送间隔。客户端会多久发送一次心跳包以保持连接。
 7. 禁用 MTU 探测。
+8. （仅限 Linux）接口名称。强制 QUIC 数据包通过此接口发送。
+9. （仅限 Linux）要为 QUIC 数据包添加的 `SO_MARK` 标记。
+10. （仅限 Linux）由其它进程监听的 Unix Socket 路径。<br>Hysteria 客户端会把 QUIC 连接所使用的文件描述符（File Descriptor）作为辅助信息（Ancillary Message）发送给该 Unix Socket，以便监听进程进行其它自定义的配置。<br>此选项可被用于 Android 客户端开发，请参考 [FD Control 协议](./FD-Control.md) 以了解更多细节。
 
 默认的流和连接接收窗口大小分别为 8MB 和 20MB。**除非你完全明白自己在做什么，否则不建议修改这些值。**如果要改，建议保持流接收窗口与连接接收窗口的比例为 2:5。
+
+**注意：** `sockopts` 项下的子选项目前仅对出站 QUIC 连接有效，对其它出站连接（例如为解析服务端地址而发送的 DNS 查询）无效。
 
 ## 带宽
 
