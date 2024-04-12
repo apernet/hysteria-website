@@ -6,8 +6,8 @@ Hysteria 客户端使用此协议将出站 QUIC 连接的文件描述符（File 
 
 ## 角色
 
-+ 服务端： 监听 `fdControlUnixSocket` 的第三方进程，例如 Android 客户端主进程。
-+ 客户端： Hysteria 客户端进程。
+- 服务端： 监听 `fdControlUnixSocket` 的第三方进程，例如 Android 客户端主进程。
+- 客户端： Hysteria 客户端进程。
 
 ## 服务端实现步骤
 
@@ -20,5 +20,5 @@ Hysteria 客户端使用此协议将出站 QUIC 连接的文件描述符（File 
 
 ## 参考样例
 
-+ [Nekobox 的服务端实现](https://github.com/MatsuriDayo/libneko/blob/5277a5bfc889ee7a89462695b0e678c1bd4909b1/protect_server/protect_server_linux.go) (Go)
-+ [Hysteria 中用于单元测试的服务端](https://github.com/apernet/hysteria/blob/6b5486fc09d22c3fb4a1cc78c799c8cfe81e6dce/app/internal/sockopts/fd_control_unix_socket_test.py) (Python)
+- [Nekobox 的服务端实现](https://github.com/MatsuriDayo/libneko/blob/5277a5bfc889ee7a89462695b0e678c1bd4909b1/protect_server/protect_server_linux.go) (Go)
+- [Hysteria 中用于单元测试的服务端](https://github.com/apernet/hysteria/blob/6b5486fc09d22c3fb4a1cc78c799c8cfe81e6dce/app/internal/sockopts/fd_control_unix_socket_test.py) (Python)

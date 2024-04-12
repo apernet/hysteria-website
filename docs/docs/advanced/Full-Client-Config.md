@@ -97,6 +97,10 @@ quic:
   maxIdleTimeout: 30s # (5)!
   keepAlivePeriod: 10s # (6)!
   disablePathMTUDiscovery: false # (7)!
+  sockopts:
+    bindInterface: eth0 # (8)!
+    fwmark: 1234 # (9)!
+    fdControlUnixSocket: ./test.sock # (10)!
 ```
 
 1. The initial QUIC stream receive window size.
@@ -106,8 +110,13 @@ quic:
 5. The maximum idle timeout. How long until the client will consider the connection dead if no packets from the server are received.
 6. The keep-alive period. How often the client will send a packet to the server to keep the connection alive.
 7. Disable QUIC path MTU discovery.
+8. (Linux only) Interface name. Forces QUIC packets to be sent through this interface.
+9. (Linux only) The `SO_MARK` tag to be added to QUIC packets.
+10. (Linux only) Path to a Unix Socket that is listened to by other processes. The Hysteria client will send the file descriptor (FD) used for the QUIC connection as ancillary information to this Unix Socket, allowing the listening process to perform other custom configurations. This option can be used in Android client development; please refer to the [FD Control Protocol](./FD-Control.md) for more details.
 
 The default stream and connection receive window sizes are 8MB and 20MB, respectively. **We do not recommend changing these values unless you fully understand what you are doing.** If you choose to change these values, we recommend keeping the ratio of stream receive window to connection receive window at 2:5.
+
+**Note:** The options under `sockopts` only applies to outbound QUIC connections, not to other possible outbound connections (e.g. DNS queries to resolve the server address).
 
 ## Bandwidth
 
