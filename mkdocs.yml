@@ -75,6 +75,7 @@ plugins:
                     - 完整客户端配置: docs/advanced/Full-Client-Config.md
                     - ACL: docs/advanced/ACL.md
                     - 流量统计 API: docs/advanced/Traffic-Stats-API.md
+                    - FD Control 协议: docs/advanced/FD-Control.md
                     - 透明代理: docs/advanced/TPROXY.md
                     - 端口跳跃: docs/advanced/Port-Hopping.md
                     - 环境变量: docs/advanced/Environment-Variables.md
@@ -130,6 +131,7 @@ nav:
           - Full Client Config: docs/advanced/Full-Client-Config.md
           - ACL: docs/advanced/ACL.md
           - Traffic Stats API: docs/advanced/Traffic-Stats-API.md
+          - FD Control Protocol: docs/advanced/FD-Control.md
           - TProxy: docs/advanced/TPROXY.md
           - Port Hopping: docs/advanced/Port-Hopping.md
           - Environment Variables: docs/advanced/Environment-Variables.md
