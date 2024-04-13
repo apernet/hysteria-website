@@ -4,6 +4,11 @@ hide:
   - navigation
 ---
 
+## 2.4.1
+
+- The client now supports listening to both HTTP and SOCKS5 on a single port by making their `listen` addresses the same
+- The client has added a new `sockopts` section to `quic` which allows the user to specify the bind interface, fwmark and FD control socket path for outbound QUIC connections. This is a feature mainly for Android app development.
+
 ## 2.4.0
 
 - Added TUN mode to client (supports Windows, Linux & macOS)

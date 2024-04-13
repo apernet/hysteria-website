@@ -4,6 +4,11 @@ hide:
   - navigation
 ---
 
+## 2.4.1
+
+- 客户端现已支持在同一端口上同时监听 HTTP 和 SOCKS5，只需将它们的 `listen` 地址设置为相同即可
+- 客户端在 `quic` 下新增了 `sockopts` 部分，允许用户为出站的 QUIC 连接绑定指定网卡、设置 fwmark 和 FD control socket 路径。此功能主要用于 Android 代理应用的开发。
+
 ## 2.4.0
 
 - 客户端新增 TUN 模式，支持 Windows, Linux 和 macOS
