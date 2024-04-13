@@ -1,5 +1,7 @@
 # FD Control Protocol
 
+> This feature is mainly used for developing Android proxy apps.
+
 The Hysteria client supports sending the file descriptor (fd) of outbound QUIC connections to any process listening on `fdControlUnixSocket`.
 
 **Note:** `fdControlUnixSocket` is currently only effective for outbound QUIC connections. Third-party Android clients using this feature will need to handle additional DNS resolution requests for the Hysteria server domain, or make sure that the `server` option in the Hysteria client config is an IP address, not a domain.
