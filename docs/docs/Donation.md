@@ -41,4 +41,5 @@ Hysteria is an open source project born out of a passion to bring value to the c
 - [modimobeikete](https://space.bilibili.com/375736195) (Individual Donor)
 - [洋葱游戏盾](https://youxidun.vip/) - Security products based on modern anti-censorship protocols, inspired by Hysteria 2's anti-censorship designs and optimizations for unstable networks
 - [PlayerCatboy](https://github.com/Catboy96) (Individual Donor)
+- [Nachoneko](https://nacho.lol/) - High-speed proxy service, unlock streaming/ChatGPT, full support for the Hysteria2 protocol and various clients
 - **Will you be next?**
