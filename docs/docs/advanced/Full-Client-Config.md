@@ -155,6 +155,8 @@ lazy: true
 
 To use the Hysteria client, you must at least specify one of the following modes:
 
+> **Tips:** Starting with version 2.4.1, the Hysteria client can support both SOCKS5 and HTTP protocols on a single port. Just have both `socks5` and `http` in the configuration and make sure their `listen` addresses are exactly the same.
+
 ### SOCKS5
 
 A SOCKS5 proxy server that can be used with any SOCKS5-compatible application. Supports both TCP and UDP.

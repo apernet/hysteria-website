@@ -155,6 +155,8 @@ lazy: true
 
 要使用 Hysteria 客户端，必须至少指定下面中的一个代理模式。
 
+> **提示：**从 2.4.1 版本开始，Hysteria 客户端支持单端口同时支持 SOCKS5 和 HTTP 代理，只需在配置文件中同时配置 `socks5` 和 `http` 并且 `listen` 地址完全相同即可。
+
 ### SOCKS5
 
 SOCKS5 代理服务器。支持 TCP 和 UDP。
