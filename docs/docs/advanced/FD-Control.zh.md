@@ -1,5 +1,7 @@
 # FD Control 协议
 
+> 此特性主要用于 Android 代理客户端开发。
+
 Hysteria 客户端使用此协议将出站 QUIC 连接的文件描述符（File Descriptor，下称 `fd`）发送给监听 `fdControlUnixSocket` 的进程。
 
 **注意：** `fdControlUnixSocket` 目前仅对出站 QUIC 连接生效。使用此特性实现第三方 Android 客户端需要对 Hysteria 服务端域名的 DNS 解析请求进行额外的处理，或者确保在 Hysteria 客户端配置的 `server` 选项中填入 IP 地址。
