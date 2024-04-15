@@ -66,8 +66,8 @@ hide:
   </div>
   
   <div>
-    <h3>🤗 Cards on the table</h3>
-    <p>We have well-documented specifications and code for developers to contribute and build their own apps. And a helpful community, too.</p>
+    <h3>🤗 Chill and supportive</h3>
+    <p>We have well-documented specifications and code for developers to contribute and/or build their own apps. And a helpful community, too.</p>
   </div>
 </div>
 
