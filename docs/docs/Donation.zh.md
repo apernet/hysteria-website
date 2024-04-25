@@ -42,4 +42,5 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 - [洋葱游戏盾](https://youxidun.vip/) - 基于多种现代化防审查协议的安全产品，参考了 Hysteria 2 在防审查和不稳定网络中传输优化的设计
 - [PlayerCatboy](https://github.com/Catboy96) (个人捐赠)
 - [Nachoneko](https://nacho.lol/) - 甘城猫高速机场，解锁流媒体/ChatGPT，全面支持 Hysteria2 协议和多种客户端
+- **Easton Tech** (个人捐赠) - 做黑夜中最明亮的星星之火
 - **虚位以待**
