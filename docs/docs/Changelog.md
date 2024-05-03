@@ -4,6 +4,18 @@ hide:
   - navigation
 ---
 
+## 2.4.3
+
+> This release contains important fixes and we strongly encourage everyone to upgrade.
+
+- Fixed a bug introduced in the previous version that caused UDP forwarding to not work properly
+
+## 2.4.2
+
+- Small tweaks to Brutal congestion control to improve performance at high speeds
+- When using a local certificate, the server now checks if the files can be accessed on startup. This ensures that access problems are detected immediately, rather than when accepting client connections.
+- Updated quic-go to v0.43.0
+
 ## 2.4.1
 
 - The client now supports listening to both HTTP and SOCKS5 on a single port by making their `listen` addresses the same
