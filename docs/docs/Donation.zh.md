@@ -35,13 +35,20 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 
 ## 荣誉榜
 
+排名不分先后，顺序每次刷新随机变化。
+
+<div id="hof-start"></div>
+
 - [Aperture Internet Laboratory](https://apernet.io/) - 致力于开发自由软件、研究、构建促进和加强信息自由交换的基础设施
 - [狗狗加速](https://狗狗加速.com) - 高性能海外 VPN 机场，免费试用，解锁流媒体/ChatGPT，全球首家支持 Hysteria 协议，目前全面支持 Hysteria 2
-- **Asahi** (个人捐赠)
+- Asahi (个人捐赠)
 - [莫蒂默贝克特](https://space.bilibili.com/375736195) (个人捐赠)
 - [洋葱游戏盾](https://youxidun.vip/) - 基于多种现代化防审查协议的安全产品，参考了 Hysteria 2 在防审查和不稳定网络中传输优化的设计
 - [PlayerCatboy](https://github.com/Catboy96) (个人捐赠)
 - [Nachoneko](https://nacho.lol/) - 甘城猫高速机场，解锁流媒体/ChatGPT，全面支持 Hysteria2 协议和多种客户端
-- **Easton Tech** (个人捐赠) - 做黑夜中最明亮的星星之火
+- Easton Tech (个人捐赠) - 做黑夜中最明亮的星星之火
 - [Nekobay](http://38.180.4.6:8080/) - 感谢 Hysteria 为本站提供通信自由保障
-- **虚位以待**
+
+**👀 虚位以待**
+
+<script src="/javascripts/hof_rand.js"></script>
