@@ -47,6 +47,7 @@ The rankings are random and change with each refresh.
 - [Nachoneko](https://nacho.lol/) - High-speed proxy service, unlock streaming/ChatGPT, full support for the Hysteria2 protocol and various clients
 - Easton Tech (Individual Donor) - Be the brightest spark in a dark night
 - [Nekobay](http://38.180.4.6:8080/) - Thanks to Hysteria for enabling the freedom of communication for this site
+- [棜先生](https://bio.link/yuxiansheng) (Individual Donor)
 
 **👀 Will you be next?**
 
