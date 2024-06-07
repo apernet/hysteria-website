@@ -47,7 +47,7 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 - [PlayerCatboy](https://github.com/Catboy96) (个人捐赠)
 - [Nachoneko](https://nacho.lol/) - 甘城猫高速机场，解锁流媒体/ChatGPT，全面支持 Hysteria2 协议和多种客户端
 - Easton Tech (个人捐赠) - 做黑夜中最明亮的星星之火
-- [Nekobay](http://38.180.4.6:8080/) - 感谢 Hysteria 为本站提供通信自由保障
+- [Nekobay](https://github.com/zhangtony239) (个人捐赠)
 - [棜先生](https://bio.link/yuxiansheng) (个人捐赠)
 
 **👀 虚位以待**
