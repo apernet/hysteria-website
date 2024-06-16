@@ -50,7 +50,7 @@ Hysteria 服务端并不能同时监听多个端口，因此不能在服务器�
     define PORT_RANGE=20000-50000
     define HYSTERIA_SERVER_PORT=443
 
-    table inet hysteria_porthopping {
+    table ip hysteria_porthopping {
       chain prerouting {
         type nat hook prerouting priority dstnat; policy accept;
         iifname $INGRESS_INTERFACE udp dport $PORT_RANGE counter dnat to :$HYSTERIA_SERVER_PORT
