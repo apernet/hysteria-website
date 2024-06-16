@@ -48,6 +48,7 @@ The rankings are random and change with each refresh.
 - Easton Tech (Individual Donor) - Be the brightest spark in a dark night
 - [ZT239](https://github.com/zhangtony239) (Individual Donor)
 - [棜先生](https://bio.link/yuxiansheng) (Individual Donor)
+- [Integral](https://integral.codeberg.page/about/) (Individual Donor)
 
 **👀 Will you be next?**
 
