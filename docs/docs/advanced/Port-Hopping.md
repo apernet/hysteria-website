@@ -50,7 +50,7 @@ The Hysteria server does not have built-in support for listening on multiple por
     define PORT_RANGE=20000-50000
     define HYSTERIA_SERVER_PORT=443
 
-    table inet hysteria_porthopping {
+    table ip hysteria_porthopping {
       chain prerouting {
         type nat hook prerouting priority dstnat; policy accept;
         iifname $INGRESS_INTERFACE udp dport $PORT_RANGE counter dnat to :$HYSTERIA_SERVER_PORT
