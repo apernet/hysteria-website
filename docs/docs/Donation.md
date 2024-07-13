@@ -50,6 +50,7 @@ The rankings are random and change with each refresh.
 - [ZT239](https://github.com/zhangtony239) (Individual Donor)
 - [棜先生](https://bio.link/yuxiansheng) (Individual Donor)
 - [Integral](https://integral.codeberg.page/about/) (Individual Donor)
+- [TekLan Hosting](https://teklanhosting.co.uk) - UK web hosting company with global locations
 
 **👀 Will you be next?**
 
