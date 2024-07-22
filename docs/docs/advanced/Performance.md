@@ -61,8 +61,10 @@ Create `/etc/systemd/system/hysteria-server.service.d/priority.conf` and add the
 
 ```ini
 [Service]
-CPUSchedulingPolicy=rr
+CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=99
+IOSchedulingClass=realtime
+IOSchedulingPriority=0
 ```
 
 Reload the systemd config files and restart the service using the following commands:
