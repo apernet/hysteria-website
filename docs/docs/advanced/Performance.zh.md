@@ -61,8 +61,10 @@ quic:
 
 ```ini
 [Service]
-CPUSchedulingPolicy=rr
+CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=99
+IOSchedulingClass=realtime
+IOSchedulingPriority=0
 ```
 
 使用以下命令重载 systemd 配置文件并重启服务。
