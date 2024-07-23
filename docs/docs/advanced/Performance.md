@@ -65,6 +65,7 @@ CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=99
 IOSchedulingClass=realtime
 IOSchedulingPriority=0
+IOWeight=1000
 ```
 
 Reload the systemd config files and restart the service using the following commands:
