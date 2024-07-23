@@ -66,6 +66,9 @@ CPUSchedulingPriority=99
 IOSchedulingClass=realtime
 IOSchedulingPriority=0
 IOWeight=1000
+MemorySwapMax=0
+OOMPolicy=continue
+OOMScoreAdjust=-1000
 ```
 
 使用以下命令重载 systemd 配置文件并重启服务。
