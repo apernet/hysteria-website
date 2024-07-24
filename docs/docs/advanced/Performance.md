@@ -63,6 +63,7 @@ Create `/etc/systemd/system/hysteria-server.service.d/priority.conf` and add the
 [Service]
 CPUSchedulingPolicy=fifo
 CPUSchedulingPriority=99
+CPUShares=2048
 IOSchedulingClass=realtime
 IOSchedulingPriority=0
 IOWeight=1000
