@@ -230,6 +230,16 @@ auth:
   command: /etc/some_command # (5)!
 ```
 
+When using userpass, the type should be userpass instead of password:
+```yaml
+auth:
+  type: userpass
+  userpass:
+    user1: pass1
+    user2: pass2
+    user3: pass3
+```
+
 1. Replace with a strong password of your choice.
 2. A map of username-password pairs.
 3. The URL of the backend server that handles authentication.

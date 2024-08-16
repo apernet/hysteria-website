@@ -230,6 +230,16 @@ auth:
   command: /etc/some_command # (5)!
 ```
 
+使用userpass时需要配置type为userpass
+```yaml
+auth:
+  type: userpass
+  userpass:
+    user1: pass1
+    user2: pass2
+    user3: pass3
+```
+
 1. 用自己选的强密码进行替换。
 2. 用户名-密码映射表。
 3. 处理验证的后端 URL。
