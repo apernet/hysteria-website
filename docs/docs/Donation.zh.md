@@ -51,6 +51,7 @@ Hysteria 是一个旨在打破审查高墙的纯公益开源项目。如果你�
 - [棜先生](https://bio.link/yuxiansheng) (个人捐赠)
 - [Integral](https://integral.codeberg.page/about/) (个人捐赠)
 - [TekLan Hosting](https://teklanhosting.co.uk) - 拥有全球多个地点的英国网络托管公司
+- [二次元论坛](https://www.ecylt.top/) - 按下 F 逃离世界！
 
 **👀 虚位以待**
 
