@@ -102,4 +102,3 @@ curl -H 'Authorization: secret' http://ip:port/path
 State    Auth           Connection   Stream     TX-Bytes     RX-Bytes     Lifetime  Last-Active Req-Addr         Hooked-Req-Addr
 ESTAB    user             BE3E0905        4         3937         4441       3.005s        1.84s 192.0.2.1:80     example.com:80
 ```
-
