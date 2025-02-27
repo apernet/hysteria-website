@@ -49,7 +49,7 @@ The rankings are random and change with each refresh.
 - Easton Tech (Individual Donor) - Be the brightest spark in a dark night
 - [ZT239](https://github.com/zhangtony239) (Individual Donor)
 - [棜先生](https://bio.link/yuxiansheng) (Individual Donor)
-- [Integral](https://integral.codeberg.page/about/) (Individual Donor)
+- Integral (Individual Donor)
 - [TekLan Hosting](https://teklanhosting.co.uk) - UK web hosting company with global locations
 - [二次元论坛](https://www.ecylt.top/) - Press F to flee the world!
 - [新狮云机场](https://my.cloudlion.me/) - Premium proxy leader, enjoy ultra-fast network
