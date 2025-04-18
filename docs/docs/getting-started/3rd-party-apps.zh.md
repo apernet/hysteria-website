@@ -8,6 +8,7 @@
 
 | 名称                                                                       | 描述                                                                                                               | 平台                                | 模式           |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | -------------- |
+| [Blitz](https://github.com/ReturnFI/Blitz)                      | Management panel for Hysteria2 with advanced features                                                              | Linux | 面板         |
 | [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta)                      | A rule-based tunnel in Go (v1.16.0 后支持 Hysteria 2)                                                              | Windows, Linux, macOS, Android, iOS | 客户端         |
 | [dae](https://github.com/daeuniverse/dae)                                  | eBPF-based Linux high-performance transparent proxy solution (v0.7.0rc1 后支持 Hysteria 2)                         | Linux                               | 客户端         |
 | [daed](https://github.com/daeuniverse/daed)                                | A modern dashboard with [dae](https://github.com/daeuniverse/dae) (v0.7.0rc1 后支持 Hysteria 2)                    | Linux                               | 客户端         |
