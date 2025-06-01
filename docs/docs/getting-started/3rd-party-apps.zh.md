@@ -8,6 +8,7 @@
 
 | 名称                                                                       | 描述                                                                                                               | 平台                                | 模式            |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | --------------- |
+| [libHysteria2](https://github.com/CodeWithTamim/libHysteria2)              | A high-performance Hysteria 2 client and library written in Go, designed for easy integration and development                | Windows, Linux, macOS, Android     | 客户端 & 库     |
 | [Blitz](https://github.com/ReturnFI/Blitz)                                 | Management panel for Hysteria 2 with advanced features                                                             | Linux                               | 管理面板        |
 | [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta)                      | A rule-based tunnel in Go (v1.16.0 后支持 Hysteria 2)                                                              | Windows, Linux, macOS, Android, iOS | 客户端          |
 | [dae](https://github.com/daeuniverse/dae)                                  | eBPF-based Linux high-performance transparent proxy solution (v0.7.0rc1 后支持 Hysteria 2)                         | Linux                               | 客户端          |
