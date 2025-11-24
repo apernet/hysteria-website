@@ -86,3 +86,7 @@ hide:
     <i class="fab fa-github"></i> GitHub 讨论区
   </a>
 </p>
+
+---
+
+[![PPanel](./assets/ppanel-banner.jpg)](https://ppanel.dev/){: style="max-width: 500px; display: block; margin: 0 auto;"}

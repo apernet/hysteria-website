@@ -8,6 +8,7 @@ It's built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 pip install mkdocs-material
 pip install mkdocs-static-i18n
 pip install mkdocs-glightbox
+pip install mkdocs-mermaid2-plugin
 
 mkdocs serve
 ```
