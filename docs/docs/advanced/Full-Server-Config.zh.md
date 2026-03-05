@@ -81,6 +81,31 @@ listen: :443 # (1)!
        （注意： 改为非 443 需要另行配置端口转发或者 SNI Proxy，否则证书会签署失败！）
     7. DNS 提供商。详细信息请参考 [ACME DNS 配置](ACME-DNS-Config.md)。
 
+## 加密客户端问候 (ECH)
+
+[加密客户端问候 (ECH)](https://blog.cloudflare.com/announcing-encrypted-client-hello) 是一个 TLS 扩展，用于加密 Client Hello 消息，包括服务器名称指示 (SNI)。这可以防止被动网络观察者通过 SNI 确定客户端正在连接的服务器。
+
+要使用 ECH，首先需要生成 ECH 密钥对：
+
+```bash
+hysteria generate ech-keypair example.com \
+  --outKey ech.key \
+  --outConfig ech.config
+```
+
+这将生成两个文件：`ech.key` 用于服务端，`ech.config` 用于客户端。参数（此例中的 `example.com`）是 "外部 SNI" - 观察者看到的公开服务器名称，而非真实名称。
+
+要在服务端启用 ECH，请在配置中添加以下内容：
+
+```yaml
+ech:
+  keyFile: ech.key # (1)!
+```
+
+1. `hysteria generate ech-keypair` 生成的 ECH 密钥文件路径。
+
+> **注意:** 主动探测理论上可以发现 ECH 的使用，但目前尚无主要审查机构部署此类检测方法。
+
 ## 混淆
 
 默认 Hysteria 协议伪装为 HTTP/3。如果你的网络针对性屏蔽了 QUIC 或 HTTP/3 流量（但允许其他 UDP 流量），可以使用混淆来解决此问题。目前有一个名为 "Salamander" 的混淆实现，将数据包混淆成没有特征的 UDP 包。此功能需要一个混淆密码，密码在客户端和服务端必须相同。

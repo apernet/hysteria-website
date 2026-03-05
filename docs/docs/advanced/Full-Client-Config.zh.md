@@ -53,6 +53,8 @@ tls:
   ca: custom_ca.crt # (4)!
   clientCertificate: client.crt # (5)!
   clientKey: client.key # (6)!
+  ech:
+    configFile: ech.config # (7)!
 ```
 
 1. 用于 TLS 验证的服务器名称。如果省略，服务器名称将从 `server` 字段中提取。
@@ -61,6 +63,7 @@ tls:
 4. 使用自定义 CA。
 5. 使用客户端证书进行 mTLS 验证。
 6. 使用客户端密钥进行 mTLS 验证。
+7. `hysteria generate ech-keypair` 生成的 ECH 配置文件路径。有关生成密钥对的更多详细信息，请参阅服务端配置中的[加密客户端问候 (ECH)](Full-Server-Config.md#加密客户端问候-ech)。
 
 ## 传输 (Transport)
 
