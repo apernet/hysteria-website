@@ -68,13 +68,17 @@ tls:
 
 ```yaml
 transport:
-  type: udp # (2)!
+  type: udp
   udp:
     hopInterval: 30s # (1)!
+    # 或使用随机间隔：
+    # minHopInterval: 15s
+    # maxHopInterval: 45s
 ```
 
 1. 端口跳跃间隔。这只在使用多端口地址时才有效。更多信息请参见 [端口跳跃](Port-Hopping.md)。
-2. 传输类型。 请阅读页面最上方关于 "类型选择" 配置格式的说明。
+
+> **注意：** 可以使用 `hopInterval` 设置固定间隔，或使用 `minHopInterval`/`maxHopInterval` 设置随机间隔范围。两者不能同时使用。如果都未设置，默认为固定 30s 间隔。
 
 ## 混淆
 

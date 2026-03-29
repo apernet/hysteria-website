@@ -68,13 +68,17 @@ The `transport` section is for customizing the underlying protocol used by the Q
 
 ```yaml
 transport:
-  type: udp # (2)!
+  type: udp
   udp:
     hopInterval: 30s # (1)!
+    # Or use random interval:
+    # minHopInterval: 15s
+    # maxHopInterval: 45s
 ```
 
 1. The port hopping interval. This is only relevant if you're using a port hopping address. See [Port Hopping](Port-Hopping.md) for more information.
-2. Please read the instructions regarding the "type selector" at the top of this page.
+
+> **NOTE:** You can either use `hopInterval` for a fixed interval, or `minHopInterval`/`maxHopInterval` for a random interval within the specified range. You cannot use both. If neither is set, the default is a fixed 30s interval.
 
 ## Obfuscation
 

@@ -27,6 +27,16 @@ listen: :443 # (1)!
 
 1. 当只有端口没有 IP 地址时，服务器将监听所有可用的 IPv4 和 IPv6 地址。要仅监听 IPv4，可以使用 `0.0.0.0:443`。要仅监听 IPv6，可以使用 `[::]:443`。
 
+`listen` 也支持端口范围，用于[端口跳跃](Port-Hopping.md)：
+
+```yaml
+listen: :20000-50000 # (1)!
+```
+
+1. 服务器将监听范围内的第一个端口，并自动设置防火墙规则（使用 nftables 或 iptables）将其他端口的流量重定向到第一个端口。服务器关闭时会自动清理这些规则。
+
+> **注意：** 服务器端端口范围监听仅支持 Linux。需要系统上有 `nft`（nftables）或 `iptables`/`ip6tables`。服务器可能需要以适当的权限运行（例如 root 或 `CAP_NET_ADMIN`）才能修改防火墙规则。
+
 ## TLS
 
 可以选择使用 `tls` 或 `acme`，但不能同时包含两者。
@@ -532,6 +542,7 @@ masquerade:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
     insecure: false # (4)!
+    xForwarded: false # (8)!
   string:
     content: hello stupid world # (5)!
     headers: # (6)!
@@ -547,7 +558,7 @@ masquerade:
 5. 要返回的字符串。
 6. 可选。要返回的 HTTP 头列表。
 7. 可选。要返回的 HTTP 状态码。默认为 200。
-8. 伪装类型。 请阅读页面最上方关于 "类型选择" 配置格式的说明。
+8. 可选。是否在代理请求时设置 `X-Forwarded-For`、`X-Forwarded-Host` 和 `X-Forwarded-Proto` 头。默认禁用。
 
 可以通过特定参数启动 Chrome 以强制使用 QUIC，测试你的伪装配置：
 

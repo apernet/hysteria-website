@@ -27,6 +27,16 @@ listen: :443 # (1)!
 
 1. When the IP address is omitted, the server will listen on all interfaces, both IPv4 and IPv6. To listen on IPv4 only, you can use `0.0.0.0:443`. To listen on IPv6 only, you can use `[::]:443`.
 
+The `listen` field also supports port ranges for [port hopping](Port-Hopping.md):
+
+```yaml
+listen: :20000-50000 # (1)!
+```
+
+1. The server will listen on the first port in the range and automatically set up firewall rules (using nftables or iptables) to redirect traffic from all other ports in the range to the first port. The rules are automatically cleaned up when the server shuts down.
+
+> **NOTE:** Server-side port range listening is only supported on Linux. It requires either `nft` (nftables) or `iptables`/`ip6tables` to be available on the system. The server may need to be run with appropriate privileges (e.g. root or `CAP_NET_ADMIN`) to modify firewall rules.
+
 ## TLS
 
 You can have either `tls` or `acme`, but not both.
@@ -525,13 +535,14 @@ Currently, Hysteria provides the following masquerade modes:
 
 ```yaml
 masquerade:
-  type: file | proxy | string # (7)!
+  type: file | proxy | string
   file:
     dir: /www/masq # (1)!
   proxy:
     url: https://some.site.net # (2)!
     rewriteHost: true # (3)!
     insecure: false # (4)!
+    xForwarded: false # (8)!
   string:
     content: hello stupid world # (5)!
     headers: # (6)!
@@ -547,7 +558,7 @@ masquerade:
 5. The string to return.
 6. Optional. The headers to return.
 7. Optional. The status code to return. 200 by default.
-8. Please read the instructions regarding the "type selector" at the top of this page.
+8. Optional. Whether to set `X-Forwarded-For`, `X-Forwarded-Host`, and `X-Forwarded-Proto` headers when proxying requests. Disabled by default.
 
 You can test your masquerade configuration by starting Chrome with a special flag (to force QUIC):
 
