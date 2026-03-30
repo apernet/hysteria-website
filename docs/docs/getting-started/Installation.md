@@ -101,4 +101,4 @@ volumes:
   acme:
 ```
 
-`NET_ADMIN` is only required when port hopping is enabled.
+The capability `NET_ADMIN` is only required when port hopping is enabled.
