@@ -91,6 +91,8 @@ services:
     container_name: hysteria
     restart: always
     network_mode: "host"
+    cap_add:
+      - NET_ADMIN
     volumes:
       - acme:/acme
       - ./hysteria.yaml:/etc/hysteria.yaml
