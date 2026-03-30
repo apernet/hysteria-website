@@ -100,3 +100,5 @@ services:
 volumes:
   acme:
 ```
+
+只有在启用端口跳跃时才需要 `NET_ADMIN` 功能。
