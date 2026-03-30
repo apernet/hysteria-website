@@ -100,3 +100,5 @@ services:
 volumes:
   acme:
 ```
+
+قابلیت `NET_ADMIN` فقط زمانی مورد نیاز است که port hopping فعال باشد.
