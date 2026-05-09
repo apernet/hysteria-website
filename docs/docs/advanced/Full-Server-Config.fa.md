@@ -53,7 +53,7 @@ realm:
     - stun.nextcloud.com:3478
     - global.stun.twilio.com:3478
   stunTimeout: 5s # (2)!
-  stunRefreshInterval: 10m # (3)!
+  stunRefreshInterval: 30m # (3)!
   punchTimeout: 5s # (4)!
   heartbeatInterval: 30s # (5)!
   insecure: false # (6)!
