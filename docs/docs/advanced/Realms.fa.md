@@ -139,6 +139,15 @@ auth: your-hysteria-password
 
 این‌ها توسط اشخاص ثالث اجرا می‌شوند و به‌صورت داوطلبانه ارائه می‌شوند. ممکن است از کار بیفتند، محدودیت نرخ اعمال کنند یا در شبکهٔ شما مسدود شوند. برای هر چیزی فراتر از استفادهٔ آزمایشی، Hysteria را از طریق [`realm.stunServers`](Full-Server-Config.md#realm) در سرور و [`realm.stunServers`](Full-Client-Config.md#realm) در کلاینت به سرورهای STUN خودتان (یا قابل‌اعتماد) متصل کنید.
 
+## گزارش مشکلات اتصال
+
+Realms اجزای متعددی دارد (STUN، rendezvous، NAT punching، TLS، QUIC handshake)، بنابراین گزارش «وصل نمی‌شود» بدون لاگ تقریباً قابل پیگیری نیست. هنگام ثبت issue، **هم کلاینت و هم سرور** را با `HYSTERIA_LOG_LEVEL=debug` اجرا کنید و خروجی کامل هر دو طرف را ضمیمه کنید:
+
+```bash
+HYSTERIA_LOG_LEVEL=debug ./hysteria server -c server.yaml
+HYSTERIA_LOG_LEVEL=debug ./hysteria client -c client.yaml
+```
+
 ## برای پروتکل‌های دیگر
 
 Realms در اصل یک چارچوب عمومی برای پانچ UDP است — پروتکل rendezvous، کشف STUN و منطق پانچ هیچ وابستگی‌ای به Hysteria ندارند. Hysteria فقط اولین کاربر آن است.

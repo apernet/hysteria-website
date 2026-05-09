@@ -139,6 +139,15 @@ Both server and client need STUN to discover their public UDP addresses before t
 
 These are run by third parties and offered as a courtesy. They may go down, be rate-limited, or get blocked in your network. For anything more than casual use, point Hysteria at your own (or trusted) STUN servers via [`realm.stunServers`](Full-Server-Config.md#realm) on the server and [`realm.stunServers`](Full-Client-Config.md#realm) on the client.
 
+## Reporting connectivity issues
+
+Realms involves several moving parts (STUN, the rendezvous, NAT punching, TLS, the QUIC handshake), so a "doesn't connect" report is hard to act on without the trace. If you're filing an issue, run **both client and server** with `HYSTERIA_LOG_LEVEL=debug` and attach the full output from both sides:
+
+```bash
+HYSTERIA_LOG_LEVEL=debug ./hysteria server -c server.yaml
+HYSTERIA_LOG_LEVEL=debug ./hysteria client -c client.yaml
+```
+
 ## For other protocols
 
 Realms is, at its core, a generic UDP hole-punching framework — the rendezvous protocol, STUN discovery, and punch logic do not depend on Hysteria in any way. Hysteria just happens to be its first user.
