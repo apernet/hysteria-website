@@ -53,18 +53,16 @@ realm:
     - stun.nextcloud.com:3478
     - global.stun.twilio.com:3478
   stunTimeout: 5s # (2)!
-  stunRefreshInterval: 30m # (3)!
-  punchTimeout: 5s # (4)!
-  heartbeatInterval: 30s # (5)!
-  insecure: false # (6)!
+  punchTimeout: 5s # (3)!
+  heartbeatInterval: 30s # (4)!
+  insecure: false # (5)!
 ```
 
 1. STUN servers used to discover the server's public UDP addresses. Defaults to a small built-in list.
 2. Per-server timeout for STUN discovery.
-3. How often to re-run STUN discovery and update the rendezvous with current addresses.
-4. Maximum time to wait for UDP hole punching to succeed for a single connect attempt.
-5. How often to send a heartbeat to the rendezvous to keep the realm registered. The session expires if the rendezvous doesn't see one in time.
-6. Set to `true` only to skip TLS verification of a self-signed rendezvous server (development).
+3. Maximum time to wait for UDP hole punching to succeed for a single connect attempt.
+4. How often to send a heartbeat to the rendezvous to keep the realm registered. The session expires if the rendezvous doesn't see one in time.
+5. Set to `true` only to skip TLS verification of a self-signed rendezvous server (development).
 
 ## TLS
 

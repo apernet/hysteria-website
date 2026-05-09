@@ -53,18 +53,16 @@ realm:
     - stun.nextcloud.com:3478
     - global.stun.twilio.com:3478
   stunTimeout: 5s # (2)!
-  stunRefreshInterval: 30m # (3)!
-  punchTimeout: 5s # (4)!
-  heartbeatInterval: 30s # (5)!
-  insecure: false # (6)!
+  punchTimeout: 5s # (3)!
+  heartbeatInterval: 30s # (4)!
+  insecure: false # (5)!
 ```
 
 1. 用于发现服务端公网 UDP 地址的 STUN 服务器。默认会使用一个内置的小列表。
 2. 单个 STUN 服务器的查询超时。
-3. 多久重新执行一次 STUN 发现，并把当前的地址更新到牵线服务器。
-4. 单次连接尝试中等待 UDP 打洞成功的最大时间。
-5. 多久向牵线服务器发送一次心跳以保持 realm 注册。如果牵线服务器在超时前没有收到心跳，会话将过期。
-6. 仅在跳过对自签牵线服务器的 TLS 校验时（开发用途）设为 `true`。
+3. 单次连接尝试中等待 UDP 打洞成功的最大时间。
+4. 多久向牵线服务器发送一次心跳以保持 realm 注册。如果牵线服务器在超时前没有收到心跳，会话将过期。
+5. 仅在跳过对自签牵线服务器的 TLS 校验时（开发用途）设为 `true`。
 
 ## TLS
 

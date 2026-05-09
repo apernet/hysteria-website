@@ -53,18 +53,16 @@ realm:
     - stun.nextcloud.com:3478
     - global.stun.twilio.com:3478
   stunTimeout: 5s # (2)!
-  stunRefreshInterval: 30m # (3)!
-  punchTimeout: 5s # (4)!
-  heartbeatInterval: 30s # (5)!
-  insecure: false # (6)!
+  punchTimeout: 5s # (3)!
+  heartbeatInterval: 30s # (4)!
+  insecure: false # (5)!
 ```
 
 1. سرورهای STUN که برای کشف آدرس‌های UDP عمومی سرور استفاده می‌شوند. به‌طور پیش‌فرض از یک فهرست داخلی کوچک استفاده می‌شود.
 2. زمان انتظار برای هر سرور STUN.
-3. هر چند وقت یک‌بار STUN discovery دوباره اجرا شود و آدرس‌ها روی rendezvous به‌روزرسانی شوند.
-4. حداکثر زمان انتظار برای موفق‌شدن UDP hole punching در یک تلاش اتصال.
-5. هر چند وقت یک‌بار به rendezvous heartbeat فرستاده شود تا realm ثبت‌شده بماند. اگر rendezvous در زمان مقرر heartbeat دریافت نکند، نشست منقضی می‌شود.
-6. فقط زمانی روی `true` بگذارید که می‌خواهید تأیید TLS سرور rendezvous self-signed را رد کنید (فقط برای توسعه).
+3. حداکثر زمان انتظار برای موفق‌شدن UDP hole punching در یک تلاش اتصال.
+4. هر چند وقت یک‌بار به rendezvous heartbeat فرستاده شود تا realm ثبت‌شده بماند. اگر rendezvous در زمان مقرر heartbeat دریافت نکند، نشست منقضی می‌شود.
+5. فقط زمانی روی `true` بگذارید که می‌خواهید تأیید TLS سرور rendezvous self-signed را رد کنید (فقط برای توسعه).
 
 ## TLS
 
