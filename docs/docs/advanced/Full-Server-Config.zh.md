@@ -127,6 +127,17 @@ realm:
        （注意： 改为非 443 需要另行配置端口转发或者 SNI Proxy，否则证书会签署失败！）
     7. DNS 提供商。详细信息请参考 [ACME DNS 配置](ACME-DNS-Config.md)。
 
+### ECH
+
+可选开启 [Encrypted Client Hello](ECH.md)，以对中间设备隐藏 TLS SNI。
+
+```yaml
+ech:
+  keyPath: ech.pem # (1)!
+```
+
+1. 使用 `sing-box generate ech-keypair <public_name>` 生成的 ECH 密钥文件的路径。服务端在启动时会在日志中输出客户端需要设置到其 `tls.ech` 中的配置列表。详细信息请参考 [ECH](ECH.md)。
+
 ## 混淆
 
 默认 Hysteria 协议伪装为 HTTP/3。如果你的网络针对性屏蔽了 QUIC 或 HTTP/3 流量（但允许其他 UDP 流量），可以使用混淆来解决此问题。目前有两种实现，均需要在客户端和服务端使用相同的密码：

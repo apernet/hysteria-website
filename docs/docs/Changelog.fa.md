@@ -4,6 +4,10 @@ hide:
   - navigation
 ---
 
+## منتشرنشده
+
+- پشتیبانی از [Encrypted Client Hello](advanced/ECH.md) افزوده شد
+
 ## 2.9.3
 
 - پشتیبانی از نگاشت پورت UPnP/NAT-PMP به [Hysteria Realms](advanced/Realms.md) برای عبور آسان‌تر از NAT افزوده شد

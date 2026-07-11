@@ -87,6 +87,7 @@ tls:
   ca: custom_ca.crt # (4)!
   clientCertificate: client.crt # (5)!
   clientKey: client.key # (6)!
+  ech: AEz+DQBIAAAg... # (7)!
 ```
 
 1. 用于 TLS 验证的服务器名称。如果省略，服务器名称将从 `server` 字段中提取。
@@ -95,6 +96,7 @@ tls:
 4. 使用自定义 CA。
 5. 使用客户端证书进行 mTLS 验证。
 6. 使用客户端密钥进行 mTLS 验证。
+7. 启用 [Encrypted Client Hello](ECH.md) 以隐藏 SNI。取值为服务端提供的配置列表（base64），或是一个包含它的文件路径。服务端必须已启用 ECH，否则连接将失败。
 
 ## 传输 (Transport)
 

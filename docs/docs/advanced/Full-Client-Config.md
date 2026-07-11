@@ -87,6 +87,7 @@ tls:
   ca: custom_ca.crt # (4)!
   clientCertificate: client.crt # (5)!
   clientKey: client.key # (6)!
+  ech: AEz+DQBIAAAg... # (7)!
 ```
 
 1. Server name to use for TLS verification. If omitted, the server name will be extracted from the `server` field.
@@ -95,6 +96,7 @@ tls:
 4. Use a custom CA certificate for TLS verification.
 5. Use a client certificate for mTLS verification.
 6. Use a client key for mTLS verification.
+7. Enable [Encrypted Client Hello](ECH.md) to hide the SNI. The value is the config list provided by the server (base64), or a path to a file containing it. The server must have ECH enabled, or the connection will fail.
 
 ## Transport
 

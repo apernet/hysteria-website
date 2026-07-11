@@ -4,6 +4,10 @@ hide:
   - navigation
 ---
 
+## Unreleased
+
+- Added [Encrypted Client Hello](advanced/ECH.md) support
+
 ## 2.9.3
 
 - Added [Hysteria Realms](advanced/Realms.md) UPnP/NAT-PMP port mapping support for easier NAT traversal

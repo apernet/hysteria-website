@@ -4,6 +4,10 @@ hide:
   - navigation
 ---
 
+## 未发布
+
+- 新增 [Encrypted Client Hello](advanced/ECH.md) 支持
+
 ## 2.9.3
 
 - 为 [Hysteria Realms](advanced/Realms.md) 新增 UPnP/NAT-PMP 支持以加强 NAT 穿透能力

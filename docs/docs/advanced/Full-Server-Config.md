@@ -127,6 +127,17 @@ You can have either `tls` or `acme`, but not both.
        (Note: Changing to a port other than 443 requires port forwarding or TLS reverse proxy, or the challenge will fail!)
     7. DNS provider. For details, refer to [ACME DNS Configuration](ACME-DNS-Config.md).
 
+### ECH
+
+You can optionally enable [Encrypted Client Hello](ECH.md) to hide the TLS SNI from middleboxes.
+
+```yaml
+ech:
+  keyPath: ech.pem # (1)!
+```
+
+1. Path to an ECH key file generated with `sing-box generate ech-keypair <public_name>`. On startup, the server logs the config list that clients need to set in their `tls.ech`. See [ECH](ECH.md) for details.
+
 ## Obfuscation
 
 By default, the Hysteria protocol mimics HTTP/3. If your network specifically blocks QUIC or HTTP/3 traffic (but not UDP in general), obfuscation can be used to work around this. Two implementations are available, both requiring a password that must be identical on the client and server:
