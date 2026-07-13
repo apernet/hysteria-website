@@ -215,7 +215,10 @@ congestion:
 bandwidth:
   up: 100 mbps
   down: 200 mbps
+  disableLossCompensation: false # (1)!
 ```
+
+1. Brutal 拥塞控制有一个「丢包补偿」机制：当出现丢包时，它会根据丢包率以略高于设定带宽的速度发送，以尝试继续达到设定的目标速度。取决于网络环境，这可能有用也可能适得其反。将此项设为 `true` 即可关闭补偿机制，永远不以高于设定带宽的速度发送。注意此选项是本地的，只影响本机的上传方向。
 
 Hysteria 现在有三种相关的拥塞控制模式：Brutal、BBR 和 Reno。**`bandwidth` 决定某个方向是否使用 Brutal。** 如果该方向没有使用 Brutal，则客户端会使用 `congestion` 中配置的非 Brutal 控制器（默认是 `bbr` + `standard`）。如果你希望使用非 Brutal 控制器，可以删除对应方向的带宽值，或者直接删除整个 `bandwidth` 部分。详细信息请参见 [完整服务端配置](../advanced/Full-Server-Config.md) 中的带宽协商与拥塞控制说明。
 

@@ -4,9 +4,11 @@ hide:
   - navigation
 ---
 
-## 未发布
+## 2.10.0
 
 - 新增 [Encrypted Client Hello](advanced/ECH.md) 支持
+- 新增 `bandwidth.disableLossCompensation` 选项，用于关闭 Brutal 的速率补偿机制，可以在一些情况下提升稳定性
+- 若干依赖更新与小修复
 
 ## 2.9.3
 

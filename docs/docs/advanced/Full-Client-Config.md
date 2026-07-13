@@ -215,7 +215,10 @@ The `congestion` section is local to this endpoint and is not negotiated in the 
 bandwidth:
   up: 100 mbps
   down: 200 mbps
+  disableLossCompensation: false # (1)!
 ```
+
+1. Brutal congestion control has a "loss compensation" mechanism: when there is packet loss, it attempts to send slightly faster than the set bandwidth to compensate and still reach the target speed. This may or may not help depending on the network conditions, and can sometimes make things worse. Set this to `true` to disable the compensation and always send at exactly the set speed. Note that this option is local to the endpoint (it only affects the upload direction of this machine).
 
 Hysteria can use Brutal, BBR, or Reno. **The `bandwidth` section determines whether Brutal is used for a given direction.** If Brutal is not selected, the client uses the non-Brutal controller configured in `congestion` (default: `bbr` with the `standard` profile). If you want to use a non-Brutal controller instead of Brutal, remove the corresponding bandwidth value or delete the entire `bandwidth` section. For more details, see [Bandwidth negotiation process](../advanced/Full-Server-Config.md#bandwidth-negotiation-process) and [Congestion control details](../advanced/Full-Server-Config.md#congestion-control-details).
 

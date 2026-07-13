@@ -4,9 +4,11 @@ hide:
   - navigation
 ---
 
-## Unreleased
+## 2.10.0
 
 - Added [Encrypted Client Hello](advanced/ECH.md) support
+- Added a `bandwidth.disableLossCompensation` option for disabling Brutal congestion control's loss compensation mechanism, which can improve stability in some cases
+- Various dependency updates and minor bug fixes
 
 ## 2.9.3
 
